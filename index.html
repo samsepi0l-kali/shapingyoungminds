@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shaping Young Minds</title>
+
+  <!-- Alice font (regular). For true Bold, swap to self-hosted @font-face later -->
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <img src="/assets/logo.jpeg" alt="Logo" class="preloader-logo" />
+      <div class="preloader-title">
+        <span class="word word-1"></span>
+        <span class="word word-2"></span>
+        <span class="word word-3"></span>
+        <span class="caret"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main site content (placeholder for now) -->
+  <main id="page">
+    <div class="page-inner">
+      <h1>Home page goes here</h1>
+      <p>We will build the website content after the preloader UX is perfect.</p>
+    </div>
+  </main>
+
+  <script>
+    // Words and targets
+    const words = ["Shaping", "Young", "Minds"];
+    const wordEls = [
+      document.querySelector(".word-1"),
+      document.querySelector(".word-2"),
+      document.querySelector(".word-3")
+    ];
+
+    let wIndex = 0;
+    let lIndex = 0;
+
+    const letterSpeed = 90;   // ms per letter
+    const wordGap = 250;      // pause between words
+    const endPause = 800;     // pause before fade-out
+
+    // Ensure all words are empty at start
+    wordEls.forEach(el => { if (el) el.textContent = ""; });
+
+    function typeNext() {
+      const currentEl = wordEls[wIndex];
+      const full = words[wIndex];
+
+      if (!currentEl) return;
+
+      currentEl.textContent = full.slice(0, lIndex + 1);
+      lIndex++;
+
+      if (lIndex < full.length) {
+        setTimeout(typeNext, letterSpeed);
+      } else {
+        // finished this word
+        wIndex++;
+        lIndex = 0;
+        if (wIndex < words.length) {
+          setTimeout(typeNext, wordGap);
+        } else {
+          // all done
+          setTimeout(finishPreloader, endPause);
+        }
+      }
+    }
+
+    function finishPreloader() {
+      const preloader = document.getElementById("preloader");
+      const page = document.getElementById("page");
+      preloader.classList.add("preloader-hide");
+      page.classList.add("page-show");
+    }
+
+    window.addEventListener("load", () => {
+      // Start typing slightly after logo zoom has begun
+      setTimeout(typeNext, 400);
+    });
+  </script>
+</body>
+</html>
