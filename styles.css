@@ -914,7 +914,7 @@ body {
 }
 
 .experience-counter .number {
-  font-size: 4rem;
+  font-size: 8rem;
   color: #55a80a;
   font-family: "Alice", serif;
 }
@@ -1219,6 +1219,20 @@ body {
     display: flex;
   }
 
+  .preloader-logo {
+    width: clamp(180px, 38vw, 280px); /* Increased from 140px to 160px */
+  }
+  
+  .preloader-title {
+    font-size: clamp(2.2rem, 6vw, 3.8rem); /* Increased from 1.6rem to 2rem */
+    gap: clamp(0.5rem, 1vw, 0.8rem); /* Increased gap */
+  }
+
+  .caret {
+    height: 1.3em; /* Taller caret */
+    width: 3px; /* Slightly wider caret */
+  }
+
   .nav-links {
     position: fixed;
     top: 80px; /* Height of navbar */
@@ -1268,16 +1282,16 @@ body {
   }
 
   .navbar {
-    padding: 15px 20px;
+    padding: 16px 20px;
   }
 
   .logo {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
   }
 
   .text {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
   }
 
   /* Main Content */
@@ -1517,11 +1531,11 @@ body {
   }
   
   .experience-counter .number {
-    font-size: 2.5rem; /* Consistent counter number size */
+    font-size: 3.5rem; /* Consistent counter number size */
   }
   
   .experience-counter .text {
-    font-size: 1.2rem; /* Consistent counter text size */
+    font-size: 1.5rem; /* Consistent counter text size */
   }
   
   .mentor-cta {
@@ -1537,6 +1551,14 @@ body {
 
 @media (max-width: 480px) {
   /* Extra small devices */
+  .preloader-logo {
+    width: clamp(170px, 42vw, 240px); /* Increased from 150px to 170px */
+  }
+  
+  .preloader-title {
+    font-size: clamp(2rem, 6.5vw, 3.5rem); /* Increased from 1.9rem to 2rem */
+  }
+
   .content {
     padding: 2rem 1rem 2rem;
   }
@@ -1578,16 +1600,16 @@ body {
   }
 
   .navbar {
-    padding: 12px 15px;
+    padding: 14px 16px;
   }
 
   .logo {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
   }
 
   .text {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .hamburger {
@@ -1727,11 +1749,11 @@ body {
   }
   
   .experience-counter .number {
-    font-size: 2rem; /* Consistent counter number size */
+    font-size: 3.5rem; /* Consistent counter number size */
   }
   
   .experience-counter .text {
-    font-size: 1rem; /* Consistent counter text size */
+    font-size: 1.5rem; /* Consistent counter text size */
   }
   
   .mentor-button {
