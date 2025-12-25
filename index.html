@@ -6,17 +6,21 @@
   <title>Shaping Young Minds</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-
-  <!-- Alice font (regular)-->
+  <!-- Alice font -->
   <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+  <!-- Plus Jakarta Sans for the site UI/content -->
+  <link rel="stylesheet" href="https://unpkg.com/plusplusjakartasans/plusjakartasans.css" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Gentle Leaves Trail -->
+  <div class="cursor-trail-container"></div>
   <!-- Preloader -->
   <div id="preloader">
     <div class="preloader-inner">
-      <img src="/assets/logo.png" alt="Logo" class="preloader-logo" />
+      <img src="assets/logo.png" alt="Logo" class="preloader-logo" />
       <div class="preloader-title">
         <span class="word word-1"></span>
         <span class="word word-2"></span>
@@ -26,17 +30,282 @@
     </div>
   </div>
 
-  <!-- Main site content-->
-  <main id="page">
-    <div class="page-inner">
-      <h1>Site is under Construction🤗</h1>
-      <p>We are working hard to bring this site to you as soon as possible.</p>
-      <p>Please stay tuned. 😉</p>
-    </div>
-  </main>
+  <!-- Falling Leaves Background -->
+  <div class="leaves-background" id="leavesBackground"></div>
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="SYM logo" class="logo" />
+        <div class="text">Shaping <span class="highlight">Young</span> Minds</div>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">Mental Health Awareness <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="mha.html">I am a parent</a></li>
+            <li><a href="mha-young.html">I am a young person</a></li>
+          </ul>
+        </li>
+
+        <li><a href="sym.html">SYM</a></li>
+        <li><a href="safe-space.html">Safe Space</a></li>
+        <li><a href="blog.html">Blog</a></li>
+
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">About us <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </li>
+
+        <li><a href="mentors.html">SYM Mentors</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="content">
+      <div class="page-inner">
+        <!-- Quote Carousel -->
+        <section class="quote-carousel-section">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <!-- Slide 1: Pink -->
+              <div class="quote-box active" data-color="pink">
+                <div class="quote-content">
+                  <div class="quote-text">
+                    <div class="quote-text-inner">
+                      <p class="quote">"The mind is like a garden. What you plant grows. Let's plant seeds of resilience, kindness, and self-belief in our young ones."</p>
+                      <div class="quote-author">
+                        <h3>Kanta Devi</h3>
+                        <p>Child Psychologist & Founder</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="quote-image">
+                    <img src="assets/kanta.png" alt="Kanta Devi"> 
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Green -->
+              <div class="quote-box" data-color="green">
+                <div class="quote-content">
+                  <div class="quote-text">
+                    <div class="quote-text-inner">
+                      <p class="quote">"Every child's mental health journey is unique. Our role is to walk beside them, not ahead, offering support when they need it most."</p>
+                      <div class="quote-author">
+                        <h3>Yukta Mandal</h3>
+                        <p>Youth Mental Health Advocate</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="quote-image">
+                    <img src="assets/yukta.png" alt="Yukta Mandal"> 
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3: Blue -->
+              <div class="quote-box" data-color="blue">
+                <div class="quote-content">
+                  <div class="quote-text">
+                    <div class="quote-text-inner">
+                      <p class="quote">"The greatest gift we can give our youth is the confidence to express their emotions without fear or judgment."</p>
+                      <div class="quote-author">
+                        <h3>Ishita Kapoor</h3>
+                        <p>Youth Mental Health Advocate</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="quote-image">
+                    <img src="assets/ishita.png" alt="Ishita Kapoor"> 
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+              <button class="carousel-btn prev" aria-label="Previous quote">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              
+              <div class="carousel-indicators">
+                <button class="indicator active" data-index="0" aria-label="Go to slide 1"></button>
+                <button class="indicator" data-index="1" aria-label="Go to slide 2"></button>
+                <button class="indicator" data-index="2" aria-label="Go to slide 3"></button>
+              </div>
+              
+              <button class="carousel-btn next" aria-label="Next quote">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="intro-section">
+          <div class="intro-container">
+            <div class="intro-header">
+              <h1>What is Shaping <span class="highlight">Young</span> Minds?</h1>
+              <div class="intro-divider"></div>
+            </div>
+            
+            <div class="intro-content">
+              <p class="intro-lead">
+                Shaping Young Minds is a compassionate initiative dedicated to nurturing the emotional and mental wellbeing of children and adolescents.
+              </p>
+              
+              <div class="intro-details">
+                <p>
+                  We understand that growing up can sometimes feel overwhelming. There are moments when children struggle with feelings they don't fully understand, and parents worry about how to help without making things worse. At Shaping Young Minds, we are here to walk with you through those moments.
+                </p>
+                
+                <p>
+                  We want to help families notice the small signs, understand what lies beneath certain behaviors, and respond with patience, love, and care. It's not about judging or fixing: it's about guiding, supporting, and creating a space where children feel safe and parents feel confident.
+                </p>
+                
+                <div class="intro-highlight">
+                  <p>
+                    Our hope is to build a future where childhood is truly a time of joy and growth, where traumas don't linger, and where children can carry confidence, hope, and resilience into adulthood.
+                  </p>
+                </div>
+                
+                <div class="intro-cta">
+                  <a href="sym.html" class="cta-button">Learn More About SYM</a>
+                  <a href="contact.html" class="cta-button secondary">Get In Touch</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mental Health Awareness Section -->
+        <section class="mha-preview-section">
+          <div class="section-header">
+            <h2>Mental Health Awareness</h2>
+            <p class="section-subtitle">Resources tailored for both parents and young people</p>
+          </div>
+          
+          <div class="mha-preview-container">
+            <!-- Parent Section -->
+            <div class="mha-card parent-card">
+              <div class="mha-card-header">
+                <div class="mha-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <h3>I am a Parent</h3>
+              </div>
+              
+              <div class="mha-card-content">
+                <p class="mha-description">
+                  A gentle guide to understanding your child's emotional world. Every child faces challenges, and every parent wants to support them with love, clarity, and confidence.
+                </p>
+                
+                <div class="mha-topics">
+                  <h4>Topics covered:</h4>
+                  <ul class="topics-list">
+                    <li>ADHD & Autism</li>
+                    <li>Anger & Emotional Regulation</li>
+                    <li>Bullying & Social Anxiety</li>
+                    <li>Screen & Gaming Addiction</li>
+                    <li>Eating Disorders</li>
+                    <li>And much more...</li>
+                  </ul>
+                </div>
+                
+                <div class="mha-cta">
+                  <a href="mha.html" class="mha-button parent-button">
+                    Explore Parent Resources
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Young Person Section -->
+            <div class="mha-card young-card">
+              <div class="mha-card-header">
+                <div class="mha-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <h3>I am a Young Person</h3>
+              </div>
+              
+              <div class="mha-card-content">
+                <p class="mha-description">
+                  Understanding your feelings, coping with life's challenges, and supporting friends. Your mental health matters, and you're not alone on this journey.
+                </p>
+                
+                <div class="mha-topics">
+                  <h4>Topics covered:</h4>
+                  <ul class="topics-list">
+                    <li>Understanding Mental Health Conditions</li>
+                    <li>Navigating Feelings & Emotions</li>
+                    <li>Coping Strategies for Daily Life</li>
+                    <li>Supporting Friends in Need</li>
+                    <li>Managing Exam Stress</li>
+                    <li>And much more...</li>
+                  </ul>
+                </div>
+                
+                <div class="mha-cta">
+                  <a href="mha-young.html" class="mha-button young-button">
+                    Explore Youth Resources
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mha-note">
+            <p>Both sections offer compassionate, practical guidance to help families navigate emotional challenges with understanding and care.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="site-footer">
+      <p>© 2025 Shaping Young Minds. All rights reserved.</p>
+    </footer>
+  </div>
 
   <script>
-    // Words and targets
+    // Preloader typewriter
     const words = ["Shaping", "Young", "Minds"];
     const wordEls = [
       document.querySelector(".word-1"),
@@ -46,18 +315,15 @@
 
     let wIndex = 0;
     let lIndex = 0;
+    const letterSpeed = 90;
+    const wordGap = 250;
+    const endPause = 800;
 
-    const letterSpeed = 90;   // ms per letter
-    const wordGap = 250;      // pause between words
-    const endPause = 800;     // pause before fade-out
-
-    // Ensures all words are empty at start
     wordEls.forEach(el => { if (el) el.textContent = ""; });
 
     function typeNext() {
       const currentEl = wordEls[wIndex];
       const full = words[wIndex];
-
       if (!currentEl) return;
 
       currentEl.textContent = full.slice(0, lIndex + 1);
@@ -66,13 +332,11 @@
       if (lIndex < full.length) {
         setTimeout(typeNext, letterSpeed);
       } else {
-        // finished this word
         wIndex++;
         lIndex = 0;
         if (wIndex < words.length) {
           setTimeout(typeNext, wordGap);
         } else {
-          // all done
           setTimeout(finishPreloader, endPause);
         }
       }
@@ -80,15 +344,315 @@
 
     function finishPreloader() {
       const preloader = document.getElementById("preloader");
-      const page = document.getElementById("page");
+      const pageContent = document.getElementById("pageContent");
       preloader.classList.add("preloader-hide");
-      page.classList.add("page-show");
+      preloader.setAttribute("aria-hidden", "true");
+      pageContent.classList.add("page-show");
+
+      window.scrollTo(0, 0); 
+      
+      // Create falling leaves after preloader finishes
+      setTimeout(createLeaves, 300);
+      
+      // Start the quote carousel after preloader finishes
+      setTimeout(initQuoteCarousel, 500);
     }
 
     window.addEventListener("load", () => {
-      // Start typing slightly after logo zoom has begun
       setTimeout(typeNext, 400);
     });
+
+    // Create falling leaves
+    function createLeaves() {
+      const leavesContainer = document.getElementById('leavesBackground');
+      const numberOfLeaves = 15;
+      
+      for (let i = 0; i < numberOfLeaves; i++) {
+        const leaf = document.createElement('div');
+        leaf.classList.add('leaf');
+        
+        // Random color class
+        const colorClass = `color-${Math.floor(Math.random() * 3) + 1}`;
+        leaf.classList.add(colorClass);
+        
+        // Random position
+        leaf.style.left = `${Math.random() * 100}vw`;
+        leaf.style.top = `${Math.random() * 100}vh`;
+        
+        // Random size
+        const size = 15 + Math.random() * 10;
+        leaf.style.width = `${size}px`;
+        leaf.style.height = `${size}px`;
+        
+        // Random animation
+        const animations = ['floatLeaf', 'floatLeaf2', 'floatLeaf3', 'floatLeaf4'];
+        const animation = animations[Math.floor(Math.random() * animations.length)];
+        leaf.style.animation = `${animation} ${10 + Math.random() * 10}s linear infinite`;
+        leaf.style.animationDelay = `${Math.random() * 5}s`;
+        
+        leavesContainer.appendChild(leaf);
+      }
+      
+      // Show leaves after a short delay
+      setTimeout(() => {
+        leavesContainer.style.opacity = '1';
+      }, 500);
+    }
+
+    // Hamburger menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      navLinks.classList.toggle('open');
+    });
+
+    // Dropdown menus
+    function handleDropdowns() {
+      const parents = document.querySelectorAll('.nav-parent');
+      
+      parents.forEach(parent => {
+        parent.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          parents.forEach(otherParent => {
+            if (otherParent !== parent) {
+              otherParent.parentElement.classList.remove('active');
+            }
+          });
+          
+          this.parentElement.classList.toggle('active');
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        parents.forEach(parent => {
+          if (!parent.parentElement.contains(e.target)) {
+            parent.parentElement.classList.remove('active');
+          }
+        });
+      });
+    }
+
+    handleDropdowns();
+
+    // Quote Carousel - Simplified (no typewriter)
+    function initQuoteCarousel() {
+      const carouselTrack = document.querySelector('.carousel-track');
+      const quoteBoxes = document.querySelectorAll('.quote-box');
+      const indicators = document.querySelectorAll('.indicator');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      
+      let currentIndex = 0;
+      let isAnimating = false;
+      let autoSlideInterval;
+      const slideDuration = 6000; // 6 seconds
+      
+      function goToSlide(index) {
+        if (isAnimating || index === currentIndex) return;
+        
+        isAnimating = true;
+        
+        // Remove active class from current slide
+        quoteBoxes[currentIndex].classList.remove('active');
+        indicators[currentIndex].classList.remove('active');
+        
+        // Update current index
+        currentIndex = index;
+        
+        // Add active class to new slide
+        quoteBoxes[currentIndex].classList.add('active');
+        indicators[currentIndex].classList.add('active');
+        
+        // Reset animation flag after transition
+        setTimeout(() => {
+          isAnimating = false;
+        }, 600);
+        
+        // Reset autoplay
+        startAutoSlide();
+      }
+      
+      function goToNextSlide() {
+        const nextIndex = (currentIndex + 1) % quoteBoxes.length;
+        goToSlide(nextIndex);
+      }
+      
+      function goToPrevSlide() {
+        const prevIndex = (currentIndex - 1 + quoteBoxes.length) % quoteBoxes.length;
+        goToSlide(prevIndex);
+      }
+      
+      function startAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(goToNextSlide, slideDuration);
+      }
+      
+      // Event listeners
+      prevBtn.addEventListener('click', goToPrevSlide);
+      nextBtn.addEventListener('click', goToNextSlide);
+      
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index));
+      });
+      
+      // Pause autoplay on hover
+      carouselTrack.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+      });
+      
+      carouselTrack.addEventListener('mouseleave', startAutoSlide);
+      
+      // Start autoplay
+      startAutoSlide();
+    }
+    // ============================================
+    // GENTLE LEAVES TRAIL EFFECT
+    // ============================================
+    
+    // Only run after page is fully loaded
+    window.addEventListener('load', function() {
+      initLeavesTrail();
+    });
+    
+    function initLeavesTrail() {
+      // Don't run on touch devices
+      if (('ontouchstart' in window) || 
+          (navigator.maxTouchPoints > 0) || 
+          (navigator.msMaxTouchPoints > 0)) {
+        return;
+      }
+      
+      const leaves = [];
+      const maxLeaves = 12;
+      let lastLeafTime = 0;
+      const leafDelay = 150;
+      
+      const leafTypes = [
+        { class: 'leaf-trail-1', life: 2000, floatDistance: 20, rotation: 45 },
+        { class: 'leaf-trail-2', life: 1800, floatDistance: 18, rotation: 30 },
+        { class: 'leaf-trail-3', life: 2200, floatDistance: 22, rotation: 60 }
+      ];
+      
+      function createLeaf(x, y) {
+        if (leaves.length >= maxLeaves) {
+          const oldestLeaf = leaves.shift();
+          if (oldestLeaf && oldestLeaf.element) {
+            oldestLeaf.element.remove();
+          }
+        }
+        
+        const leafType = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+        const leaf = document.createElement('div');
+        leaf.className = `cursor-leaf ${leafType.class}`;
+        
+        leaf.style.left = x + 'px';
+        leaf.style.top = y + 'px';
+        leaf.style.opacity = '0';
+        leaf.style.transform = 'scale(0.8) rotate(0deg)';
+        
+        document.body.appendChild(leaf);
+        
+        const leafInfo = {
+          element: leaf,
+          createdAt: Date.now(),
+          life: leafType.life,
+          floatDistance: leafType.floatDistance,
+          rotation: leafType.rotation,
+          startX: x,
+          startY: y,
+          driftX: (Math.random() - 0.5) * 12
+        };
+        
+        leaves.push(leafInfo);
+        animateLeaf(leafInfo);
+        return leafInfo;
+      }
+      
+      function animateLeaf(leafInfo) {
+        const leaf = leafInfo.element;
+        
+        setTimeout(() => {
+          leaf.style.opacity = '0.7';
+          leaf.style.transform = 'scale(1) rotate(0deg)';
+        }, 10);
+        
+        const startTime = Date.now();
+        const duration = leafInfo.life;
+        
+        function floatAnimation() {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          if (progress >= 1) {
+            leaf.style.opacity = '0';
+            leaf.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+              if (leaf.parentNode) leaf.remove();
+              const index = leaves.indexOf(leafInfo);
+              if (index > -1) leaves.splice(index, 1);
+            }, 500);
+            return;
+          }
+          
+          const floatY = progress * leafInfo.floatDistance;
+          const floatX = Math.sin(progress * Math.PI) * leafInfo.driftX;
+          const rotation = progress * leafInfo.rotation;
+          
+          leaf.style.transform = `
+            translate(${floatX}px, ${floatY}px)
+            scale(${1 - progress * 0.3})
+            rotate(${rotation}deg)
+          `;
+          
+          leaf.style.opacity = (0.7 * (1 - progress * 0.8)).toString();
+          requestAnimationFrame(floatAnimation);
+        }
+        
+        floatAnimation();
+      }
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        const now = Date.now();
+        if (now - lastLeafTime > leafDelay) {
+          createLeaf(mouseX, mouseY);
+          lastLeafTime = now;
+        }
+      });
+      
+      const cleanupInterval = setInterval(() => {
+        const now = Date.now();
+        for (let i = leaves.length - 1; i >= 0; i--) {
+          if (now - leaves[i].createdAt > leaves[i].life + 500) {
+            if (leaves[i].element && leaves[i].element.parentNode) {
+              leaves[i].element.remove();
+            }
+            leaves.splice(i, 1);
+          }
+        }
+      }, 1000);
+      
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          clearInterval(cleanupInterval);
+        }
+      });
+    }
+    
+    // ============================================
+    // END LEAVES TRAIL EFFECT
+    // ============================================
+    
   </script>
 </body>
 </html>
