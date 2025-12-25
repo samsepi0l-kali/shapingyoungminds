@@ -735,6 +735,220 @@ body {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
+/* ============================================
+   FEATURED MENTOR SECTION - SIMPLIFIED
+   ============================================ */
+
+.featured-mentor-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+  width: 100%;
+  background: #f9fafb;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.featured-mentor-section .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.featured-mentor-section .section-header h2 {
+  font-family: "Alice", serif;
+  font-size: 2.5rem;
+  color: #55a80a;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.featured-mentor-section .section-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mentor-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mentor-card {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.mentor-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mentor-image {
+  position: relative;
+  width: 280px; /* Increased for bigger circle */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container {
+  width: 260px; /* Bigger circle */
+  height: 260px; /* Bigger circle */
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(85, 168, 10, 0.2);
+  background: #aef359;
+  display: flex;
+  align-items: flex-end; /* Align image to bottom */
+  justify-content: center;
+}
+
+.mentor-photo {
+  width: 100%;
+  height: 100%; /* Leave space at top for gradient */
+  object-fit: cover;
+  object-position: center bottom; /* Justify image at bottom */
+  display: block;
+}
+
+/* Remove all hover effects */
+.image-border {
+  display: none; /* Remove the border element */
+}
+
+.mentor-info {
+  flex: 1;
+  text-align: left;
+}
+
+.mentor-info h3 {
+  font-family: "Alice", serif;
+  font-size: 2rem;
+  color: #020202;
+  margin-bottom: 0.3rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Remove hover effects from h3 underline */
+.mentor-info h3:after {
+  width: 40px; /* Fixed width, no hover animation */
+}
+
+.mentor-info h4 {
+  color: #55a80a;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.mentor-info p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.mentor-specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.mentor-specialties span {
+  background: rgba(85, 168, 10, 0.1);
+  border: 1px solid rgba(85, 168, 10, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #374151;
+  cursor: default;
+}
+
+/* Remove hover effects from specialties */
+.mentor-specialties span:hover {
+  background: rgba(85, 168, 10, 0.1); /* No change on hover */
+  transform: none; /* No movement on hover */
+}
+
+.mentor-quote {
+  font-style: italic;
+  color: #6b7280;
+  font-size: 1.1rem;
+  border-left: 3px solid #55a80a;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* Experience Counter */
+.experience-counter {
+  margin: 3rem 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.experience-counter .number {
+  font-size: 4rem;
+  color: #55a80a;
+  font-family: "Alice", serif;
+}
+
+.experience-counter .text {
+  font-size: 2rem;
+  color: #020202;
+  font-family: "Alice", serif;
+  margin-left: 0.5rem;
+}
+
+/* Mentor CTA Button */
+.mentor-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.mentor-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: #55a80a;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #55a80a;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.mentor-button:hover {
+  background: white;
+  color: #55a80a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(85, 168, 10, 0.3);
+}
+
+.mentor-button svg {
+  transition: transform 0.3s ease;
+}
+
+.mentor-button:hover svg {
+  transform: translateX(5px);
+}
+
 /* ============================================
    GENTLE LEAVES TRAIL CURSOR EFFECT
    ============================================ */
@@ -969,7 +1183,10 @@ body {
   margin-top: auto;
 }
 
-/* Mobile Responsive Design */
+/* ============================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================ */
+
 @media (max-width: 768px) {
   /* For mobile, reduce number of leaves or size */
   .leaf {
@@ -1193,6 +1410,60 @@ body {
   .mha-note p {
     font-size: 1rem;
   }
+  
+  /* Featured Mentor Section - Mobile */
+  .mentor-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .mentor-image {
+    width: 240px;
+    margin: 0 auto;
+  }
+  
+  .image-container {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .mentor-info {
+    text-align: center;
+  }
+  
+  .mentor-info h3:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .mentor-specialties {
+    justify-content: center;
+  }
+  
+  .mentor-quote {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+  }
+  
+  .experience-counter .number {
+    font-size: 3rem;
+  }
+  
+  .experience-counter .text {
+    font-size: 1.5rem;
+  }
+  
+  .mentor-cta {
+    padding: 0 1rem;
+  }
+  
+  .mentor-button {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1308,6 +1579,52 @@ body {
     padding: 0.8rem 1.5rem;
     font-size: 0.95rem;
   }
+  
+  /* Featured Mentor Section - Extra Small */
+  .featured-mentor-section .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .mentor-image {
+    width: 200px;
+  }
+  
+  .image-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .mentor-info h3 {
+    font-size: 1.8rem;
+  }
+  
+  .mentor-info h4 {
+    font-size: 1rem;
+  }
+  
+  .mentor-specialties {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .mentor-specialties span {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .experience-counter .number {
+    font-size: 2.5rem;
+  }
+  
+  .experience-counter .text {
+    font-size: 1.2rem;
+  }
+  
+  .mentor-button {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 /* Tablet adjustments */
@@ -1345,6 +1662,20 @@ body {
   .intro-section {
     padding: 3.5rem 1.5rem;
     margin: 2.5rem auto;
+  }
+  
+  /* Featured Mentor Section - Tablet */
+  .mentor-card {
+    gap: 2rem;
+  }
+  
+  .mentor-image {
+    width: 240px;
+  }
+  
+  .image-container {
+    width: 220px;
+    height: 220px;
   }
 }
 

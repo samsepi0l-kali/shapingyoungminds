@@ -295,6 +295,57 @@
             <p>Both sections offer compassionate, practical guidance to help families navigate emotional challenges with understanding and care.</p>
           </div>
         </section>
+        <!-- Featured Mentor Section -->
+        <section class="featured-mentor-section">
+          <div class="section-header">
+            <h2>SYM Mentors</h2>
+            <p class="section-subtitle">Meet our experienced mental health professionals</p>
+          </div>
+          
+          <div class="mentor-container">
+            <div class="mentor-card">
+              <div class="mentor-image">
+                <div class="image-container">
+                  <img src="assets/deepika.png" alt="Dr. Deepika Chamoli Shahi" class="mentor-photo">
+                </div>
+                <div class="image-border"></div>
+              </div>
+              
+              <div class="mentor-info">
+                <h3>Dr. Deepika Chamoli Shahi</h3>
+                <h4>Cognitive Psychologist & Clinical Hypnotherapist</h4>
+                <p>Prof. Dr. Deepika Chamoli Shahi is a compassionate Cognitive Psychologist and Clinical Hypnotherapist with over 22 years of experience in supporting mental and emotional well-being. Recognised among the top online psychologists, she has been a pioneer in making quality mental health care accessible through online counselling.</p>
+                
+                <div class="mentor-specialties">
+                  <span>🧠 Anxiety & Stress</span>
+                  <span>💭 Obsessive Thoughts</span>
+                  <span>👶 Childhood Experiences</span>
+                  <span>🤝 Relationship Support</span>
+                </div>
+                
+                <div class="mentor-quote">
+                  "With her strong expertise in online counselling, Dr. Deepika offers a safe and supportive space to explore your thoughts, emotions, and challenges."
+                </div>
+              </div>
+            </div>
+            
+            <!-- Experience Counter -->
+            <div class="experience-counter" aria-label="Experience counter">
+              <span class="number" id="experienceYears">22</span> 
+              <span class="text">Years of Experience</span>
+            </div>
+            
+            <!-- Learn More Button -->
+            <div class="mentor-cta">
+              <a href="mentors.html" class="mentor-button">
+                Learn More About Our Mentors
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
@@ -652,7 +703,51 @@
     // ============================================
     // END LEAVES TRAIL EFFECT
     // ============================================
+    // Mentor section animation
+  function initMentorAnimation() {
+    const mentorCard = document.querySelector('.mentor-card');
+    const experienceCounter = document.getElementById('experienceYears');
     
+    if (!mentorCard || !experienceCounter) return;
+    
+    // Intersection Observer for mentor card
+    const mentorObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Start counter animation
+          startExperienceCounter();
+          mentorObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+    
+    mentorObserver.observe(mentorCard);
+    
+    // Counter animation
+    function startExperienceCounter() {
+      let count = 0;
+      const target = 22;
+      const increment = 1;
+      const intervalTime = 80; // Slower for dramatic effect
+      
+      function updateCounter() {
+        if (count < target) {
+          count += increment;
+          experienceCounter.textContent = count;
+          setTimeout(updateCounter, intervalTime);
+        }
+      }
+      
+      updateCounter();
+    }
+  }
+
+  // Initialize mentor animation after page loads
+  window.addEventListener('load', () => {
+    setTimeout(initMentorAnimation, 1000);
+  });
   </script>
 </body>
 </html>
