@@ -813,11 +813,12 @@ body {
 }
 
 .mentor-photo {
-  width: 100%;
-  height: 100%; /* Leave space at top for gradient */
+  width: 90%; /* Reduced width for smaller image */
+  height: 90%; /* Reduced height for smaller image */
   object-fit: cover;
-  object-position: center bottom; /* Justify image at bottom */
+  object-position: center bottom;
   display: block;
+  margin: 0 auto; /* Center the image */
 }
 
 /* Remove all hover effects */
@@ -837,6 +838,16 @@ body {
   margin-bottom: 0.3rem;
   position: relative;
   display: inline-block;
+}
+
+.mentor-info h3:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background: #55a80a;
+  bottom: -7px;
+  left: 0;
 }
 
 /* Remove hover effects from h3 underline */
@@ -874,12 +885,16 @@ body {
   font-size: 0.9rem;
   color: #374151;
   cursor: default;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 /* Remove hover effects from specialties */
 .mentor-specialties span:hover {
   background: rgba(85, 168, 10, 0.1); /* No change on hover */
-  transform: none; /* No movement on hover */
+  border-color: #55a80a;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(85, 168, 10, 0.2);
 }
 
 .mentor-quote {
@@ -1184,7 +1199,7 @@ body {
 }
 
 /* ============================================
-   MOBILE RESPONSIVE DESIGN
+   MOBILE RESPONSIVE DESIGN - CONSISTENT FONT SIZES
    ============================================ */
 
 @media (max-width: 768px) {
@@ -1270,7 +1285,7 @@ body {
     padding: 3rem 1rem 3rem;
   }
 
-  /* Quote Carousel */
+  /* Quote Carousel Section - Mobile */
   .carousel-container {
     margin: 0 1rem;
     border-radius: 15px;
@@ -1304,17 +1319,19 @@ body {
     object-fit: contain;
   }
   
+  /* Consistent font sizes for quote section */
   .quote {
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* Consistent size */
     margin-bottom: 1.5rem;
+    line-height: 1.4;
   }
 
   .quote-author h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* Consistent size */
   }
 
   .quote-author p {
-    font-size: 1rem;
+    font-size: 1rem; /* Consistent size */
   }
   
   .carousel-controls {
@@ -1332,7 +1349,7 @@ body {
     height: 20px;
   }
 
-  /* Introduction Section */
+  /* Introduction Section - Mobile */
   .intro-section {
     padding: 3rem 1.5rem;
     margin: 2rem auto 1.5rem;
@@ -1340,15 +1357,18 @@ body {
   }
   
   .intro-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Consistent main heading size */
+    margin-bottom: 0.8rem;
   }
   
   .intro-lead {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Consistent lead text size */
+    margin-bottom: 1.5rem;
   }
   
   .intro-details p {
-    font-size: 1rem;
+    font-size: 1rem; /* Consistent paragraph size */
+    margin-bottom: 1.2rem;
   }
   
   .intro-highlight {
@@ -1356,7 +1376,7 @@ body {
   }
   
   .intro-highlight p {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Consistent highlight text size */
   }
   
   .intro-cta {
@@ -1367,19 +1387,21 @@ body {
   .cta-button {
     width: 100%;
     max-width: 300px;
+    font-size: 0.95rem; /* Consistent button text size */
   }
 
-  /* Mental Health Awareness Section */
+  /* Mental Health Awareness Section - Mobile */
   .mha-preview-section {
     padding: 3rem 1.5rem;
   }
   
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Consistent main heading size */
+    margin-bottom: 0.5rem;
   }
   
   .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Consistent subtitle size */
   }
   
   .mha-preview-container {
@@ -1392,7 +1414,7 @@ body {
   }
   
   .mha-card-header h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem; /* Consistent card heading size */
   }
   
   .mha-card-content {
@@ -1400,7 +1422,20 @@ body {
   }
   
   .mha-description {
-    font-size: 1rem;
+    font-size: 1rem; /* Consistent description size */
+    margin-bottom: 1.2rem;
+  }
+  
+  .mha-topics h4 {
+    font-size: 1.1rem; /* Consistent topics heading size */
+  }
+  
+  .topics-list li {
+    font-size: 0.9rem; /* Consistent list item size */
+  }
+  
+  .mha-button {
+    font-size: 0.95rem; /* Consistent button size */
   }
   
   .mha-note {
@@ -1408,7 +1443,7 @@ body {
   }
   
   .mha-note p {
-    font-size: 1rem;
+    font-size: 1rem; /* Consistent note text size */
   }
   
   /* Featured Mentor Section - Mobile */
@@ -1428,8 +1463,17 @@ body {
     height: 220px;
   }
   
+  .mentor-photo {
+    width: 90%;
+    height: 90%;
+  }
+  
   .mentor-info {
     text-align: center;
+  }
+  
+  .mentor-info h3 {
+    font-size: 1.8rem; /* Consistent mentor name size */
   }
   
   .mentor-info h3:after {
@@ -1437,11 +1481,34 @@ body {
     transform: translateX(-50%);
   }
   
+  .mentor-info h4 {
+    font-size: 1.1rem; /* Consistent subtitle size */
+  }
+  
+  .mentor-info p {
+    font-size: 1rem; /* Consistent paragraph size */
+    margin-bottom: 1.2rem;
+  }
+  
   .mentor-specialties {
     justify-content: center;
+    gap: 0.6rem;
+  }
+  
+  .mentor-specialties span {
+    font-size: 0.9rem; /* Consistent specialty text size */
+    padding: 0.4rem 0.8rem;
+    transition: all 0.3s ease;
+  }
+  .mentor-specialties span:hover{
+    background: rgba(85, 168, 10, 0.2);
+    border-color: #55a80a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(85, 168, 10, 0.2);
   }
   
   .mentor-quote {
+    font-size: 1rem; /* Consistent quote size */
     text-align: left;
     margin-left: auto;
     margin-right: auto;
@@ -1449,11 +1516,11 @@ body {
   }
   
   .experience-counter .number {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Consistent counter number size */
   }
   
   .experience-counter .text {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Consistent counter text size */
   }
   
   .mentor-cta {
@@ -1463,6 +1530,7 @@ body {
   .mentor-button {
     width: 100%;
     max-width: 300px;
+    font-size: 1rem; /* Consistent button text size */
   }
 }
 
@@ -1488,17 +1556,18 @@ body {
     object-fit: contain;
   }
 
+  /* Consistent font sizes for extra small devices */
   .quote {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Consistent size */
     line-height: 1.4;
   }
 
   .quote-author h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Consistent size */
   }
 
   .quote-author p {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Consistent size */
   }
 
   .carousel-controls {
@@ -1529,18 +1598,22 @@ body {
     padding: 1.5rem;
   }
 
-  /* Introduction Section */
+  /* Introduction Section - Extra Small */
   .intro-section {
     padding: 2rem 1rem;
     margin: 1.5rem auto 1rem;
   }
   
   .intro-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Consistent main heading size */
   }
   
   .intro-lead {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Consistent lead text size */
+  }
+  
+  .intro-details p {
+    font-size: 0.95rem; /* Consistent paragraph size */
   }
   
   .intro-highlight {
@@ -1548,16 +1621,20 @@ body {
   }
   
   .intro-highlight p {
-    font-size: 1rem;
+    font-size: 0.95rem; /* Consistent highlight text size */
   }
 
-  /* Mental Health Awareness Section */
+  /* Mental Health Awareness Section - Extra Small */
   .mha-preview-section {
     padding: 2.5rem 1rem;
   }
   
   .section-header h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Consistent main heading size */
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem; /* Consistent subtitle size */
   }
   
   .mha-card-header {
@@ -1567,7 +1644,7 @@ body {
   }
   
   .mha-card-header h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Consistent card heading size */
   }
   
   .mha-icon {
@@ -1575,14 +1652,26 @@ body {
     height: 45px;
   }
   
+  .mha-description {
+    font-size: 0.95rem; /* Consistent description size */
+  }
+  
+  .mha-topics h4 {
+    font-size: 1rem; /* Consistent topics heading size */
+  }
+  
+  .topics-list li {
+    font-size: 0.85rem; /* Consistent list item size */
+  }
+  
   .mha-button {
     padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem; /* Consistent button text size */
   }
   
   /* Featured Mentor Section - Extra Small */
   .featured-mentor-section .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.6rem; /* Consistent main heading size */
   }
   
   .mentor-image {
@@ -1594,12 +1683,21 @@ body {
     height: 180px;
   }
   
+  .mentor-photo {
+    width: 90%;
+    height: 90%;
+  }
+  
   .mentor-info h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Consistent mentor name size */
   }
   
   .mentor-info h4 {
-    font-size: 1rem;
+    font-size: 1rem; /* Consistent subtitle size */
+  }
+  
+  .mentor-info p {
+    font-size: 0.95rem; /* Consistent paragraph size */
   }
   
   .mentor-specialties {
@@ -1611,19 +1709,31 @@ body {
   .mentor-specialties span {
     width: 100%;
     text-align: center;
+    font-size: 0.85rem; /* Consistent specialty text size */
+    transition: all 0.3s ease;
+  }
+  .mentor-specialties span:hover {
+  background: rgba(85, 168, 10, 0.2);
+  border-color: #55a80a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(85, 168, 10, 0.2);
+}
+  
+  .mentor-quote {
+    font-size: 0.95rem; /* Consistent quote size */
   }
   
   .experience-counter .number {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Consistent counter number size */
   }
   
   .experience-counter .text {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Consistent counter text size */
   }
   
   .mentor-button {
     padding: 0.9rem 1.5rem;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Consistent button text size */
   }
 }
 
@@ -1676,6 +1786,11 @@ body {
   .image-container {
     width: 220px;
     height: 220px;
+  }
+  
+  .mentor-photo {
+    width: 90%;
+    height: 90%;
   }
 }
 
