@@ -1,0 +1,1434 @@
+/* stylecon.css - Contact Page Specific Styles */
+
+/* ============================================
+   SHARED STYLES FROM styles.css
+   ============================================ */
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  background: #ffffff;
+  color: #020202;
+}
+
+.highlight {
+  color: #55a80a;
+}
+
+/* Navbar - Logo LEFT, Menu RIGHT, FULL WIDTH */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e4e4e4;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.text {
+  font-family: "Alice", serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  color: #020202;
+}
+
+.text .highlight {
+  color: #55a80a;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+/* ETERNORA HOVER GLOW EFFECT */
+.nav-links a,
+.nav-parent {
+  color: #111827;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Green glow effect on hover */
+.nav-links a:hover,
+.nav-parent:hover {
+  color: #55a80a;
+  text-shadow: 0 0 10px rgba(85, 168, 10, 0.3), 
+               0 0 20px rgba(85, 168, 10, 0.2),
+               0 0 30px rgba(85, 168, 10, 0.1);
+  background: transparent;
+}
+
+/* Subtle underline animation like Eternora */
+.nav-links a::after,
+.nav-parent::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #55a80a;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after,
+.nav-parent:hover::after {
+  width: 70%;
+}
+
+.chevron {
+  font-size: 0.7rem;
+  transition: color 0.3s ease;
+}
+
+.nav-parent:hover .chevron {
+  color: #55a80a;
+}
+
+/* Dropdown - hidden by default */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-radius: 0.6rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+  padding: 0.5rem 0;
+  list-style: none;
+  display: none;
+  margin-top: 0.25rem;
+  z-index: 1001;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* FIX: Dropdown should show when parent has active class */
+.has-submenu.active .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.submenu li a {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #111827;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.submenu li a:hover {
+  background: #f3f4f6;
+  color: #55a80a;
+  text-shadow: 0 0 8px rgba(85, 168, 10, 0.2);
+}
+
+/* Hamburger - FIXED (no circle) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px; /* Changed from 999px to remove circle */
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+.hamburger:hover {
+  border-color: #55a80a;
+  box-shadow: 0 0 10px rgba(85, 168, 10, 0.2);
+}
+
+.bar {
+  width: 20px;
+  height: 2px;
+  background: #111827;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.hamburger:hover .bar {
+  background: #55a80a;
+}
+
+/* Main Content - CENTERED */
+#pageContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+#pageContent.page-show {
+  opacity: 1;
+}
+
+.content {
+  flex: 1;
+  padding: 5rem 1.25rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.page-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CTA Button Styles (for consistency) */
+.cta-button {
+  padding: 0.9rem 2rem;
+  background: #55a80a;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #55a80a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+}
+
+.cta-button:hover {
+  background: white;
+  color: #55a80a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(85, 168, 10, 0.2);
+}
+
+.cta-button.secondary {
+  background: white;
+  color: #55a80a;
+  border: 2px solid #55a80a;
+}
+
+.cta-button.secondary:hover {
+  background: #55a80a;
+  color: white;
+}
+
+/* Section Header Styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: "Alice", serif;
+  font-size: 2.5rem;
+  color: #f40e66;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form Styles */
+.contact-form-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(85, 168, 10, 0.1);
+}
+
+.form-header h3 {
+  font-family: "Alice", serif;
+  font-size: 1.8rem;
+  color: #020202;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.9rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #55a80a;
+  box-shadow: 0 0 0 3px rgba(85, 168, 10, 0.1);
+}
+
+/* Add red validation styles */
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+  border-color: #f87171;
+}
+
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+  border-color: #e5e7eb;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.checkbox-group {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.2rem;
+  accent-color: #55a80a;
+  flex-shrink: 0;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.form-submit {
+  margin-top: 1rem;
+}
+
+.submit-button {
+  background: #55a80a;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 50px;
+}
+
+.submit-button:hover {
+  background: #3b8205;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(85, 168, 10, 0.3);
+}
+
+.submit-button svg {
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover svg {
+  transform: translateX(5px);
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.confidentiality-notice {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(85, 168, 10, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #55a80a;
+}
+
+.confidentiality-notice h4 {
+  color: #020202;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.confidentiality-notice p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   GENTLE LEAVES TRAIL CURSOR EFFECT
+   ============================================ */
+
+.cursor-leaf {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 1.2s ease, transform 1.5s ease;
+  filter: drop-shadow(0 0 3px rgba(85, 168, 10, 0.2));
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Different leaf styles (subtle variations) */
+.leaf-trail-1 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2355a80a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  width: 16px;
+  height: 16px;
+}
+
+.leaf-trail-2 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2378b93c"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  width: 14px;
+  height: 14px;
+}
+
+.leaf-trail-3 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2393c763"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8z"/></svg>');
+  width: 18px;
+  height: 18px;
+}
+
+/* Hide on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-leaf {
+    display: none;
+  }
+}
+
+/* Falling Leaves Background */
+.leaves-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background: transparent;
+}
+
+.leaf {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2355a80a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 2px rgba(85, 168, 10, 0.3));
+}
+
+/* Different leaf colors */
+.leaf.color-1 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2355a80a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  opacity: 0.5;
+}
+
+.leaf.color-2 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23a7d397"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  opacity: 0.3;
+}
+
+.leaf.color-3 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c1e1a7"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  opacity: 0.6;
+}
+
+/* Leaf animations */
+@keyframes floatLeaf {
+  0% {
+    transform: translateY(-100px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatLeaf2 {
+  0% {
+    transform: translateY(-100px) translateX(50px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-50px) rotate(405deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatLeaf3 {
+  0% {
+    transform: translateY(-100px) translateX(-30px) rotate(90deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(100vh) translateX(80px) rotate(450deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatLeaf4 {
+  0% {
+    transform: translateY(-100px) translateX(80px) rotate(135deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-30px) rotate(495deg);
+    opacity: 0;
+  }
+}
+
+/* Fixed Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #6b7280;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eternora-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.eternora-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #55a80a;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+}
+
+.eternora-link:hover {
+  color: #3b8205;
+  background: rgba(85, 168, 10, 0.08);
+  transform: translateY(-1px);
+}
+
+.eternora-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* ============================================
+   CONTACT PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* Contact Hero Section */
+.contact-hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content h1 {
+  font-family: "Alice", serif;
+  font-size: 2.8rem;
+  color: #020202;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Emergency Banner */
+.emergency-banner {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border: 2px solid #ffd700;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 3rem 0;
+}
+
+.emergency-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.emergency-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.emergency-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.emergency-text h3 {
+  font-family: "Alice", serif;
+  font-size: 1.8rem;
+  color: #856404;
+  margin-bottom: 0.5rem;
+}
+
+.emergency-text p {
+  color: #856404;
+  font-size: 1.1rem;
+}
+
+.helpline-numbers {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.helpline {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  min-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.helpline-name {
+  display: block;
+  font-weight: 600;
+  color: #020202;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.helpline-number {
+  display: block;
+  font-size: 1.8rem;
+  color: #55a80a;
+  text-decoration: none;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.helpline-number:hover {
+  color: #3b8205;
+  text-decoration: underline;
+}
+
+.helpline-desc {
+  display: block;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* Contact Methods Grid */
+.contact-methods-section {
+  padding: 4rem 1rem;
+  margin: 3rem 0;
+}
+
+.contact-methods-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.method-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex; 
+  flex-direction: column;
+  flex: 1;
+  min-width: 250px;
+  max-width: 280px; 
+}
+
+.method-card:hover {
+  transform: translateY(-5px);
+  border-color: #55a80a;
+  box-shadow: 0 10px 25px rgba(85, 168, 10, 0.1);
+}
+
+.method-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.method-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1.6rem;
+  color: #020202;
+  margin-bottom: 1rem;
+}
+
+.method-card p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.method-details {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.method-email, .method-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #55a80a;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.method-email:hover, .method-link:hover {
+  color: #3b8205;
+  text-decoration: underline;
+}
+
+/* Team Grid for Contact Page */
+.contact-team-section {
+  padding: 4rem 1rem;
+  margin: 3rem 0;
+}
+
+.team-grid-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.team-member-contact {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  flex-direction: column; 
+  text-align: center; 
+  flex: 1;
+  min-width: 250px;
+  max-width: 280px;
+}
+
+.team-member-contact:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.member-image-contact {
+  flex-shrink: 0;
+}
+
+.image-container-contact {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(85, 168, 10, 0.2);
+  background: #aef359; /* Green background like index.html */
+  display: flex;
+  align-items: flex-end; /* Align image to bottom */
+  justify-content: center;
+}
+
+.image-container-contact img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+
+.member-info-contact {
+  flex: 1;
+}
+
+.member-info-contact h3 {
+  font-family: "Alice", serif;
+  font-size: 1.4rem;
+  color: #020202;
+  margin-bottom: 0.3rem;
+}
+
+.member-role-contact {
+  color: #55a80a;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.member-email-contact {
+  color: #55a80a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.member-email-contact:hover {
+  color: #3b8205;
+  text-decoration: underline;
+}
+
+/* Form Tabs */
+.form-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 1rem;
+}
+
+.tab-btn {
+  padding: 0.8rem 1.5rem;
+  background: none;
+  border: none;
+  border-radius: 999px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #55a80a;
+  color: white;
+}
+
+.tab-btn:hover:not(.active) {
+  background: #f3f4f6;
+  color: #020202;
+}
+
+/* Multiple forms handling */
+.contact-form {
+  display: none;
+}
+
+.contact-form.active {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Urgency Options */
+.urgency-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.urgency-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.urgency-option:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.urgency-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #55a80a;
+  flex-shrink: 0;
+}
+
+.urgency-option span {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 4rem 1rem;
+  margin: 3rem 0;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #020202;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: #f9fafb;
+  color: #55a80a;
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  color: #55a80a;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  padding: 0 1rem 1.5rem;
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+  #pageContent {
+    padding-top: 80px;
+  }
+  
+  /* Navigation */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-parent {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 8px;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    background: #f9fafb;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .text {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+
+  /* Main Content */
+  .content {
+    padding: 3rem 1rem 3rem;
+  }
+
+  /* For mobile, reduce number of leaves or size */
+  .leaf {
+    width: 15px;
+    height: 15px;
+    animation-duration: 15s !important;
+  }
+
+  /* Contact Hero */
+  .contact-hero {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Emergency Banner */
+  .emergency-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .emergency-text {
+    min-width: 100%;
+  }
+  
+  .helpline-numbers {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .helpline {
+    min-width: 100%;
+  }
+  
+  /* Contact Methods */
+  .contact-methods-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Team Grid */
+  .team-grid-contact {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-member-contact {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Form Tabs */
+  .form-tabs {
+    flex-direction: column;
+  }
+  
+  .tab-btn {
+    width: 100%;
+  }
+  
+  /* Urgency Options */
+  .urgency-options {
+    gap: 0.75rem;
+  }
+  
+  .urgency-option {
+    padding: 0.8rem;
+  }
+  
+  /* FAQ */
+  .faq-question {
+    font-size: 1rem;
+    padding: 1.25rem 1rem;
+  }
+  
+  /* Section Headers */
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .site-footer {
+    padding: 1.5rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+  
+  .eternora-credit {
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .eternora-link {
+    padding: 0.2rem 0.4rem;
+    flex-direction: row;
+  }
+  
+  .eternora-logo {
+    width: 20px;
+    height: 20px;
+  }
+
+    /* Contact Methods Grid - Mobile */
+  .contact-methods-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+  
+  /* Team Grid - Mobile */
+  .team-grid-contact {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+
+  .team-member-contact {
+    width: 100%;
+    max-width: 350px; 
+    margin: 0 auto; 
+}
+
+  .member-info-contact h3 {
+    font-size: 1.2rem; /* Slightly smaller font for long names */
+    word-wrap: break-word; /* Allow long names to break */
+}
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .text {
+    font-size: 1.3rem;
+  }
+
+  .hamburger {
+    width: 36px;
+    height: 36px;
+  }
+
+  .site-footer {
+    padding: 1.5rem;
+  }
+
+  /* Contact Hero */
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  /* Emergency Banner */
+  .emergency-banner {
+    padding: 1.5rem;
+  }
+  
+  /* Method Cards */
+  .method-card {
+    padding: 1.5rem;
+  }
+  
+  /* Team Members */
+  .team-member-contact {
+    padding: 1.5rem;
+  }
+  
+  .image-container-contact {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* FAQ */
+  .faq-question {
+    font-size: 0.95rem;
+  }
+  
+  /* Section Headers */
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .eternora-credit {
+    font-size: 0.85rem;
+    flex-wrap: nowrap;
+  }
+  
+  .eternora-link {
+    font-size: 0.85rem;
+  }
+
+  .eternora-logo {
+    width: 18px;
+    height: 18px;
+  }
+
+    /* Contact Methods Grid - Mobile */
+  .contact-methods-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+  
+  /* Team Grid - Mobile */
+  .team-grid-contact {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+
+}
+
+/* Animation for hamburger menu when active */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Smooth transition for bars */
+.bar {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}

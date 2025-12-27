@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - Shaping Young Minds</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Alice font -->
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+  <!-- Plus Jakarta Sans for the site UI/content -->
+  <link rel="stylesheet" href="https://unpkg.com/plusplusjakartasans/plusjakartasans.css" />
+
+  <link rel="stylesheet" href="stylecon.css" />
+</head>
+<body>
+  <!-- Gentle Leaves Trail -->
+  <div class="cursor-trail-container"></div>
+
+  <!-- Falling Leaves Background -->
+  <div class="leaves-background" id="leavesBackground"></div>
+
+  <!-- Page Content -->
+  <div id="pageContent" class="page-show">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="SYM logo" class="logo" />
+        <div class="text">Shaping <span class="highlight">Young</span> Minds</div>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">Mental Health Awareness <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="mha.html">I am a parent</a></li>
+            <li><a href="mha-young.html">I am a young person</a></li>
+          </ul>
+        </li>
+
+        <li><a href="sym.html">SYM</a></li>
+        <li><a href="safe-space.html">Safe Space</a></li>
+        <li><a href="blog.html">Blog</a></li>
+
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">About us <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </li>
+
+        <li><a href="mentors.html">SYM Mentors</a></li>
+        <li><a href="contact.html" class="active">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="content">
+      <div class="page-inner">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+          <div class="hero-content">
+            <h1>You're Not Alone.<br>We're Here to Listen.</h1>
+            <p class="hero-subtitle">Reach out with confidence. Our compassionate team is ready to support you and your family's mental health journey.</p>
+            <div class="hero-cta">
+              <a href="#contact-form" class="cta-button">Send a Message</a>
+              <a href="#emergency" class="cta-button secondary">Emergency Resources</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Emergency Banner -->
+        <div class="emergency-banner" id="emergency">
+          <div class="emergency-content">
+            <div class="emergency-icon">⚠️</div>
+            <div class="emergency-text">
+              <h3>Need Immediate Support?</h3>
+              <p>If you or someone you know is in crisis, please contact these national helplines immediately:</p>
+            </div>
+            <div class="helpline-numbers">
+              <div class="helpline">
+                <span class="helpline-name">Childline India</span>
+                <a href="tel:1098" class="helpline-number">1098</a>
+                <span class="helpline-desc">24/7 Child Emergency Helpline</span>
+              </div>
+              <div class="helpline">
+                <span class="helpline-name">KIRAN Mental Health</span>
+                <a href="tel:18005990019" class="helpline-number">1800-599-0019</a>
+                <span class="helpline-desc">24/7 National Mental Health Helpline</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Methods -->
+        <section class="contact-methods-section">
+          <div class="section-header">
+            <h2>Choose Your Contact Method</h2>
+            <p class="section-subtitle">Select the approach that feels most comfortable for you</p>
+          </div>
+          
+          <div class="contact-methods-grid">
+            <div class="method-card">
+              <div class="method-icon">📧</div>
+              <h3>Email Support</h3>
+              <p>For detailed questions, document sharing, or if you prefer written communication.</p>
+              <div class="method-details">
+                <strong>Best for:</strong> Detailed concerns, follow-ups
+                <br>
+                <strong>Response:</strong> Within 24 hours
+                <br>
+                <a href="mailto:contact@shapingyoungminds.in" class="method-email">contact@shapingyoungminds.in</a>
+              </div>
+            </div>
+            
+            <div class="method-card">
+              <div class="method-icon">📝</div>
+              <h3>Online Form</h3>
+              <p>Structured way to share your situation and get matched with appropriate support.</p>
+              <div class="method-details">
+                <strong>Best for:</strong> First-time contact, comprehensive support
+                <br>
+                <strong>Response:</strong> Within 24 hours
+                <br>
+                <a href="#contact-form" class="method-link">Fill Form Below →</a>
+              </div>
+            </div>
+            
+            <div class="method-card">
+              <div class="method-icon">👨‍👩‍👧‍👦</div>
+              <h3>Parent Guidance</h3>
+              <p>Specialized support for parents navigating child and adolescent mental health.</p>
+              <div class="method-details">
+                <strong>Best for:</strong> Parenting concerns, behavioral issues
+                <br>
+                <strong>Response:</strong> By appointment
+                <br>
+                <a href="mha.html" class="method-link">Explore Parent Resources →</a>
+              </div>
+            </div>
+            
+            <div class="method-card">
+              <div class="method-icon">🧒</div>
+              <h3>Youth Support</h3>
+              <p>Safe space for young people to seek guidance and understanding.</p>
+              <div class="method-details">
+                <strong>Best for:</strong> Youth ages 12-25
+                <br>
+                <strong>Response:</strong> Confidential & judgement-free
+                <br>
+                <a href="mha-young.html" class="method-link">Youth Support Portal →</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="contact-team-section">
+          <div class="section-header">
+            <h2>Meet Our Support Team</h2>
+            <p class="section-subtitle">Compassionate professionals dedicated to your wellbeing</p>
+          </div>
+          
+          <div class="team-grid-contact">
+            <!-- Kanta Devi -->
+            <div class="team-member-contact">
+              <div class="member-image-contact">
+                <div class="image-container-contact">
+                  <img src="assets/kanta.png" alt="Kanta Devi">
+                </div>
+              </div>
+              <div class="member-info-contact">
+                <h3>Kanta Devi</h3>
+                <p class="member-role-contact">Founder & Child Psychologist</p>
+                <a href="mailto:kanta@shapingyoungminds.org" class="member-email-contact">kanta@shapingyoungminds.org</a>
+              </div>
+            </div>
+            
+            <!-- Dr. Deepika Chamoli Shahi -->
+            <div class="team-member-contact">
+              <div class="member-image-contact">
+                <div class="image-container-contact">
+                  <img src="assets/deepika.png" alt="Dr. Deepika Chamoli Shahi">
+                </div>
+              </div>
+              <div class="member-info-contact">
+                <h3>Dr. Deepika Chamoli Shahi</h3>
+                <p class="member-role-contact">Cognitive Psychologist & Clinical Hypnotherapist</p>
+                <a href="mailto:deepika@shapingyoungminds.org" class="member-email-contact">deepika@shapingyoungminds.org</a>
+              </div>
+            </div>
+            
+            <!-- Yukta Mandal -->
+            <div class="team-member-contact">
+              <div class="member-image-contact">
+                <div class="image-container-contact">
+                  <img src="assets/yuktacon.png" alt="Yukta Mandal">
+                </div>
+              </div>
+              <div class="member-info-contact">
+                <h3>Yukta Mandal</h3>
+                <p class="member-role-contact">Youth Mental Health Advocate</p>
+                <a href="mailto:yukta@shapingyoungminds.org" class="member-email-contact">yukta@shapingyoungminds.org</a>
+              </div>
+            </div>
+            
+            <!-- Ishita Kapoor -->
+            <div class="team-member-contact">
+              <div class="member-image-contact">
+                <div class="image-container-contact">
+                  <img src="assets/ishitacon.png" alt="Ishita Kapoor">
+                </div>
+              </div>
+              <div class="member-info-contact">
+                <h3>Ishita Kapoor</h3>
+                <p class="member-role-contact">Youth Mental Health Advocate</p>
+                <a href="mailto:ishita@shapingyoungminds.org" class="member-email-contact">ishita@shapingyoungminds.org</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form-section" id="contact-form">
+          <div class="section-header">
+            <h2>Send Us a Message</h2>
+            <p class="section-subtitle">Share what's on your mind. All information is confidential.</p>
+          </div>
+          
+          <div class="contact-form-container">
+            <div class="form-tabs">
+              <button class="tab-btn active" data-tab="general">General Inquiry</button>
+              <button class="tab-btn" data-tab="support">Support Request</button>
+            </div>
+            
+            <!-- General Inquiry Form -->
+            <form action="https://formspree.io/f/xgoekwzy" method="POST" id="generalForm" class="contact-form active">
+              <input type="hidden" name="_subject" value="General Inquiry - Shaping Young Minds">
+              <input type="hidden" name="_replyto" value="%email%">
+              
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="inquiry-type">Type of Inquiry *</label>
+                <select id="inquiry-type" name="inquiry_type" required>
+                  <option value="" disabled selected>Select inquiry type</option>
+                  <option value="general">General information about SYM</option>
+                  <option value="partnership">Partnership opportunities</option>
+                  <option value="media">Media inquiry</option>
+                  <option value="volunteer">Volunteering</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+              </div>
+              
+              <div class="form-submit">
+                <button type="submit" class="submit-button">
+                  Send Inquiry
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13"></path>
+                    <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            
+            <!-- Support Request Form -->
+            <form action="https://formspree.io/f/xgoekwzy" method="POST" id="supportForm" class="contact-form">
+              <input type="hidden" name="_subject" value="Support Request - Shaping Young Minds">
+              <input type="hidden" name="_replyto" value="%email%">
+              
+              <div class="form-group">
+                <label for="support-name">Your Name *</label>
+                <input type="text" id="support-name" name="name" placeholder="Enter your full name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="support-email">Email Address *</label>
+                <input type="email" id="support-email" name="email" placeholder="Enter your email address" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="support-for">Who needs support? *</label>
+                <select id="support-for" name="support_for" required>
+                  <option value="" disabled selected>Select option</option>
+                  <option value="myself">Myself</option>
+                  <option value="my-child">My child</option>
+                  <option value="family-member">Family member</option>
+                  <option value="friend">Friend</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="age-group">Age Group *</label>
+                <select id="age-group" name="age_group" required>
+                  <option value="" disabled selected>Select age group</option>
+                  <option value="child">Child (Under 12)</option>
+                  <option value="teen">Teenager (13-18)</option>
+                  <option value="young-adult">Young Adult (19-25)</option>
+                  <option value="adult">Adult (26+)</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="concern-type">Primary Concern *</label>
+                <select id="concern-type" name="concern_type" required>
+                  <option value="" disabled selected>Select main concern</option>
+                  <option value="anxiety">Anxiety/Worry</option>
+                  <option value="depression">Depression/Sadness</option>
+                  <option value="stress">Stress Management</option>
+                  <option value="behavior">Behavioral Issues</option>
+                  <option value="relationships">Relationship Issues</option>
+                  <option value="academic">Academic Pressure</option>
+                  <option value="other-concern">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="urgency">Urgency Level *</label>
+                <div class="urgency-options">
+                  <label class="urgency-option">
+                    <input type="radio" name="urgency" value="low" required>
+                    <span>Low - General guidance needed</span>
+                  </label>
+                  <label class="urgency-option">
+                    <input type="radio" name="urgency" value="medium" required>
+                    <span>Medium - Would like to connect soon</span>
+                  </label>
+                  <label class="urgency-option">
+                    <input type="radio" name="urgency" value="high" required>
+                    <span>High - Need to connect as soon as possible</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="support-message">Tell us more about your situation *</label>
+                <textarea id="support-message" name="message" rows="5" placeholder="Please share what you're comfortable sharing. This helps us understand how best to support you." required></textarea>
+              </div>
+              
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="confidentiality-agreement" name="confidentiality_agreement" required>
+                <label for="confidentiality-agreement">
+                  I understand that all information shared is confidential and protected under professional ethical guidelines.
+                </label>
+              </div>
+              
+              <div class="form-submit">
+                <button type="submit" class="submit-button">
+                  Request Support
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13"></path>
+                    <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+                  </svg>
+                </button>
+                <p class="form-note">We'll respond within 24 hours. For emergencies, please use the helplines above.</p>
+              </div>
+            </form>
+            
+            <div class="confidentiality-notice">
+              <h4>🔒 Your Privacy Matters</h4>
+              <p>All communications are encrypted and confidential. We adhere to strict privacy policies and professional ethical guidelines. Your information is only used to provide you with appropriate support.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+          <div class="section-header">
+            <h2>Common Questions</h2>
+            <p class="section-subtitle">Answers to frequently asked questions</p>
+          </div>
+          
+          <div class="faq-container">
+            <div class="faq-item">
+              <button class="faq-question">
+                How quickly will I receive a response?
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>We respond to all inquiries within 24 hours on weekdays. Weekend messages receive responses by Monday afternoon. Support requests marked as "High Urgency" receive priority attention.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                Is there any cost for your services?
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Initial consultations are always free. Some specialized services may have associated costs, which will be clearly communicated upfront with absolutely no pressure to proceed.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                Can I remain anonymous?
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>You can use initials or a pseudonym in initial communications. However, for ongoing support, we'll need verified contact information to ensure safe and ethical service delivery.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                What age groups do you serve?
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>We support children (5+), adolescents, and young adults up to age 25. We also provide guidance and resources for parents and caregivers of all ages.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <button class="faq-question">
+                Do you offer in-person sessions?
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Currently, all our services are provided online through secure video conferencing, phone calls, or email. This allows us to reach families across different locations while maintaining high standards of care.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>© 2025 Shaping Young Minds. All rights reserved.</p>
+        <div class="eternora-credit">
+          <span>Website built by</span>
+          <a href="https://eternora.in" target="_blank" rel="noopener noreferrer" class="eternora-link">
+            <img src="assets/eternora-logo.png" alt="Eternora" class="eternora-logo">
+            <span>Eternora</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ============================================
+    // DROPDOWN MENU FUNCTIONALITY - SAME AS INDEX.HTML
+    // ============================================
+    
+    function handleDropdowns() {
+      const parents = document.querySelectorAll('.nav-parent');
+      
+      parents.forEach(parent => {
+        parent.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          parents.forEach(otherParent => {
+            if (otherParent !== parent) {
+              otherParent.parentElement.classList.remove('active');
+            }
+          });
+          
+          this.parentElement.classList.toggle('active');
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        parents.forEach(parent => {
+          if (!parent.parentElement.contains(e.target)) {
+            parent.parentElement.classList.remove('active');
+          }
+        });
+      });
+    }
+
+    // ============================================
+    // HAMBURGER MENU FUNCTIONALITY
+    // ============================================
+    
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburgerBtn) {
+      hamburgerBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        navLinks.classList.toggle('open');
+        this.classList.toggle('active');
+      });
+    }
+
+    // Close hamburger menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (navLinks && navLinks.classList.contains('open') && 
+          hamburgerBtn && !hamburgerBtn.contains(e.target) && 
+          !navLinks.contains(e.target)) {
+        navLinks.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+      }
+    });
+
+    // ============================================
+    // CONTACT PAGE SPECIFIC FUNCTIONALITY
+    // ============================================
+    
+    function initContactPage() {
+      // Form tabs functionality
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const forms = document.querySelectorAll('.contact-form');
+      
+      if (tabBtns.length > 0 && forms.length > 0) {
+        tabBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            
+            // Update active tab button
+            tabBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show selected form
+            forms.forEach(form => {
+              form.classList.remove('active');
+              if (form.id === tabName + 'Form') {
+                form.classList.add('active');
+              }
+            });
+          });
+        });
+      }
+      
+      // FAQ accordion functionality
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const answer = this.nextElementSibling;
+          const toggle = this.querySelector('.faq-toggle');
+          
+          // Close other open FAQs
+          faqQuestions.forEach(q => {
+            if (q !== this) {
+              q.classList.remove('active');
+              q.nextElementSibling.style.maxHeight = null;
+              q.querySelector('.faq-toggle').textContent = '+';
+            }
+          });
+          
+          // Toggle current FAQ
+          this.classList.toggle('active');
+          
+          if (this.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            toggle.textContent = '−';
+          } else {
+            answer.style.maxHeight = null;
+            toggle.textContent = '+';
+          }
+        });
+      });
+      
+      // Form submission handling
+      const formsToHandle = document.querySelectorAll('#generalForm, #supportForm');
+      
+      formsToHandle.forEach(form => {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const submitButton = this.querySelector('.submit-button');
+          const originalText = submitButton.innerHTML;
+          
+          // Show loading state
+          submitButton.innerHTML = '<span class="spinner"></span> Sending...';
+          submitButton.disabled = true;
+          
+          try {
+            const formData = new FormData(this);
+            const response = await fetch(this.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+            
+            if (response.ok) {
+              alert('Thank you! Your message has been sent. We\'ll respond within 24 hours.');
+              this.reset();
+            } else {
+              alert('Sorry, there was an error sending your message. Please try again or email us directly.');
+            }
+          } catch (error) {
+            alert('Network error. Please check your connection and try again.');
+          } finally {
+            // Reset button
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+          }
+        });
+      });
+    }
+
+    // ============================================
+    // LEAVES BACKGROUND
+    // ============================================
+    
+    function createLeaves() {
+      const leavesContainer = document.getElementById('leavesBackground');
+      const isMobile = window.innerWidth <= 768;
+      const numberOfLeaves = isMobile ? 8 : 15;
+      
+      if (isMobile) {
+        leavesContainer.style.opacity = '0';
+        return;
+      }
+      
+      for (let i = 0; i < numberOfLeaves; i++) {
+        const leaf = document.createElement('div');
+        leaf.classList.add('leaf');
+        
+        const colorClass = `color-${Math.floor(Math.random() * 3) + 1}`;
+        leaf.classList.add(colorClass);
+        
+        leaf.style.left = `${Math.random() * 100}vw`;
+        leaf.style.top = `${Math.random() * 100}vh`;
+        
+        const size = 15 + Math.random() * 10;
+        leaf.style.width = `${size}px`;
+        leaf.style.height = `${size}px`;
+        
+        const animations = ['floatLeaf', 'floatLeaf2', 'floatLeaf3', 'floatLeaf4'];
+        const animation = animations[Math.floor(Math.random() * animations.length)];
+        leaf.style.animation = `${animation} ${10 + Math.random() * 10}s linear infinite`;
+        leaf.style.animationDelay = `${Math.random() * 5}s`;
+        
+        leavesContainer.appendChild(leaf);
+      }
+      
+      setTimeout(() => {
+        leavesContainer.style.opacity = '1';
+      }, 500);
+    }
+
+    // ============================================
+    // GENTLE LEAVES TRAIL EFFECT
+    // ============================================
+    
+    function initLeavesTrail() {
+      const isMobile = ('ontouchstart' in window) || 
+                       (navigator.maxTouchPoints > 0) || 
+                       (navigator.msMaxTouchPoints > 0) ||
+                       window.innerWidth <= 768;
+      
+      if (isMobile) {
+        document.querySelectorAll('.cursor-leaf, .leaf').forEach(el => {
+          el.style.display = 'none';
+        });
+        return;
+      }
+      
+      const leaves = [];
+      const maxLeaves = 12;
+      let lastLeafTime = 0;
+      const leafDelay = 150;
+      
+      const leafTypes = [
+        { class: 'leaf-trail-1', life: 2000, floatDistance: 20, rotation: 45 },
+        { class: 'leaf-trail-2', life: 1800, floatDistance: 18, rotation: 30 },
+        { class: 'leaf-trail-3', life: 2200, floatDistance: 22, rotation: 60 }
+      ];
+      
+      function createLeaf(x, y) {
+        if (leaves.length >= maxLeaves) {
+          const oldestLeaf = leaves.shift();
+          if (oldestLeaf && oldestLeaf.element) {
+            oldestLeaf.element.remove();
+          }
+        }
+        
+        const leafType = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+        const leaf = document.createElement('div');
+        leaf.className = `cursor-leaf ${leafType.class}`;
+        
+        leaf.style.left = x + 'px';
+        leaf.style.top = y + 'px';
+        leaf.style.opacity = '0';
+        leaf.style.transform = 'scale(0.8) rotate(0deg)';
+        
+        document.body.appendChild(leaf);
+        
+        const leafInfo = {
+          element: leaf,
+          createdAt: Date.now(),
+          life: leafType.life,
+          floatDistance: leafType.floatDistance,
+          rotation: leafType.rotation,
+          startX: x,
+          startY: y,
+          driftX: (Math.random() - 0.5) * 12
+        };
+        
+        leaves.push(leafInfo);
+        animateLeaf(leafInfo);
+        return leafInfo;
+      }
+      
+      function animateLeaf(leafInfo) {
+        const leaf = leafInfo.element;
+        
+        setTimeout(() => {
+          leaf.style.opacity = '0.7';
+          leaf.style.transform = 'scale(1) rotate(0deg)';
+        }, 10);
+        
+        const startTime = Date.now();
+        const duration = leafInfo.life;
+        
+        function floatAnimation() {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          if (progress >= 1) {
+            leaf.style.opacity = '0';
+            leaf.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+              if (leaf.parentNode) leaf.remove();
+              const index = leaves.indexOf(leafInfo);
+              if (index > -1) leaves.splice(index, 1);
+            }, 500);
+            return;
+          }
+          
+          const floatY = progress * leafInfo.floatDistance;
+          const floatX = Math.sin(progress * Math.PI) * leafInfo.driftX;
+          const rotation = progress * leafInfo.rotation;
+          
+          leaf.style.transform = `
+            translate(${floatX}px, ${floatY}px)
+            scale(${1 - progress * 0.3})
+            rotate(${rotation}deg)
+          `;
+          
+          leaf.style.opacity = (0.7 * (1 - progress * 0.8)).toString();
+          requestAnimationFrame(floatAnimation);
+        }
+        
+        floatAnimation();
+      }
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        const now = Date.now();
+        if (now - lastLeafTime > leafDelay) {
+          createLeaf(mouseX, mouseY);
+          lastLeafTime = now;
+        }
+      });
+    }
+
+    // ============================================
+    // PAGE INITIALIZATION
+    // ============================================
+    
+    window.addEventListener("load", function() {
+      // Initialize dropdowns
+      handleDropdowns();
+      
+      // Create falling leaves
+      setTimeout(createLeaves, 300);
+      
+      // Initialize leaves trail
+      initLeavesTrail();
+      
+      // Initialize contact page functionality
+      initContactPage();
+    });
+  </script>
+</body>
+</html>

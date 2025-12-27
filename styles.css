@@ -30,7 +30,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  position: sticky;
+  position: fixed;
   top: 0;
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid #e4e4e4;
@@ -206,6 +206,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: 100px;
 }
 
 #pageContent.page-show {
@@ -964,6 +965,367 @@ body {
   transform: translateX(5px);
 }
 
+.contact-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+  width: 100%;
+  background: linear-gradient(135deg, #f9fafb 0%, #f0fdf4 100%);
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.contact-section .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-section .section-header h2 {
+  font-family: "Alice", serif;
+  font-size: 2.5rem;
+  color: #55a80a;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.contact-section .section-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(85, 168, 10, 0.1);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(85, 168, 10, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #55a80a;
+}
+
+.contact-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1.5rem;
+  color: #020202;
+  margin-bottom: 0.8rem;
+}
+
+.contact-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.contact-email {
+  color: #55a80a;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+  color: #3b8205;
+  text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(85, 168, 10, 0.1);
+}
+
+.form-header h3 {
+  font-family: "Alice", serif;
+  font-size: 1.8rem;
+  color: #020202;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.9rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #55a80a;
+  box-shadow: 0 0 0 3px rgba(85, 168, 10, 0.1);
+}
+
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+  border-color: #f87171;
+}
+
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+  border-color: #e5e7eb;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.checkbox-group {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.2rem;
+  accent-color: #55a80a;
+  flex-shrink: 0;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.form-submit {
+  margin-top: 1rem;
+}
+
+.submit-button {
+  background: #55a80a;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 50px;
+}
+
+.submit-button:hover {
+  background: #3b8205;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(85, 168, 10, 0.3);
+}
+
+.submit-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-button svg {
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover svg {
+  transform: translateX(5px);
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.confidentiality-notice {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(85, 168, 10, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #55a80a;
+}
+
+.confidentiality-notice h4 {
+  color: #020202;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.confidentiality-notice p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Form Messages */
+.form-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-message.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.form-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #6b7280;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eternora-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.eternora-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #55a80a;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+}
+
+.eternora-link:hover {
+  color: #3b8205;
+  background: rgba(85, 168, 10, 0.08);
+  transform: translateY(-1px);
+}
+
+.eternora-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+
+/* Loading Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 /* ============================================
    GENTLE LEAVES TRAIL CURSOR EFFECT
    ============================================ */
@@ -1203,6 +1565,9 @@ body {
    ============================================ */
 
 @media (max-width: 768px) {
+  #pageContent{
+    padding-top: 80px;
+  }
   /* For mobile, reduce number of leaves or size */
   .leaf {
     width: 15px;
@@ -1547,6 +1912,121 @@ body {
     max-width: 300px;
     font-size: 1rem; /* Consistent button text size */
   }
+    .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-section {
+    padding: 3rem 1rem;
+    margin: 1.5rem auto;
+    border-radius: 15px;
+  }
+  
+  .contact-section .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .contact-section .section-header h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-section .section-subtitle {
+    font-size: 1rem !important;
+    padding: 0 0.5rem;
+  }
+  
+  .contact-form-container {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .form-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  
+  .form-header h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-header p {
+    font-size: 0.95rem !important;
+  }
+  
+  .contact-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .contact-card h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  .contact-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.5;
+  }
+  
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.95rem;
+  }
+  
+  .submit-button {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem !important;
+    min-height: 46px;
+  }
+  
+  .confidentiality-notice {
+    margin-top: 2rem;
+    padding: 1.25rem;
+  }
+  
+  .confidentiality-notice h4 {
+    font-size: 1rem !important;
+  }
+  
+  .confidentiality-notice p {
+    font-size: 0.9rem !important;
+  }
+
+  .site-footer {
+    padding: 1.5rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+  
+  .eternora-credit {
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .eternora-link {
+    padding: 0.2rem 0.4rem;
+    flex-direction: row;
+  }
+  
+  .eternora-logo {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1760,6 +2240,78 @@ body {
     padding: 0.9rem 1.5rem;
     font-size: 0.95rem; /* Consistent button text size */
   }
+
+    .contact-section {
+    padding: 2.5rem 1rem;
+    margin: 1rem auto;
+  }
+  
+  .contact-section .section-header h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  .contact-section .section-subtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .contact-form-container {
+    padding: 1.25rem;
+  }
+  
+  .form-header h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  .checkbox-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .checkbox-group label {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-top: 0.1rem;
+  }
+  
+  .contact-card {
+    padding: 1.25rem;
+  }
+  
+  .contact-card h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .contact-email {
+    font-size: 0.9rem;
+  }
+  
+  .submit-button {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem !important;
+    min-height: 44px;
+  }
+  
+  .form-note {
+    font-size: 0.8rem;
+  }
+
+  .eternora-credit {
+    font-size: 0.85rem;
+    flex-wrap: nowrap;
+  }
+  
+  .eternora-link {
+    font-size: 0.85rem;
+  }
+
+  .eternora-logo{
+    width: 18px;
+    height: 18px;
+  }
 }
 
 /* Tablet adjustments */
@@ -1816,6 +2368,18 @@ body {
   .mentor-photo {
     width: 90%;
     height: 90%;
+  }
+
+  .contact-container {
+    gap: 2rem;
+  }
+  
+  .contact-form-container {
+    padding: 2rem;
+  }
+  
+  .contact-card {
+    padding: 1.5rem;
   }
 }
 
