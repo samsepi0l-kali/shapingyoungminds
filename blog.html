@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - Shaping Young Minds</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Alice font -->
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+  <!-- Plus Jakarta Sans for the site UI/content -->
+  <link rel="stylesheet" href="https://unpkg.com/plusplusjakartasans/plusjakartasans.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Additional styles for the blog construction page */
+    .blog-construction-container {
+      text-align: center;
+      padding: 6rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .blog-construction-icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 3rem;
+      position: relative;
+    }
+    
+    .blog-construction-icon svg {
+      width: 100%;
+      height: 100%;
+      color: #fc7c3b; /* Orange color for blog */
+      animation: gentlePulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes gentlePulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+    }
+    
+    .blog-construction-title {
+      font-family: "Alice", serif;
+      font-size: 3.5rem;
+      color: #020202;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .blog-construction-title .highlight {
+      color: #fc7c3b; /* Orange color for blog */
+    }
+    
+    .blog-construction-subtitle {
+      font-size: 1.4rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .blog-construction-message {
+      background: rgba(252, 124, 59, 0.08); /* Orange tint */
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      border-left: 4px solid #fc7c3b;
+    }
+    
+    .blog-construction-message p {
+      font-size: 1.2rem;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .blog-construction-message p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .blog-author-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      padding: 2rem;
+      background: rgba(85, 168, 10, 0.05);
+      border-radius: 16px;
+      border: 1px solid rgba(85, 168, 10, 0.1);
+    }
+    
+    .blog-author-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    
+    .blog-author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .blog-author-info {
+      text-align: left;
+      flex: 1;
+    }
+    
+    .blog-author-name {
+      font-family: "Alice", serif;
+      font-size: 1.5rem;
+      color: #020202;
+      margin-bottom: 0.5rem;
+    }
+    
+    .blog-author-title {
+      color: #55a80a;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .blog-author-quote {
+      font-style: italic;
+      color: #6b7280;
+      font-size: 1.1rem;
+      border-left: 3px solid #fc7c3b;
+      padding-left: 1rem;
+      margin-top: 0.75rem;
+    }
+    
+    .blog-coming-soon-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    
+    .blog-topic-card {
+      flex: 1 1 calc(50% - 1rem); /* 2 columns on desktop/tablet */
+      max-width: 350px;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .blog-topic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .blog-topic-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(252, 124, 59, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: #fc7c3b;
+    }
+    
+    .blog-topic-card h3 {
+      font-family: "Alice", serif;
+      font-size: 1.3rem;
+      color: #020202;
+      margin-bottom: 0.75rem;
+    }
+    
+    .blog-topic-card p {
+      color: #4b5563;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    
+    .blog-construction-cta {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+    
+    .blog-construction-link {
+      padding: 1rem 2.5rem;
+      background: #fc7c3b; /* Orange color for blog */
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid #fc7c3b;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 200px;
+    }
+    
+    .blog-construction-link:hover {
+      background: white;
+      color: #fc7c3b;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(252, 124, 59, 0.2);
+    }
+    
+    .blog-construction-link.secondary {
+      background: white;
+      color: #55a80a;
+      border: 2px solid #55a80a;
+    }
+    
+    .blog-construction-link.secondary:hover {
+      background: #55a80a;
+      color: white;
+    }
+    
+    .blog-progress-container {
+      margin: 3rem auto;
+      max-width: 500px;
+    }
+    
+    .blog-progress-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    
+    .blog-progress-bar {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .blog-progress-fill {
+      height: 100%;
+      background: #fc7c3b; /* Orange color for blog */
+      border-radius: 4px;
+      width: 60%;
+      animation: progressFill 2s ease-out;
+    }
+    
+    @keyframes progressFill {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 60%;
+      }
+    }
+    
+    /* Newsletter signup */
+    .blog-newsletter {
+      background: rgba(85, 168, 10, 0.05);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 4rem 0 2rem;
+      text-align: center;
+    }
+    
+    .blog-newsletter h3 {
+      font-family: "Alice", serif;
+      font-size: 1.8rem;
+      color: #020202;
+      margin-bottom: 1rem;
+    }
+    
+    .blog-newsletter p {
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .newsletter-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-input {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #fc7c3b;
+      box-shadow: 0 0 0 3px rgba(252, 124, 59, 0.1);
+    }
+    
+    .newsletter-button {
+      width: 100%;
+      padding: 0.9rem 2rem;
+      background: #55a80a;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .newsletter-button:hover {
+      background: #3b8205;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(85, 168, 10, 0.2);
+    }
+    
+    /* ============================================
+       RESPONSIVE DESIGN FOR BLOG PAGE
+       ============================================ */
+    
+    /* Tablet - 2 cards per row */
+    @media (min-width: 769px) and (max-width: 1023px) {
+      .blog-topic-card {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+      }
+    }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .blog-construction-container {
+        padding: 4rem 1.5rem;
+      }
+      
+      .blog-construction-title {
+        font-size: 2.5rem;
+      }
+      
+      .blog-construction-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .blog-construction-icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 2rem;
+      }
+      
+      .blog-construction-message {
+        padding: 2rem;
+      }
+      
+      .blog-author-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+      }
+      
+      .blog-author-info {
+        text-align: center;
+      }
+      
+      .blog-author-quote {
+        text-align: left;
+      }
+      
+      /* FIX: Blog topic cards for mobile */
+      .blog-coming-soon-list {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+      }
+      
+      .blog-topic-card {
+        flex: none !important;
+        width: 100% !important;
+        max-width: 350px !important;
+      }
+      
+      .blog-construction-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .blog-construction-link {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .blog-newsletter {
+        padding: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .blog-construction-title {
+        font-size: 2rem;
+      }
+      
+      .blog-construction-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .blog-construction-message {
+        padding: 1.5rem;
+      }
+      
+      .blog-construction-message p {
+        font-size: 1.1rem;
+      }
+      
+      .blog-author-image {
+        width: 80px;
+        height: 80px;
+      }
+      
+      /* Small Mobile - full width cards */
+      .blog-topic-card {
+        max-width: 100% !important;
+        padding: 1.5rem;
+      }
+      
+      .blog-newsletter {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Gentle Leaves Trail -->
+  <div class="cursor-trail-container"></div>
+
+  <!-- Falling Leaves Background -->
+  <div class="leaves-background" id="leavesBackground"></div>
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="SYM logo" class="logo" />
+        <div class="text">Shaping <span class="highlight">Young</span> Minds</div>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">Mental Health Awareness <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="mha.html">I am a parent</a></li>
+            <li><a href="mha-young.html">I am a young person</a></li>
+          </ul>
+        </li>
+
+        <li><a href="sym.html">SYM</a></li>
+        <li><a href="safe-space.html">Safe Space</a></li>
+        <li class="active"><a href="blog.html">Blog</a></li>
+
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">About us <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </li>
+
+        <li><a href="mentors.html">SYM Mentors</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="content">
+      <div class="page-inner">
+        <!-- Blog Construction Page -->
+        <section class="blog-construction-container">
+          <div class="blog-construction-icon">
+            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          
+          <h1 class="blog-construction-title">Our <span class="highlight">Blog</span></h1>
+          
+          <p class="blog-construction-subtitle">
+            Wisdom, insights, and guidance from Mrs. Kanta Devi ✍️
+          </p>
+          
+          <!-- Progress Indicator -->
+          <div class="blog-progress-container">
+            <div class="blog-progress-text">
+              <span>Blogs in Progress</span>
+              <span>60% Complete</span>
+            </div>
+            <div class="blog-progress-bar">
+              <div class="blog-progress-fill"></div>
+            </div>
+          </div>
+          
+          <!-- Author Section -->
+          <div class="blog-author-section">
+            <div class="blog-author-image">
+              <img src="assets/kanta1.png" alt="Mrs. Kanta Devi">
+            </div>
+            <div class="blog-author-info">
+              <h3 class="blog-author-name">Mrs. Kanta Devi</h3>
+              <p class="blog-author-title">Founder & Child Psychologist</p>
+              <p class="blog-author-quote">
+                "I'm carefully preparing insightful articles to share with our community. Each blog is crafted with care and compassion."
+              </p>
+            </div>
+          </div>
+          
+          <div class="blog-construction-message">
+            <p>
+              Welcome to our future blog space! Mrs. Kanta Devi is thoughtfully preparing a series of articles that will offer guidance, insights, and support for parents, educators, and young people.
+            </p>
+            
+            <p>
+              Our blog will feature evidence-based advice, personal stories, practical tips, and compassionate perspectives on child mental health and emotional wellbeing.
+            </p>
+            
+            <p>
+              We believe in quality over quantity, which is why we're taking our time to ensure each article provides genuine value and speaks directly to the needs of our community.
+            </p>
+          </div>
+          
+          <!-- Coming Soon Topics -->
+          <div class="blog-coming-soon-list">
+            <div class="blog-topic-card">
+              <div class="blog-topic-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3>Parenting Guidance</h3>
+              <p>Practical advice for navigating the challenges and joys of raising emotionally healthy children.</p>
+            </div>
+            
+            <div class="blog-topic-card">
+              <div class="blog-topic-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3>Child Development</h3>
+              <p>Understanding the emotional and psychological milestones of growing up.</p>
+            </div>
+            
+            <div class="blog-topic-card">
+              <div class="blog-topic-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </div>
+              <h3>Communication Tips</h3>
+              <p>How to talk with children about emotions, challenges, and mental health.</p>
+            </div>
+          </div>
+          
+          <!-- Newsletter Signup -->
+          <div class="blog-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Be the first to know when our blog launches! Subscribe to get notified about new articles.</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+              <button type="submit" class="newsletter-button">Notify Me</button>
+            </form>
+          </div>
+          
+          <div class="blog-construction-cta">
+            <a href="founder.html" class="blog-construction-link">
+              Meet Mrs. Kanta Devi
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            
+            <a href="contact.html" class="blog-construction-link secondary">
+              Contact Us
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="site-footer">
+      <p>© 2025 Shaping Young Minds. All rights reserved.</p>
+      <div class="eternora-credit">
+        <span>Website built by</span>
+        <a href="https://eternora.online" target="_blank" rel="noopener noreferrer" class="eternora-link">
+          <img src="assets/eternora-logo.png" alt="Eternora" class="eternora-logo">
+          <span>Eternora</span>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Create falling leaves
+    function createLeaves() {
+      const leavesContainer = document.getElementById('leavesBackground');
+      const numberOfLeaves = 15;
+      
+      for (let i = 0; i < numberOfLeaves; i++) {
+        const leaf = document.createElement('div');
+        leaf.classList.add('leaf');
+        
+        // Random color class
+        const colorClass = `color-${Math.floor(Math.random() * 3) + 1}`;
+        leaf.classList.add(colorClass);
+        
+        // Random position
+        leaf.style.left = `${Math.random() * 100}vw`;
+        leaf.style.top = `${Math.random() * 100}vh`;
+        
+        // Random size
+        const size = 15 + Math.random() * 10;
+        leaf.style.width = `${size}px`;
+        leaf.style.height = `${size}px`;
+        
+        // Random animation
+        const animations = ['floatLeaf', 'floatLeaf2', 'floatLeaf3', 'floatLeaf4'];
+        const animation = animations[Math.floor(Math.random() * animations.length)];
+        leaf.style.animation = `${animation} ${10 + Math.random() * 10}s linear infinite`;
+        leaf.style.animationDelay = `${Math.random() * 5}s`;
+        
+        leavesContainer.appendChild(leaf);
+      }
+      
+      // Show leaves after a short delay
+      setTimeout(() => {
+        leavesContainer.style.opacity = '1';
+      }, 500);
+    }
+
+    // Initialize leaves when page loads
+    window.addEventListener('load', () => {
+      createLeaves();
+      initLeavesTrail();
+    });
+
+    // Hamburger menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      navLinks.classList.toggle('open');
+    });
+
+    // Dropdown menus
+    function handleDropdowns() {
+      const parents = document.querySelectorAll('.nav-parent');
+      
+      parents.forEach(parent => {
+        parent.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          parents.forEach(otherParent => {
+            if (otherParent !== parent) {
+              otherParent.parentElement.classList.remove('active');
+            }
+          });
+          
+          this.parentElement.classList.toggle('active');
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        parents.forEach(parent => {
+          if (!parent.parentElement.contains(e.target)) {
+            parent.parentElement.classList.remove('active');
+          }
+        });
+      });
+    }
+
+    handleDropdowns();
+
+    // ============================================
+    // GENTLE LEAVES TRAIL EFFECT
+    // ============================================
+    
+    function initLeavesTrail() {
+      // Don't run on touch devices
+      if (('ontouchstart' in window) || 
+          (navigator.maxTouchPoints > 0) || 
+          (navigator.msMaxTouchPoints > 0)) {
+        return;
+      }
+      
+      const leaves = [];
+      const maxLeaves = 12;
+      let lastLeafTime = 0;
+      const leafDelay = 150;
+      
+      const leafTypes = [
+        { class: 'leaf-trail-1', life: 2000, floatDistance: 20, rotation: 45 },
+        { class: 'leaf-trail-2', life: 1800, floatDistance: 18, rotation: 30 },
+        { class: 'leaf-trail-2', life: 2200, floatDistance: 22, rotation: 60 }
+      ];
+      
+      function createLeaf(x, y) {
+        if (leaves.length >= maxLeaves) {
+          const oldestLeaf = leaves.shift();
+          if (oldestLeaf && oldestLeaf.element) {
+            oldestLeaf.element.remove();
+          }
+        }
+        
+        const leafType = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+        const leaf = document.createElement('div');
+        leaf.className = `cursor-leaf ${leafType.class}`;
+        
+        leaf.style.left = x + 'px';
+        leaf.style.top = y + 'px';
+        leaf.style.opacity = '0';
+        leaf.style.transform = 'scale(0.8) rotate(0deg)';
+        
+        document.body.appendChild(leaf);
+        
+        const leafInfo = {
+          element: leaf,
+          createdAt: Date.now(),
+          life: leafType.life,
+          floatDistance: leafType.floatDistance,
+          rotation: leafType.rotation,
+          startX: x,
+          startY: y,
+          driftX: (Math.random() - 0.5) * 12
+        };
+        
+        leaves.push(leafInfo);
+        animateLeaf(leafInfo);
+        return leafInfo;
+      }
+      
+      function animateLeaf(leafInfo) {
+        const leaf = leafInfo.element;
+        
+        setTimeout(() => {
+          leaf.style.opacity = '0.7';
+          leaf.style.transform = 'scale(1) rotate(0deg)';
+        }, 10);
+        
+        const startTime = Date.now();
+        const duration = leafInfo.life;
+        
+        function floatAnimation() {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          if (progress >= 1) {
+            leaf.style.opacity = '0';
+            leaf.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+              if (leaf.parentNode) leaf.remove();
+              const index = leaves.indexOf(leafInfo);
+              if (index > -1) leaves.splice(index, 1);
+            }, 500);
+            return;
+          }
+          
+          const floatY = progress * leafInfo.floatDistance;
+          const floatX = Math.sin(progress * Math.PI) * leafInfo.driftX;
+          const rotation = progress * leafInfo.rotation;
+          
+          leaf.style.transform = `
+            translate(${floatX}px, ${floatY}px)
+            scale(${1 - progress * 0.3})
+            rotate(${rotation}deg)
+          `;
+          
+          leaf.style.opacity = (0.7 * (1 - progress * 0.8)).toString();
+          requestAnimationFrame(floatAnimation);
+        }
+        
+        floatAnimation();
+      }
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        const now = Date.now();
+        if (now - lastLeafTime > leafDelay) {
+          createLeaf(mouseX, mouseY);
+          lastLeafTime = now;
+        }
+      });
+      
+      const cleanupInterval = setInterval(() => {
+        const now = Date.now();
+        for (let i = leaves.length - 1; i >= 0; i--) {
+          if (now - leaves[i].createdAt > leaves[i].life + 500) {
+            if (leaves[i].element && leaves[i].element.parentNode) {
+              leaves[i].element.remove();
+            }
+            leaves.splice(i, 1);
+          }
+        }
+      }, 1000);
+      
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          clearInterval(cleanupInterval);
+        }
+      });
+    }
+    
+    // ============================================
+    // END LEAVES TRAIL EFFECT
+    // ============================================
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      // If menu is open AND click is NOT on hamburger AND NOT inside menu
+      if (navLinks.classList.contains('open') && 
+          !hamburgerBtn.contains(e.target) && 
+          !navLinks.contains(e.target)) {
+        
+        navLinks.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+      }
+    });
+
+    // Newsletter form submission
+    document.getElementById('newsletterForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      const submitButton = this.querySelector('button[type="submit"]');
+      
+      if (emailInput.value) {
+        // Save original button text
+        const originalText = submitButton.textContent;
+        
+        // Show loading state
+        submitButton.textContent = 'Subscribing...';
+        submitButton.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+          // Show success message
+          submitButton.textContent = '✅ Subscribed!';
+          submitButton.style.background = '#55a80a';
+          
+          // Reset after 3 seconds
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            emailInput.value = '';
+            submitButton.style.background = '';
+          }, 3000);
+        }, 1500);
+      }
+    });
+
+    // Progress bar animation on scroll
+    function animateProgressOnScroll() {
+      const progressFill = document.querySelector('.blog-progress-fill');
+      if (!progressFill) return;
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            progressFill.style.animation = 'progressFill 2s ease-out';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(progressFill);
+    }
+
+    // Initialize when page loads
+    window.addEventListener('load', animateProgressOnScroll);
+  </script>
+</body>
+</html>

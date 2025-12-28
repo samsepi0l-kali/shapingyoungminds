@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Safe Space - AI Mental Health Assistant | Shaping Young Minds</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Alice font -->
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+  <!-- Plus Jakarta Sans for the site UI/content -->
+  <link rel="stylesheet" href="https://unpkg.com/plusplusjakartasans/plusjakartasans.css" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Additional styles for the Safe Space launch page */
+    .safe-space-hero {
+      padding: 5rem 2rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .ai-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #55a80a, #3b8205);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(85, 168, 10, 0.3);
+    }
+    
+    .safe-space-title {
+      font-family: "Alice", serif;
+      font-size: 4rem;
+      color: #020202;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    
+    .safe-space-title .highlight {
+      color: #55a80a;
+      position: relative;
+    }
+    
+    .safe-space-subtitle {
+      font-size: 1.6rem;
+      color: #4b5563;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .launch-date {
+      font-family: "Alice", serif;
+      font-size: 2.2rem;
+      color: #55a80a;
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: rgba(85, 168, 10, 0.08);
+      border-radius: 16px;
+      display: inline-block;
+      border: 2px dashed #55a80a;
+    }
+    
+    .ai-visual {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 3rem auto;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .ai-bot-container {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .ai-bot {
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(135deg, #55a80a, #aef359);
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: gentlePulse 3s ease-in-out infinite;
+      box-shadow: 0 10px 30px rgba(85, 168, 10, 0.3);
+    }
+    
+    .ai-bot::before {
+      content: '';
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 2px solid rgba(85, 168, 10, 0.2);
+      animation: pulseRing 2.5s ease-out infinite;
+    }
+    
+    .ai-bot-inner {
+      width: 120px;
+      height: 120px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3.5rem;
+      color: #55a80a;
+    }
+    
+    @keyframes gentlePulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    
+    @keyframes pulseRing {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1.3);
+        opacity: 0;
+      }
+    }
+    
+    .features-section {
+      padding: 4rem 2rem;
+      background: #f9fafb;
+      border-radius: 24px;
+      margin: 3rem auto;
+      max-width: 1200px;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-title {
+      font-family: "Alice", serif;
+      font-size: 2.8rem;
+      color: #020202;
+      margin-bottom: 1rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.3rem;
+      color: #6b7280;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    
+    .feature-card {
+      flex: 0 1 calc(33.333% - 1.67rem); /* 3 cards per row with gap accounted for */
+      min-width: 300px;
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(85, 168, 10, 0.1);
+      border-color: #55a80a;
+    }
+    
+    /* This ensures the 4th card (when there are exactly 4) centers itself */
+    .feature-card:last-child:nth-child(4) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Tablet adjustments */
+    @media (max-width: 1024px) {
+      .feature-card {
+        flex: 0 1 calc(50% - 1.25rem); /* 2 cards per row */
+      }
+      
+      .feature-card:last-child:nth-child(4) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .feature-card {
+        flex: 0 1 100%; /* 1 card per row */
+      }
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(85, 168, 10, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: #55a80a;
+      font-size: 2.5rem;
+    }
+    
+    .feature-card h3 {
+      font-family: "Alice", serif;
+      font-size: 1.8rem;
+      color: #020202;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-card p {
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .countdown-section {
+      padding: 5rem 2rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: 3rem auto;
+      background: linear-gradient(135deg, #55a80a, #3b8205);
+      border-radius: 24px;
+      color: white;
+    }
+    
+    .countdown-title {
+      font-family: "Alice", serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    
+    .countdown-subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      min-width: 120px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      flex: 0 1 auto; /* Allows items to grow/shrink but not stretch */
+    }
+    
+    .countdown-number {
+      font-family: "Alice", serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: white;
+    }
+    
+    .countdown-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.9;
+    }
+    
+    .how-it-works {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+    
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+    
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .step.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .step:nth-child(even) {
+      flex-direction: row-reverse;
+      transform: translateX(30px);
+    }
+    
+    .step:nth-child(even).visible {
+      transform: translateX(0);
+    }
+    
+    .step-number {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      background: #55a80a;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Alice", serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(85, 168, 10, 0.3);
+    }
+    
+    .step-content {
+      flex: 1;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+    }
+    
+    .step-content h3 {
+      font-family: "Alice", serif;
+      font-size: 1.8rem;
+      color: #020202;
+      margin-bottom: 1rem;
+    }
+    
+    .step-content p {
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .waitlist-section {
+      padding: 5rem 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 3rem auto;
+      background: linear-gradient(135deg, #f9fafb, #f0fdf4);
+      border-radius: 24px;
+      border: 2px solid #e5e7eb;
+    }
+    
+    .waitlist-title {
+      font-family: "Alice", serif;
+      font-size: 2.8rem;
+      color: #020202;
+      margin-bottom: 1rem;
+    }
+    
+    .waitlist-subtitle {
+      font-size: 1.3rem;
+      color: #6b7280;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    
+    .waitlist-form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #55a80a;
+      box-shadow: 0 0 0 3px rgba(85, 168, 10, 0.1);
+    }
+    
+    .waitlist-btn {
+      background: #55a80a;
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 1rem;
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+    
+    .waitlist-btn:hover:not(:disabled) {
+      background: #3b8205;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(85, 168, 10, 0.3);
+    }
+    
+    .waitlist-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    
+    .form-message {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+    
+    .form-message.success {
+      background: rgba(34, 197, 94, 0.1);
+      color: #16a34a;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      display: block;
+    }
+    
+    .form-message.error {
+      background: rgba(239, 68, 68, 0.1);
+      color: #dc2626;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      display: block;
+    }
+    
+    .privacy-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+      text-align: center;
+      line-height: 1.5;
+    }
+    
+    .faq-section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+    
+    .faq-container {
+      margin-top: 3rem;
+    }
+    
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item.active {
+      border-color: #55a80a;
+      box-shadow: 0 5px 15px rgba(85, 168, 10, 0.1);
+    }
+    
+    .faq-question {
+      padding: 1.5rem;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      color: #020202;
+      font-size: 1.1rem;
+    }
+    
+    .faq-question:hover {
+      background: #f9fafb;
+    }
+    
+    .faq-icon {
+      color: #55a80a;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+    
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      background: white;
+    }
+    
+    .faq-item.active .faq-answer {
+      padding: 1.5rem;
+      max-height: 500px;
+    }
+    
+    .faq-answer p {
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    /* Animations for elements */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .ai-badge, .safe-space-title, .safe-space-subtitle, .launch-date {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .safe-space-title {
+      animation-delay: 0.1s;
+    }
+    
+    .safe-space-subtitle {
+      animation-delay: 0.2s;
+    }
+    
+    .launch-date {
+      animation-delay: 0.3s;
+    }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .safe-space-hero {
+        padding: 3rem 1.5rem;
+      }
+      
+      .safe-space-title {
+        font-size: 2.5rem;
+      }
+      
+      .safe-space-subtitle {
+        font-size: 1.3rem;
+      }
+      
+      .launch-date {
+        font-size: 1.8rem;
+        padding: 1rem;
+      }
+      
+      .ai-bot-container {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .ai-bot {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .ai-bot-inner {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .feature-card {
+        padding: 2rem;
+      }
+      
+      .step {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .step:nth-child(even) {
+        flex-direction: column;
+      }
+      
+      .step-content {
+        padding: 1.5rem;
+      }
+      
+      .countdown-container {
+        gap: 1rem;
+      }
+      
+      .countdown-item {
+        min-width: 100px;
+        padding: 1.5rem 1rem;
+      }
+      
+      .countdown-number {
+        font-size: 2.5rem;
+      }
+      
+      .waitlist-section {
+        padding: 3rem 1.5rem;
+      }
+      
+      .waitlist-title {
+        font-size: 2.2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .safe-space-title {
+        font-size: 2rem;
+      }
+      
+      .safe-space-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .launch-date {
+        font-size: 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .countdown-title {
+        font-size: 2rem;
+      }
+      
+      .countdown-container {
+        gap: 0.75rem;
+      }
+      
+      .countdown-item {
+        min-width: 80px;
+        padding: 1.2rem 0.8rem;
+      }
+      
+      .countdown-number {
+        font-size: 2rem;
+      }
+      
+      .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+      
+      .waitlist-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-bar" id="loadingBar"></div>
+
+  <!-- Gentle Leaves Trail -->
+  <div class="cursor-trail-container"></div>
+
+  <!-- Falling Leaves Background -->
+  <div class="leaves-background" id="leavesBackground"></div>
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="SYM logo" class="logo" />
+        <div class="text">Shaping <span class="highlight">Young</span> Minds</div>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">Mental Health Awareness <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="mha.html">I am a parent</a></li>
+            <li><a href="mha-young.html">I am a young person</a></li>
+          </ul>
+        </li>
+
+        <li><a href="sym.html">SYM</a></li>
+        <li><a href="safe-space.html" class="active">Safe Space</a></li>
+        <li><a href="blog.html">Blog</a></li>
+
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">About us <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </li>
+
+        <li><a href="mentors.html">SYM Mentors</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="content">
+      <div class="page-inner">
+        <!-- Hero Section -->
+        <section class="safe-space-hero">
+          <div class="ai-badge">AI-Powered Mental Health Assistant</div>
+          
+          <h1 class="safe-space-title">Introducing <span class="highlight">Safe Space</span></h1>
+          
+          <p class="safe-space-subtitle">
+            A compassionate AI conversation assistant designed to provide judgment-free support for mental health and personal challenges. Available 24/7 whenever you need someone to talk to.
+          </p>
+          
+          <div class="launch-date">
+            <i class="fas fa-calendar-alt"></i> Launching in 2026
+          </div>
+          
+          <!-- AI Bot Visual -->
+          <div class="ai-visual">
+            <div class="ai-bot-container">
+              <div class="ai-bot">
+                <div class="ai-bot-inner">
+                  <i class="fas fa-headset"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+          <div class="section-header">
+            <h2 class="section-title">How Safe Space Helps You</h2>
+            <p class="section-subtitle">Our AI assistant is designed with empathy, privacy, and effectiveness in mind</p>
+          </div>
+          
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <h3>Always Available</h3>
+              <p>Get support anytime, day or night. No appointments needed, no waiting lists. Our AI assistant is here 24/7.</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <h3>Completely Private</h3>
+              <p>Your conversations are encrypted and confidential. Share your thoughts without fear of judgment or exposure.</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3>Evidence-Based</h3>
+              <p>Built on proven therapeutic techniques like CBT, mindfulness, and positive psychology principles.</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3>Compassionate AI</h3>
+              <p>Designed to respond with empathy and understanding, creating a genuine connection with every conversation.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section">
+          <h2 class="countdown-title">Launch Countdown</h2>
+          <p class="countdown-subtitle">We're working hard to bring Safe Space to you. Join us on this journey to better mental health support.</p>
+          
+          <div class="countdown-container">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days">365</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours">0</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes">0</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds">0</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+          
+          <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 2rem;">
+            <i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Development in progress
+          </p>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+          <div class="section-header">
+            <h2 class="section-title">How Safe Space Works</h2>
+            <p class="section-subtitle">A simple, intuitive process designed to provide the support you need</p>
+          </div>
+          
+          <div class="steps-container">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Start a Conversation</h3>
+                <p>Begin by sharing what's on your mind. Safe Space will greet you warmly and ask how it can help you today.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Express Yourself Freely</h3>
+                <p>Talk about anything that's bothering you - stress, anxiety, relationships, school pressures, or just your daily thoughts.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Receive Empathetic Support</h3>
+                <p>Safe Space will listen carefully and respond with understanding, offering helpful perspectives and coping strategies.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Learn Practical Tools</h3>
+                <p>Get personalized exercises, mindfulness techniques, and actionable advice to help you navigate challenges.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Waitlist Section -->
+        <section class="waitlist-section">
+          <h2 class="waitlist-title">Join the Waitlist</h2>
+          <p class="waitlist-subtitle">Be among the first to experience Safe Space. Get early access and updates as we approach launch.</p>
+          
+          <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xzdbrwwk" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+              <label for="role">I am a</label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="student">Student</option>
+                <option value="parent">Parent</option>
+                <option value="educator">Educator</option>
+                <option value="young-adult">Young Adult</option>
+                <option value="professional">Mental Health Professional</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="waitlist-btn">
+              <i class="fas fa-paper-plane"></i> Join Waitlist
+            </button>
+            
+            <div class="form-message" id="formMessage"></div>
+          </form>
+          
+          <p class="privacy-note">
+            <i class="fas fa-lock"></i> Your information is safe with us. We'll only contact you about Safe Space updates and won't share your details with anyone else.
+          </p>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+          <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions about Safe Space</p>
+          </div>
+          
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Is Safe Space a replacement for therapy?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>No, Safe Space is not a replacement for professional therapy. It's designed as a supportive tool for everyday mental wellbeing, providing a listening ear and helpful resources. For serious mental health concerns, we always recommend consulting with a qualified professional.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How does Safe Space protect my privacy?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Your privacy is our top priority. All conversations are encrypted end-to-end. We don't store personally identifiable information with your conversations, and you can delete your chat history at any time. We adhere to strict data protection regulations.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Will Safe Space be free to use?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes! We believe mental health support should be accessible to everyone. Safe Space will have a free tier with core features. We may offer premium features in the future to support development, but the essential support functions will always remain free.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>What age group is Safe Space designed for?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Safe Space is designed for young people aged 13 and above. The language and support approaches are tailored to be accessible and helpful for teenagers and young adults. For younger children, we recommend parental guidance and age-appropriate resources.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How is the AI trained to be empathetic?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Our AI is trained on thousands of supportive conversations supervised by mental health professionals. It incorporates principles of active listening, validation, and evidence-based therapeutic techniques. We continuously refine it based on feedback from psychologists and users.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="site-footer">
+      <p>© 2025 Shaping Young Minds. All rights reserved.</p>
+      <div class="eternora-credit">
+        <span>Website built by</span>
+        <a href="https://eternora.online" target="_blank" rel="noopener noreferrer" class="eternora-link">
+          <img src="assets/eternora-logo.png" alt="Eternora" class="eternora-logo">
+          <span>Eternora</span>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Create falling leaves
+    function createLeaves() {
+      const leavesContainer = document.getElementById('leavesBackground');
+      const numberOfLeaves = 15;
+      
+      for (let i = 0; i < numberOfLeaves; i++) {
+        const leaf = document.createElement('div');
+        leaf.classList.add('leaf');
+        
+        // Random color class
+        const colorClass = `color-${Math.floor(Math.random() * 3) + 1}`;
+        leaf.classList.add(colorClass);
+        
+        // Random position
+        leaf.style.left = `${Math.random() * 100}vw`;
+        leaf.style.top = `${Math.random() * 100}vh`;
+        
+        // Random size
+        const size = 15 + Math.random() * 10;
+        leaf.style.width = `${size}px`;
+        leaf.style.height = `${size}px`;
+        
+        // Random animation
+        const animations = ['floatLeaf', 'floatLeaf2', 'floatLeaf3', 'floatLeaf4'];
+        const animation = animations[Math.floor(Math.random() * animations.length)];
+        leaf.style.animation = `${animation} ${10 + Math.random() * 10}s linear infinite`;
+        leaf.style.animationDelay = `${Math.random() * 5}s`;
+        
+        leavesContainer.appendChild(leaf);
+      }
+      
+      // Show leaves after a short delay
+      setTimeout(() => {
+        leavesContainer.style.opacity = '1';
+      }, 500);
+    }
+
+    // Initialize when page loads
+    window.addEventListener('load', () => {
+      createLeaves();
+      initLeavesTrail();
+      startCountdown();
+      initStepAnimations();
+      initFAQ();
+      initForm();
+    });
+
+    // Hamburger menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      navLinks.classList.toggle('open');
+    });
+
+    // Dropdown menus
+    function handleDropdowns() {
+      const parents = document.querySelectorAll('.nav-parent');
+      
+      parents.forEach(parent => {
+        parent.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          parents.forEach(otherParent => {
+            if (otherParent !== parent) {
+              otherParent.parentElement.classList.remove('active');
+            }
+          });
+          
+          this.parentElement.classList.toggle('active');
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        parents.forEach(parent => {
+          if (!parent.parentElement.contains(e.target)) {
+            parent.parentElement.classList.remove('active');
+          }
+        });
+      });
+    }
+
+    handleDropdowns();
+
+    // ============================================
+    // GENTLE LEAVES TRAIL EFFECT
+    // ============================================
+    
+    function initLeavesTrail() {
+      // Don't run on touch devices
+      if (('ontouchstart' in window) || 
+          (navigator.maxTouchPoints > 0) || 
+          (navigator.msMaxTouchPoints > 0)) {
+        return;
+      }
+      
+      const leaves = [];
+      const maxLeaves = 12;
+      let lastLeafTime = 0;
+      const leafDelay = 150;
+      
+      const leafTypes = [
+        { class: 'leaf-trail-1', life: 2000, floatDistance: 20, rotation: 45 },
+        { class: 'leaf-trail-2', life: 1800, floatDistance: 18, rotation: 30 },
+        { class: 'leaf-trail-2', life: 2200, floatDistance: 22, rotation: 60 }
+      ];
+      
+      function createLeaf(x, y) {
+        if (leaves.length >= maxLeaves) {
+          const oldestLeaf = leaves.shift();
+          if (oldestLeaf && oldestLeaf.element) {
+            oldestLeaf.element.remove();
+          }
+        }
+        
+        const leafType = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+        const leaf = document.createElement('div');
+        leaf.className = `cursor-leaf ${leafType.class}`;
+        
+        leaf.style.left = x + 'px';
+        leaf.style.top = y + 'px';
+        leaf.style.opacity = '0';
+        leaf.style.transform = 'scale(0.8) rotate(0deg)';
+        
+        document.body.appendChild(leaf);
+        
+        const leafInfo = {
+          element: leaf,
+          createdAt: Date.now(),
+          life: leafType.life,
+          floatDistance: leafType.floatDistance,
+          rotation: leafType.rotation,
+          startX: x,
+          startY: y,
+          driftX: (Math.random() - 0.5) * 12
+        };
+        
+        leaves.push(leafInfo);
+        animateLeaf(leafInfo);
+        return leafInfo;
+      }
+      
+      function animateLeaf(leafInfo) {
+        const leaf = leafInfo.element;
+        
+        setTimeout(() => {
+          leaf.style.opacity = '0.7';
+          leaf.style.transform = 'scale(1) rotate(0deg)';
+        }, 10);
+        
+        const startTime = Date.now();
+        const duration = leafInfo.life;
+        
+        function floatAnimation() {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          if (progress >= 1) {
+            leaf.style.opacity = '0';
+            leaf.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+              if (leaf.parentNode) leaf.remove();
+              const index = leaves.indexOf(leafInfo);
+              if (index > -1) leaves.splice(index, 1);
+            }, 500);
+            return;
+          }
+          
+          const floatY = progress * leafInfo.floatDistance;
+          const floatX = Math.sin(progress * Math.PI) * leafInfo.driftX;
+          const rotation = progress * leafInfo.rotation;
+          
+          leaf.style.transform = `
+            translate(${floatX}px, ${floatY}px)
+            scale(${1 - progress * 0.3})
+            rotate(${rotation}deg)
+          `;
+          
+          leaf.style.opacity = (0.7 * (1 - progress * 0.8)).toString();
+          requestAnimationFrame(floatAnimation);
+        }
+        
+        floatAnimation();
+      }
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        const now = Date.now();
+        if (now - lastLeafTime > leafDelay) {
+          createLeaf(mouseX, mouseY);
+          lastLeafTime = now;
+        }
+      });
+      
+      const cleanupInterval = setInterval(() => {
+        const now = Date.now();
+        for (let i = leaves.length - 1; i >= 0; i--) {
+          if (now - leaves[i].createdAt > leaves[i].life + 500) {
+            if (leaves[i].element && leaves[i].element.parentNode) {
+              leaves[i].element.remove();
+            }
+            leaves.splice(i, 1);
+          }
+        }
+      }, 1000);
+      
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          clearInterval(cleanupInterval);
+        }
+      });
+    }
+    
+    // ============================================
+    // END LEAVES TRAIL EFFECT
+    // ============================================
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      // If menu is open AND click is NOT on hamburger AND NOT inside menu
+      if (navLinks.classList.contains('open') && 
+          !hamburgerBtn.contains(e.target) && 
+          !navLinks.contains(e.target)) {
+        
+        navLinks.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+      }
+    });
+
+    // Countdown to 2026
+    function startCountdown() {
+      // Set launch date to January 1, 2026
+      const launchDate = new Date('January 1, 2026 00:00:00').getTime();
+      
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = launchDate - now;
+        
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        // Update display
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        
+        // If countdown is finished
+        if (timeLeft < 0) {
+          clearInterval(countdownInterval);
+          document.querySelector('.countdown-container').innerHTML = '<div style="font-size: 2.5rem; font-weight: bold;">Safe Space is Live!</div>';
+        }
+      }
+      
+      // Update immediately and then every second
+      updateCountdown();
+      const countdownInterval = setInterval(updateCountdown, 1000);
+    }
+
+    // Step animations on scroll
+    function initStepAnimations() {
+      const steps = document.querySelectorAll('.step');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+      
+      steps.forEach(step => {
+        observer.observe(step);
+      });
+    }
+
+    // FAQ toggle functionality
+    function initFAQ() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          // Close other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle current item
+          item.classList.toggle('active');
+        });
+      });
+    }
+
+    // Waitlist form submission
+    function initForm() {
+      const form = document.getElementById('waitlistForm');
+      const formMessage = document.getElementById('formMessage');
+      
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const role = document.getElementById('role').value;
+        
+        // Simple validation
+        if (!name || !email || !role) {
+          formMessage.textContent = 'Please fill in all fields.';
+          formMessage.className = 'form-message error';
+          formMessage.style.display = 'block';
+          return;
+        }
+        
+        // Show loading state
+        const submitBtn = form.querySelector('.waitlist-btn');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+          // Send to Formspree
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              role: role,
+              _subject: 'Safe Space Waitlist Signup',
+              _replyto: email
+            })
+          });
+          
+          if (response.ok) {
+            // Show success message
+            formMessage.textContent = `Thank you, ${name}! You've been added to the Safe Space waitlist. We'll email you updates as we approach launch.`;
+            formMessage.className = 'form-message success';
+            formMessage.style.display = 'block';
+            
+            // Reset form
+            form.reset();
+            
+            // Scroll to message
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            throw new Error('Submission failed');
+          }
+        } catch (error) {
+          formMessage.textContent = 'Something went wrong. Please try again or contact us directly.';
+          formMessage.className = 'form-message error';
+          formMessage.style.display = 'block';
+        } finally {
+          // Reset button state
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        }
+        
+        // Hide message after 10 seconds
+        setTimeout(() => {
+          formMessage.style.display = 'none';
+        }, 10000);
+      });
+    }
+
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    // Green Loading Bar Functionality
+    const loadingBar = document.getElementById('loadingBar');
+
+    // Function to start loading animation
+    function startLoadingBar() {
+      loadingBar.style.transition = 'none';
+      loadingBar.style.width = '0';
+      loadingBar.style.display = 'block';
+      loadingBar.classList.add('active');
+      
+      // Force reflow
+      void loadingBar.offsetWidth;
+      
+      loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+      loadingBar.style.width = '100%';
+    }
+
+    // Function to complete loading
+    function completeLoadingBar() {
+      setTimeout(() => {
+        loadingBar.style.width = '100%';
+        setTimeout(() => {
+          loadingBar.style.display = 'none';
+          loadingBar.classList.remove('active');
+        }, 300);
+      }, 100);
+    }
+
+    // Add loading bar to all internal navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      
+      // Only apply to internal links (not external, mailto, tel, or anchor links)
+      if (
+        href &&
+        !href.startsWith('#') &&
+        !href.startsWith('mailto:') &&
+        !href.startsWith('tel:') &&
+        !href.startsWith('javascript:') &&
+        !href.startsWith('http') // This excludes external links
+      ) {
+        link.addEventListener('click', function(e) {
+          // Don't intercept if Ctrl/Cmd clicked or middle mouse button
+          if (e.ctrlKey || e.metaKey || e.which === 2) return;
+          
+          e.preventDefault();
+          startLoadingBar();
+          
+          // Navigate after animation
+          setTimeout(() => {
+            window.location.href = href;
+          }, 850);
+        });
+      }
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('beforeunload', function() {
+      startLoadingBar();
+    });
+
+    // Complete loading when page is fully loaded
+    window.addEventListener('load', function() {
+      completeLoadingBar();
+    });
+
+    // Also complete loading if page is already loaded (for single page navigation)
+    document.addEventListener('DOMContentLoaded', function() {
+      completeLoadingBar();
+    });
+  </script>
+</body>
+</html>

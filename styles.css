@@ -223,13 +223,169 @@ body {
 
 .page-inner {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+/* ============================================
+   NEW HOMEPAGE SECTIONS
+   ============================================ */
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 1rem 4rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(85, 168, 10, 0.1), rgba(252, 124, 59, 0.1));
+  color: #55a80a;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 2px solid rgba(85, 168, 10, 0.2);
+  animation: heroPulse 2s infinite;
+}
+
+@keyframes heroPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.hero-title {
+  font-family: "Alice", serif;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: #020202;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title .highlight {
+  color: #55a80a;
+  position: relative;
+}
+
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(85, 168, 10, 0.2);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.hero-btn.primary {
+  background: #55a80a;
+  color: #ffffff;
+}
+
+.hero-btn.primary:hover {
+  background: #3b8205;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(85, 168, 10, 0.3);
+}
+
+.hero-btn.secondary {
+  background: transparent;
+  color: #55a80a;
+  border-color: #55a80a;
+}
+
+.hero-btn.secondary:hover {
+  background: rgba(85, 168, 10, 0.1);
+  transform: translateY(-3px);
+}
+
+.hero-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.hero-btn:hover svg {
+  transform: translateX(5px);
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+}
+
+.visual-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.hero-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 8px solid #ffffff;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Quote Carousel Section */
 .quote-carousel-section {
   width: 100%;
+  margin: 4rem auto;
 }
 
 .carousel-container {
@@ -414,6 +570,320 @@ body {
   transform: scale(1.2);
 }
 
+/* Interactive Mental Health Resources */
+.resources-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.resources-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.resource-card {
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+}
+
+.resource-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.parent-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  border-color: rgba(85, 168, 10, 0.2);
+}
+
+.youth-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.card-header {
+  margin-bottom: 2rem;
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.parent-card .card-badge {
+  background: rgba(85, 168, 10, 0.1);
+  color: #55a80a;
+}
+
+.youth-card .card-badge {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.card-header h3 {
+  font-family: "Alice", serif;
+  font-size: 1.8rem;
+  color: #020202;
+  line-height: 1.3;
+}
+
+.card-description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.card-topics h4 {
+  font-family: "Alice", serif;
+  font-size: 1.2rem;
+  color: #020202;
+  margin-bottom: 1rem;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.topic-tag {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: #4b5563;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.parent-card .topic-tag:hover {
+  border-color: #55a80a;
+  color: #55a80a;
+  background: rgba(85, 168, 10, 0.05);
+}
+
+.youth-card .topic-tag:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.resource-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  width: 100%;
+  justify-content: center;
+}
+
+.parent-card .resource-btn {
+  background: #55a80a;
+  color: #ffffff;
+}
+
+.parent-card .resource-btn:hover {
+  background: #3b8205;
+  transform: translateY(-2px);
+}
+
+.youth-card .resource-btn {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.youth-card .resource-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Interactive Facts Section */
+.facts-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+  width: 100%;
+  background: linear-gradient(135deg, #f9fafb 0%, #f0fdf4 100%);
+  border-radius: 20px;
+}
+
+.facts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem auto 0;
+  max-width: 1100px;
+}
+
+.fact-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.fact-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(85, 168, 10, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.fact-number {
+  font-family: "Alice", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #55a80a;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.fact-content h3 {
+  font-family: "Alice", serif;
+  font-size: 1.3rem;
+  color: #020202;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.fact-content p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.fact-source {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.facts-note {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(85, 168, 10, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #55a80a;
+}
+
+.facts-note p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Interactive CTA Section */
+.cta-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1100px;
+  width: 100%;
+  background: linear-gradient(135deg, #55a80a 0%, #3b8205 100%);
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-family: "Alice", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cta-btn.primary {
+  background: #ffffff;
+  color: #55a80a;
+}
+
+.cta-btn.primary:hover {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.cta-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.cta-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover svg {
+  transform: translateX(5px);
+}
+
 /* Introduction Section */
 .intro-section {
   padding: 4rem 1rem;
@@ -543,7 +1013,7 @@ body {
 .section-header h2 {
   font-family: "Alice", serif;
   font-size: 2.5rem;
-  color: #f40e66;
+  color: #55a80a;
   margin-bottom: 0.5rem;
   line-height: 1.2;
 }
@@ -1561,13 +2031,61 @@ body {
 }
 
 /* ============================================
-   MOBILE RESPONSIVE DESIGN - CONSISTENT FONT SIZES
+   MOBILE RESPONSIVE DESIGN
    ============================================ */
 
-@media (max-width: 768px) {
-  #pageContent{
+@media (max-width: 1024px) {
+  #pageContent {
     padding-top: 80px;
   }
+  
+  .hero-container,
+  .resources-container,
+  .facts-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-image {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .mentor-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .mentor-info {
+    text-align: center;
+  }
+  
+  .mentor-info h3:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .mentor-specialties {
+    justify-content: center;
+  }
+  
+  .mentor-quote {
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+   .loading-bar {
+    height: 3px; /* Slightly thinner on mobile */
+  }
+  
   /* For mobile, reduce number of leaves or size */
   .leaf {
     width: 15px;
@@ -1585,22 +2103,22 @@ body {
   }
 
   .preloader-logo {
-    width: clamp(180px, 38vw, 280px); /* Increased from 140px to 160px */
+    width: clamp(180px, 38vw, 280px);
   }
   
   .preloader-title {
-    font-size: clamp(2.2rem, 6vw, 3.8rem); /* Increased from 1.6rem to 2rem */
-    gap: clamp(0.5rem, 1vw, 0.8rem); /* Increased gap */
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    gap: clamp(0.5rem, 1vw, 0.8rem);
   }
 
   .caret {
-    height: 1.3em; /* Taller caret */
-    width: 3px; /* Slightly wider caret */
+    height: 1.3em;
+    width: 3px;
   }
 
   .nav-links {
     position: fixed;
-    top: 80px; /* Height of navbar */
+    top: 80px;
     left: 0;
     width: 100%;
     background: #ffffff;
@@ -1664,6 +2182,84 @@ body {
     padding: 3rem 1rem 3rem;
   }
 
+  /* Hero Section - Mobile */
+  .hero-section {
+    padding: 2rem 1rem 2rem !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center;
+  }
+  
+  /* Stack layout: Image on top, text below */
+  .hero-content {
+    order: 2;
+    padding: 0 0.5rem;
+  }
+  
+  .hero-visual {
+    order: 1;
+    margin-top: 0;
+  }
+  
+  .hero-badge {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-title br {
+    display: none; /* Remove line breaks for better mobile flow */
+  }
+  
+  .hero-subtitle {
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+    max-width: 100% !important;
+    padding: 0;
+  }
+  
+  /* Stack buttons vertically */
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .hero-btn {
+    width: 100% !important;
+    max-width: 280px;
+    justify-content: center;
+    padding: 0.85rem 1.5rem !important;
+    font-size: 1rem;
+  }
+  
+  /* Reduce image size */
+  .visual-container {
+    height: 280px !important;
+  }
+  
+  .hero-image {
+    width: 240px !important;
+    height: 240px !important;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+    border: 6px solid #ffffff;
+  }
+
   /* Quote Carousel Section - Mobile */
   .carousel-container {
     margin: 0 1rem;
@@ -1698,19 +2294,18 @@ body {
     object-fit: contain;
   }
   
-  /* Consistent font sizes for quote section */
   .quote {
-    font-size: 1.4rem; /* Consistent size */
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
     line-height: 1.4;
   }
 
   .quote-author h3 {
-    font-size: 1.2rem; /* Consistent size */
+    font-size: 1.2rem;
   }
 
   .quote-author p {
-    font-size: 1rem; /* Consistent size */
+    font-size: 1rem;
   }
   
   .carousel-controls {
@@ -1728,110 +2323,61 @@ body {
     height: 20px;
   }
 
-  /* Introduction Section - Mobile */
-  .intro-section {
-    padding: 3rem 1.5rem;
-    margin: 2rem auto 1.5rem;
-    border-radius: 15px;
+  /* Resources Section - Mobile */
+  .resources-section {
+    padding: 3rem 1rem;
   }
   
-  .intro-header h1 {
-    font-size: 1.8rem; /* Consistent main heading size */
-    margin-bottom: 0.8rem;
+  .topics-grid {
+    grid-template-columns: 1fr;
   }
   
-  .intro-lead {
-    font-size: 1.1rem; /* Consistent lead text size */
-    margin-bottom: 1.5rem;
-  }
-  
-  .intro-details p {
-    font-size: 1rem; /* Consistent paragraph size */
-    margin-bottom: 1.2rem;
-  }
-  
-  .intro-highlight {
-    padding: 1.25rem;
-  }
-  
-  .intro-highlight p {
-    font-size: 1rem; /* Consistent highlight text size */
-  }
-  
-  .intro-cta {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cta-button {
-    width: 100%;
-    max-width: 300px;
-    font-size: 0.95rem; /* Consistent button text size */
+  .resource-card {
+    padding: 2rem;
+    min-height: auto;
   }
 
-  /* Mental Health Awareness Section - Mobile */
-  .mha-preview-section {
-    padding: 3rem 1.5rem;
+  /* Facts Section - Mobile */
+  .facts-section {
+    padding: 3rem 1rem;
   }
   
-  .section-header h2 {
-    font-size: 1.8rem; /* Consistent main heading size */
-    margin-bottom: 0.5rem;
-  }
-  
-  .section-subtitle {
-    font-size: 1rem; /* Consistent subtitle size */
-  }
-  
-  .mha-preview-container {
+  .facts-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   
-  .mha-card-header {
-    padding: 1.5rem 1.5rem 1rem;
+  .fact-number {
+    font-size: 2.5rem;
   }
   
-  .mha-card-header h3 {
-    font-size: 1.4rem; /* Consistent card heading size */
+  .facts-note {
+    padding: 1.5rem;
+  }
+
+  /* CTA Section - Mobile */
+  .cta-section {
+    padding: 3rem 1rem;
   }
   
-  .mha-card-content {
-    padding: 1rem 1.5rem 1.5rem;
+  .cta-content h2 {
+    font-size: 2rem;
   }
   
-  .mha-description {
-    font-size: 1rem; /* Consistent description size */
-    margin-bottom: 1.2rem;
+  .cta-content p {
+    font-size: 1rem;
   }
   
-  .mha-topics h4 {
-    font-size: 1.1rem; /* Consistent topics heading size */
-  }
-  
-  .topics-list li {
-    font-size: 0.9rem; /* Consistent list item size */
-  }
-  
-  .mha-button {
-    font-size: 0.95rem; /* Consistent button size */
-  }
-  
-  .mha-note {
-    padding: 1.25rem;
-  }
-  
-  .mha-note p {
-    font-size: 1rem; /* Consistent note text size */
-  }
-  
-  /* Featured Mentor Section - Mobile */
-  .mentor-card {
+  .cta-actions {
     flex-direction: column;
-    text-align: center;
-    gap: 2rem;
   }
   
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Featured Mentor Section - Mobile */
   .mentor-image {
     width: 240px;
     margin: 0 auto;
@@ -1847,60 +2393,41 @@ body {
     height: 90%;
   }
   
-  .mentor-info {
-    text-align: center;
-  }
-  
   .mentor-info h3 {
-    font-size: 1.8rem; /* Consistent mentor name size */
-  }
-  
-  .mentor-info h3:after {
-    left: 50%;
-    transform: translateX(-50%);
+    font-size: 1.8rem;
   }
   
   .mentor-info h4 {
-    font-size: 1.1rem; /* Consistent subtitle size */
+    font-size: 1.1rem;
   }
   
   .mentor-info p {
-    font-size: 1rem; /* Consistent paragraph size */
+    font-size: 1rem;
     margin-bottom: 1.2rem;
   }
   
   .mentor-specialties {
-    justify-content: center;
     gap: 0.6rem;
   }
   
   .mentor-specialties span {
-    font-size: 0.9rem; /* Consistent specialty text size */
+    font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-  .mentor-specialties span:hover{
-    background: rgba(85, 168, 10, 0.2);
-    border-color: #55a80a;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(85, 168, 10, 0.2);
   }
   
   .mentor-quote {
-    font-size: 1rem; /* Consistent quote size */
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 90%;
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
   
   .experience-counter .number {
-    font-size: 3.5rem; /* Consistent counter number size */
+    font-size: 3.5rem;
   }
   
   .experience-counter .text {
-    font-size: 1.5rem; /* Consistent counter text size */
+    font-size: 1.5rem;
   }
   
   .mentor-cta {
@@ -1910,9 +2437,11 @@ body {
   .mentor-button {
     width: 100%;
     max-width: 300px;
-    font-size: 1rem; /* Consistent button text size */
+    font-size: 1rem;
   }
-    .contact-container {
+
+  /* Contact Section - Mobile */
+  .contact-container {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -2032,17 +2561,47 @@ body {
 @media (max-width: 480px) {
   /* Extra small devices */
   .preloader-logo {
-    width: clamp(170px, 42vw, 240px); /* Increased from 150px to 170px */
+    width: clamp(170px, 42vw, 240px);
   }
   
   .preloader-title {
-    font-size: clamp(2rem, 6.5vw, 3.5rem); /* Increased from 1.9rem to 2rem */
+    font-size: clamp(2rem, 6.5vw, 3.5rem);
   }
 
   .content {
     padding: 2rem 1rem 2rem;
   }
   
+  .hero-section {
+    padding: 1.5rem 1rem 1.5rem !important;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-image {
+    width: 200px !important;
+    height: 200px !important;
+    border: 5px solid #ffffff;
+  }
+  
+  .visual-container {
+    height: 220px !important;
+  }
+  
+  .hero-btn {
+    padding: 0.8rem 1.25rem !important;
+    font-size: 0.95rem;
+  }
+
   .quote-text {
     padding: 2rem;
   }
@@ -2059,18 +2618,17 @@ body {
     object-fit: contain;
   }
 
-  /* Consistent font sizes for extra small devices */
   .quote {
-    font-size: 1.3rem; /* Consistent size */
+    font-size: 1.3rem;
     line-height: 1.4;
   }
 
   .quote-author h3 {
-    font-size: 1.1rem; /* Consistent size */
+    font-size: 1.1rem;
   }
 
   .quote-author p {
-    font-size: 0.9rem; /* Consistent size */
+    font-size: 0.9rem;
   }
 
   .carousel-controls {
@@ -2097,86 +2655,46 @@ body {
     height: 36px;
   }
 
-  .site-footer {
+  /* Resources Section - Extra Small */
+  .resource-card {
     padding: 1.5rem;
   }
-
-  /* Introduction Section - Extra Small */
-  .intro-section {
-    padding: 2rem 1rem;
-    margin: 1.5rem auto 1rem;
+  
+  .card-header h3 {
+    font-size: 1.4rem;
   }
   
-  .intro-header h1 {
-    font-size: 1.6rem; /* Consistent main heading size */
-  }
-  
-  .intro-lead {
-    font-size: 1rem; /* Consistent lead text size */
-  }
-  
-  .intro-details p {
-    font-size: 0.95rem; /* Consistent paragraph size */
-  }
-  
-  .intro-highlight {
-    padding: 1rem;
-  }
-  
-  .intro-highlight p {
-    font-size: 0.95rem; /* Consistent highlight text size */
+  .card-description {
+    font-size: 0.95rem;
   }
 
-  /* Mental Health Awareness Section - Extra Small */
-  .mha-preview-section {
-    padding: 2.5rem 1rem;
+  /* Facts Section - Extra Small */
+  .fact-card {
+    padding: 1.5rem;
   }
   
-  .section-header h2 {
-    font-size: 1.6rem; /* Consistent main heading size */
+  .fact-number {
+    font-size: 2.5rem;
   }
   
-  .section-subtitle {
-    font-size: 0.95rem; /* Consistent subtitle size */
+  .fact-content h3 {
+    font-size: 1.1rem;
   }
   
-  .mha-card-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.75rem;
+  .fact-content p {
+    font-size: 0.9rem;
+  }
+
+  /* CTA Section - Extra Small */
+  .cta-content h2 {
+    font-size: 1.8rem;
   }
   
-  .mha-card-header h3 {
-    font-size: 1.3rem; /* Consistent card heading size */
+  .cta-content p {
+    font-size: 0.95rem;
   }
-  
-  .mha-icon {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .mha-description {
-    font-size: 0.95rem; /* Consistent description size */
-  }
-  
-  .mha-topics h4 {
-    font-size: 1rem; /* Consistent topics heading size */
-  }
-  
-  .topics-list li {
-    font-size: 0.85rem; /* Consistent list item size */
-  }
-  
-  .mha-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem; /* Consistent button text size */
-  }
-  
-  /* Featured Mentor Section - Extra Small */
-  .featured-mentor-section .section-header h2 {
-    font-size: 1.6rem; /* Consistent main heading size */
-  }
-  
+
+  /* Mentor Section - Extra Small */
   .mentor-image {
     width: 200px;
   }
@@ -2192,56 +2710,40 @@ body {
   }
   
   .mentor-info h3 {
-    font-size: 1.5rem; /* Consistent mentor name size */
+    font-size: 1.5rem;
   }
   
   .mentor-info h4 {
-    font-size: 1rem; /* Consistent subtitle size */
+    font-size: 1rem;
   }
   
   .mentor-info p {
-    font-size: 0.95rem; /* Consistent paragraph size */
-  }
-  
-  .mentor-specialties {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+    font-size: 0.95rem;
   }
   
   .mentor-specialties span {
-    text-align: center;
-    font-size: 0.85rem; /* Consistent specialty text size */
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    font-size: 0.85rem;
   }
-  .mentor-specialties span:hover {
-  background: rgba(85, 168, 10, 0.2);
-  border-color: #55a80a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(85, 168, 10, 0.2);
-}
   
   .mentor-quote {
-    font-size: 0.95rem; /* Consistent quote size */
+    font-size: 0.95rem;
   }
   
   .experience-counter .number {
-    font-size: 3.5rem; /* Consistent counter number size */
+    font-size: 3.5rem;
   }
   
   .experience-counter .text {
-    font-size: 1.5rem; /* Consistent counter text size */
+    font-size: 1.5rem;
   }
   
   .mentor-button {
     padding: 0.9rem 1.5rem;
-    font-size: 0.95rem; /* Consistent button text size */
+    font-size: 0.95rem;
   }
 
-    .contact-section {
+  /* Contact Section - Extra Small */
+  .contact-section {
     padding: 2.5rem 1rem;
     margin: 1rem auto;
   }
@@ -2299,6 +2801,10 @@ body {
     font-size: 0.8rem;
   }
 
+  .site-footer {
+    padding: 1.5rem;
+  }
+
   .eternora-credit {
     font-size: 0.85rem;
     flex-wrap: nowrap;
@@ -2346,12 +2852,15 @@ body {
     opacity: 0.3;
   }
 
-  .intro-section {
-    padding: 3.5rem 1.5rem;
-    margin: 2.5rem auto;
+  .hero-title {
+    font-size: 3rem;
   }
   
-  /* Featured Mentor Section - Tablet */
+  .hero-image {
+    width: 350px;
+    height: 350px;
+  }
+  
   .mentor-card {
     gap: 2rem;
   }
@@ -2399,4 +2908,121 @@ body {
 /* Smooth transition for bars */
 .bar {
   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ============================================
+   HOMEPAGE ANIMATION CLASSES
+   ============================================ */
+
+/* Initial states */
+.hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.resource-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.resource-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fact-card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fact-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.cta-container {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cta-container.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered animations */
+.resource-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.resource-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.fact-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.fact-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.fact-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Enhanced hover effects */
+.resource-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+}
+
+.fact-card:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  border-color: rgba(85, 168, 10, 0.2) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ============================================
+   GREEN LOADING BAR (Like Eternora)
+   ============================================ */
+
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: #55a80a; /* Green color matching your theme */
+  z-index: 9999;
+  display: none;
+  transition: none;
+  box-shadow: 0 0 10px rgba(85, 168, 10, 0.7);
+}
+
+/* Animation for the loading bar */
+@keyframes loadingBarPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(85, 168, 10, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(85, 168, 10, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(85, 168, 10, 0.7);
+  }
+}
+
+.loading-bar.active {
+  display: block;
+  animation: loadingBarPulse 1s infinite;
 }

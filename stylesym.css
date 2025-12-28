@@ -1,0 +1,656 @@
+/* ============================================
+   SYM PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* SYM Page Layout */
+.sym-page {
+  padding-top: 2rem;
+}
+
+/* SYM Hero Section */
+.sym-hero {
+  padding: 4rem 1rem 3rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sym-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%2355a80a" opacity="0.1" d="M100,0C44.8,0,0,44.8,0,100s44.8,100,100,100s100-44.8,100-100S155.2,0,100,0z M100,180c-44.1,0-80-35.9-80-80s35.9-80,80-80s80,35.9,80,80S144.1,180,100,180z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.sym-hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.sym-hero-title {
+  font-family: "Alice", serif;
+  font-size: 3rem;
+  color: #020202;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.sym-hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* SYM Intro Section */
+.sym-intro-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.sym-intro-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sym-intro-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.sym-intro-image:hover {
+  transform: translateY(-10px);
+}
+
+.sym-intro-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.sym-intro-content h2 {
+  font-family: "Alice", serif;
+  font-size: 2.2rem;
+  color: #020202;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.sym-intro-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+/* Mission & Vision Section */
+.mission-vision-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f0fdf4 100%);
+  border-radius: 20px;
+  margin: 3rem auto;
+  max-width: 1200px;
+}
+
+.mission-vision-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mission-card,
+.vision-card,
+.approach-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.mission-card:hover,
+.vision-card:hover,
+.approach-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(85, 168, 10, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.mission-icon,
+.vision-icon,
+.approach-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.mission-card h3,
+.vision-card h3,
+.approach-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1.6rem;
+  color: #020202;
+  margin-bottom: 1rem;
+}
+
+.mission-card p,
+.vision-card p,
+.approach-card p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Values Section */
+.values-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.values-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.value-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid #f3f4f6;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  border-color: #55a80a;
+  box-shadow: 0 10px 25px rgba(85, 168, 10, 0.1);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1.4rem;
+  color: #020202;
+  margin-bottom: 0.75rem;
+}
+
+.value-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Offerings Section */
+.offerings-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  border-radius: 20px;
+  margin: 3rem auto;
+  max-width: 1200px;
+}
+
+.offerings-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.offering-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid #f3f4f6;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.offering-card:hover {
+  transform: translateY(-10px);
+  border-color: #55a80a;
+  box-shadow: 0 15px 35px rgba(85, 168, 10, 0.1);
+}
+
+.offering-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.offering-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1.4rem;
+  color: #020202;
+  margin-bottom: 1rem;
+}
+
+.offering-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Founder Preview Section */
+.founder-preview-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.founder-preview-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  border: 2px solid rgba(85, 168, 10, 0.1);
+}
+
+.founder-image {
+  background-color: #aef359 !important;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.founder-image img {
+  max-width: 90%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.founder-content h2 {
+  font-family: "Alice", serif;
+  font-size: 2rem;
+  color: #020202;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.founder-quote {
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #55a80a;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid #55a80a;
+}
+
+.founder-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.founder-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #55a80a;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #55a80a;
+}
+
+.founder-btn:hover {
+  background: transparent;
+  color: #55a80a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(85, 168, 10, 0.2);
+}
+
+.founder-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.founder-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Impact Section */
+.impact-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.impact-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.impact-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid #f3f4f6;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #55a80a;
+}
+
+.impact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: rgba(85, 168, 10, 0.2);
+}
+
+.impact-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1.5rem;
+  color: #020202;
+  margin-bottom: 1rem;
+}
+
+.impact-card p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* SYM CTA Section */
+.sym-cta-section {
+  padding: 4rem 1rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+  background: linear-gradient(135deg, #55a80a 0%, #3b8205 100%);
+  border-radius: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.sym-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sym-cta-container h2 {
+  font-family: "Alice", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.sym-cta-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sym-cta-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sym-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.sym-cta-btn.primary {
+  background: #ffffff;
+  color: #55a80a;
+}
+
+.sym-cta-btn.primary:hover {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.sym-cta-btn.secondary {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.sym-cta-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.sym-cta-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.sym-cta-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN FOR SYM PAGE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .sym-intro-container,
+  .mission-vision-container,
+  .founder-preview-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .values-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .offerings-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .impact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sym-hero {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .sym-hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .sym-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .sym-intro-section,
+  .mission-vision-section,
+  .values-section,
+  .offerings-section,
+  .founder-preview-section,
+  .impact-section,
+  .sym-cta-section {
+    padding: 3rem 1rem;
+  }
+  
+  .mission-vision-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .offerings-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .founder-preview-container {
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .founder-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .founder-quote {
+    font-size: 1.1rem;
+  }
+  
+  .sym-cta-container h2 {
+    font-size: 2rem;
+  }
+  
+  .sym-cta-container p {
+    font-size: 1rem;
+  }
+  
+  .sym-cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sym-cta-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sym-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .sym-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .sym-intro-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .sym-intro-content p {
+    font-size: 1rem;
+  }
+  
+  .mission-card,
+  .vision-card,
+  .approach-card,
+  .value-card,
+  .offering-card,
+  .impact-card {
+    padding: 1.5rem;
+  }
+  
+  .founder-preview-container {
+    padding: 1.5rem;
+  }
+  
+  .founder-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .founder-quote {
+    font-size: 1rem;
+  }
+  
+  .founder-content p {
+    font-size: 1rem;
+  }
+  
+  .sym-cta-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .sym-cta-container p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Animation for cards */
+.sym-intro-container,
+.mission-vision-container,
+.values-container,
+.offerings-container,
+.impact-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.page-inner.sym-page {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

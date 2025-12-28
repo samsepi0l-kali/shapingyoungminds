@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About SYM - Shaping Young Minds</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Alice font -->
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+  <!-- Plus Jakarta Sans for the site UI/content -->
+  <link rel="stylesheet" href="https://unpkg.com/plusplusjakartasans/plusjakartasans.css" />
+
+  <!-- Main styles first -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- SYM-specific styles -->
+  <link rel="stylesheet" href="stylesym.css" />
+</head>
+<body>
+  <div class="loading-bar" id="loadingBar"></div>
+
+  <!-- Gentle Leaves Trail -->
+  <div class="cursor-trail-container"></div>
+  
+  <!-- Falling Leaves Background -->
+  <div class="leaves-background" id="leavesBackground"></div>
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="SYM logo" class="logo" />
+        <div class="text">Shaping <span class="highlight">Young</span> Minds</div>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">Mental Health Awareness <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="mha.html">I am a parent</a></li>
+            <li><a href="mha-young.html">I am a young person</a></li>
+          </ul>
+        </li>
+
+        <li><a href="sym.html" class="active">SYM</a></li>
+        <li><a href="safe-space.html">Safe Space</a></li>
+        <li><a href="blog.html">Blog</a></li>
+
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">About us <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </li>
+
+        <li><a href="mentors.html">SYM Mentors</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="content">
+      <div class="page-inner sym-page">
+        <!-- Hero Section -->
+        <section class="sym-hero">
+          <div class="sym-hero-container">
+            <div class="sym-hero-content">
+              <h1 class="sym-hero-title">
+                About <span class="highlight">Shaping Young Minds</span>
+              </h1>
+              <p class="sym-hero-subtitle">
+                A compassionate initiative dedicated to nurturing the emotional and mental wellbeing 
+                of children and adolescents. We walk with families through challenging moments with 
+                patience, love, and care.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- What is SYM Section -->
+        <section class="sym-intro-section">
+          <div class="sym-intro-container">
+            <div class="sym-intro-image">
+              <img src="assets/sym-about.png" alt="Children engaging in creative activities" />
+            </div>
+            <div class="sym-intro-content">
+              <h2>What is <span class="highlight">Shaping Young Minds?</span></h2>
+              <p>
+                Shaping Young Minds (SYM) is a movement built on empathy, knowledge, and the belief 
+                that emotional wellbeing must be nurtured early. We are here to walk with families 
+                through challenging moments, helping children navigate their emotions and parents 
+                support them with confidence.
+              </p>
+              <p>
+                Our approach is not about judging or fixing—it's about guiding, supporting, and 
+                creating spaces where children feel safe and parents feel empowered. We believe 
+                that understanding a child's emotional world is the first step toward healing 
+                and growth.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="mission-vision-section">
+          <div class="mission-vision-container">
+            <!-- Mission -->
+            <div class="mission-card">
+              <div class="mission-icon">🎯</div>
+              <h3>Our Mission</h3>
+              <p>
+                To empower parents and support children by making conversations about mental health 
+                natural and accessible. We aim to help every child grow not only academically but 
+                emotionally—confident, expressive, and wholeheartedly themselves.
+              </p>
+            </div>
+
+            <!-- Vision -->
+            <div class="vision-card">
+              <div class="vision-icon">🌟</div>
+              <h3>Our Vision</h3>
+              <p>
+                To build a future where childhood is truly a time of joy and growth, where traumas 
+                don't linger, and where children carry confidence, hope, and resilience into adulthood.
+              </p>
+            </div>
+
+            <!-- Approach -->
+            <div class="approach-card">
+              <div class="approach-icon">💖</div>
+              <h3>Our Approach</h3>
+              <p>
+                We focus on noticing the small signs, understanding what lies beneath behaviors, 
+                and responding with patience, love, and care. Through stories, workshops, and 
+                simple tools, we help families grow closer and understand each other better.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="values-section">
+          <div class="section-header">
+            <h2>Our <span class="highlight">Core Values</span></h2>
+            <p class="section-subtitle">The principles that guide everything we do</p>
+          </div>
+          
+          <div class="values-container">
+            <div class="value-card">
+              <div class="value-icon">🤝</div>
+              <h3>Compassion First</h3>
+              <p>We approach every story with gentleness, clarity, and deep human understanding.</p>
+            </div>
+            
+            <div class="value-card">
+              <div class="value-icon">🛡️</div>
+              <h3>Safe Spaces</h3>
+              <p>Creating environments where children feel seen, understood, and emotionally secure.</p>
+            </div>
+            
+            <div class="value-card">
+              <div class="value-icon">🌱</div>
+              <h3>Early Intervention</h3>
+              <p>Believing that emotional wellbeing must be nurtured from the earliest stages.</p>
+            </div>
+            
+            <div class="value-card">
+              <div class="value-icon">👨‍👩‍👧‍👦</div>
+              <h3>Family-Centered</h3>
+              <p>Supporting the entire family unit in the journey toward emotional health.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- What We Offer -->
+        <section class="offerings-section">
+          <div class="section-header">
+            <h2>What We <span class="highlight">Offer</span></h2>
+            <p class="section-subtitle">Comprehensive support for families and children</p>
+          </div>
+          
+          <div class="offerings-container">
+            <div class="offering-card">
+              <div class="offering-icon">📚</div>
+              <h3>Educational Resources</h3>
+              <p>Guides for parents and children on understanding and managing emotions, mental health conditions, and everyday challenges.</p>
+            </div>
+            
+            <div class="offering-card">
+              <div class="offering-icon">👂</div>
+              <h3>Safe Space Support</h3>
+              <p>A confidential environment where children and parents can share their concerns without judgment.</p>
+            </div>
+            
+            <div class="offering-card">
+              <div class="offering-icon">🧠</div>
+              <h3>Mental Health Awareness</h3>
+              <p>Tailored information for both parents and young people about recognizing and addressing mental health needs.</p>
+            </div>
+            
+            <div class="offering-card">
+              <div class="offering-icon">👨‍🏫</div>
+              <h3>Expert Mentorship</h3>
+              <p>Access to experienced mental health professionals who provide guidance and support.</p>
+            </div>
+            
+            <div class="offering-card">
+              <div class="offering-icon">📝</div>
+              <h3>Blog & Articles</h3>
+              <p>Regular insights, stories, and practical advice from our founder and mental health experts.</p>
+            </div>
+            
+            <div class="offering-card">
+              <div class="offering-icon">🤲</div>
+              <h3>Community Workshops</h3>
+              <p>Interactive sessions that bring families together to learn, share, and grow.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Founder Preview -->
+        <section class="founder-preview-section">
+          <div class="founder-preview-container">
+            <div class="founder-image">
+              <img src="assets/kanta1.png" alt="Mrs. Kanta Devi - Founder" />
+            </div>
+            <div class="founder-content">
+              <h2>Our Founder: <span class="highlight">Mrs. Kanta Devi</span></h2>
+              <p class="founder-quote">
+                "Shaping Young Minds was born from the life I have lived and the quiet stories I have 
+                carried in my heart for nearly two decades."
+              </p>
+              <p>
+                With professional experience spanning clinical psychology, community mental health, 
+                school counseling, and voluntary work, Kanta has witnessed the silent battles children 
+                often fight behind their smiles.
+              </p>
+              <a href="founder.html" class="founder-btn">
+                Learn More About Our Founder
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Impact & Goals -->
+        <section class="impact-section">
+          <div class="section-header">
+            <h2>Our <span class="highlight">Impact & Goals</span></h2>
+            <p class="section-subtitle">Building a brighter future for young minds</p>
+          </div>
+          
+          <div class="impact-container">
+            <div class="impact-card">
+              <h3>Breaking Cycles</h3>
+              <p>Helping parents reflect on their own habits and showing children healthy ways to handle emotions to break cycles that hold families back.</p>
+            </div>
+            
+            <div class="impact-card">
+              <h3>Building Resilience</h3>
+              <p>Equipping children with emotional tools and confidence to navigate life's challenges with courage and hope.</p>
+            </div>
+            
+            <div class="impact-card">
+              <h3>Strengthening Families</h3>
+              <p>Creating closer family bonds through better understanding, communication, and shared emotional growth.</p>
+            </div>
+            
+            <div class="impact-card">
+              <h3>Raising Awareness</h3>
+              <p>Making mental health conversations natural, accessible, and free from stigma in homes and communities.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="sym-cta-section">
+          <div class="sym-cta-container">
+            <h2>Join Us in Shaping Young Minds</h2>
+            <p>
+              Whether you're a parent seeking guidance, a young person needing support, 
+              or someone who believes in our mission—there's a place for you in our community.
+            </p>
+            
+            <div class="sym-cta-actions">
+              <a href="contact.html" class="sym-cta-btn primary">
+                <span>Get Involved</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+              </a>
+              <a href="mentors.html" class="sym-cta-btn secondary">
+                <span>Meet Our Mentors</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="site-footer">
+      <p>© 2025 Shaping Young Minds. All rights reserved.</p>
+      <div class="eternora-credit">
+        <span>Website built by</span>
+        <a href="https://eternora.online" target="_blank" rel="noopener noreferrer" class="eternora-link">
+          <img src="assets/eternora-logo.png" alt="Eternora" class="eternora-logo">
+          <span>Eternora</span>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Initialize page immediately
+    document.addEventListener('DOMContentLoaded', function() {
+      // Force content to be visible
+      document.getElementById('pageContent').style.opacity = '1';
+      document.getElementById('pageContent').style.display = 'block';
+      
+      // Create falling leaves
+      function createLeaves() {
+        const leavesContainer = document.getElementById('leavesBackground');
+        if (!leavesContainer) return;
+        
+        const numberOfLeaves = 12;
+        
+        for (let i = 0; i < numberOfLeaves; i++) {
+          const leaf = document.createElement('div');
+          leaf.classList.add('leaf');
+          
+          // Random color class
+          const colorClass = `color-${Math.floor(Math.random() * 3) + 1}`;
+          leaf.classList.add(colorClass);
+          
+          // Random position
+          leaf.style.left = `${Math.random() * 100}vw`;
+          leaf.style.top = `${Math.random() * 100}vh`;
+          
+          // Random size
+          const size = 15 + Math.random() * 10;
+          leaf.style.width = `${size}px`;
+          leaf.style.height = `${size}px`;
+          
+          // Random animation
+          const animations = ['floatLeaf', 'floatLeaf2', 'floatLeaf3', 'floatLeaf4'];
+          const animation = animations[Math.floor(Math.random() * animations.length)];
+          leaf.style.animation = `${animation} ${10 + Math.random() * 10}s linear infinite`;
+          leaf.style.animationDelay = `${Math.random() * 5}s`;
+          
+          leavesContainer.appendChild(leaf);
+        }
+        
+        // Show leaves after a short delay
+        setTimeout(() => {
+          leavesContainer.style.opacity = '1';
+        }, 300);
+      }
+      
+      createLeaves();
+      
+      // Initialize hamburger menu
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (hamburgerBtn && navLinks) {
+        hamburgerBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          navLinks.classList.toggle('open');
+          hamburgerBtn.classList.toggle('active');
+        });
+      }
+      
+      // Initialize dropdown menus
+      const parents = document.querySelectorAll('.nav-parent');
+      
+      parents.forEach(parent => {
+        parent.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          parents.forEach(otherParent => {
+            if (otherParent !== parent) {
+              otherParent.parentElement.classList.remove('active');
+            }
+          });
+          
+          this.parentElement.classList.toggle('active');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        // Close hamburger menu
+        if (navLinks && navLinks.classList.contains('open') && 
+            hamburgerBtn && !hamburgerBtn.contains(e.target) && 
+            !navLinks.contains(e.target)) {
+          
+          navLinks.classList.remove('open');
+          hamburgerBtn.classList.remove('active');
+        }
+        
+        // Close dropdown menus
+        parents.forEach(parent => {
+          if (!parent.parentElement.contains(e.target)) {
+            parent.parentElement.classList.remove('active');
+          }
+        });
+      });
+      
+      // Initialize Gentle Leaves Trail Effect
+      initLeavesTrail();
+      
+      // Animate elements as they come into view
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all sections
+      document.querySelectorAll('.sym-intro-container, .mission-vision-container, .values-container, .offerings-container, .founder-preview-container, .impact-container').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+      });
+    });
+
+    // Gentle Leaves Trail Effect
+    function initLeavesTrail() {
+      if (('ontouchstart' in window) || 
+          (navigator.maxTouchPoints > 0) || 
+          (navigator.msMaxTouchPoints > 0)) {
+        return;
+      }
+      
+      const leaves = [];
+      const maxLeaves = 12;
+      let lastLeafTime = 0;
+      const leafDelay = 150;
+      
+      const leafTypes = [
+        { class: 'leaf-trail-1', life: 2000, floatDistance: 20, rotation: 45 },
+        { class: 'leaf-trail-2', life: 1800, floatDistance: 18, rotation: 30 },
+        { class: 'leaf-trail-3', life: 2200, floatDistance: 22, rotation: 60 }
+      ];
+      
+      function createLeaf(x, y) {
+        if (leaves.length >= maxLeaves) {
+          const oldestLeaf = leaves.shift();
+          if (oldestLeaf && oldestLeaf.element) {
+            oldestLeaf.element.remove();
+          }
+        }
+        
+        const leafType = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+        const leaf = document.createElement('div');
+        leaf.className = `cursor-leaf ${leafType.class}`;
+        
+        leaf.style.left = x + 'px';
+        leaf.style.top = y + 'px';
+        leaf.style.opacity = '0';
+        leaf.style.transform = 'scale(0.8) rotate(0deg)';
+        
+        document.body.appendChild(leaf);
+        
+        const leafInfo = {
+          element: leaf,
+          createdAt: Date.now(),
+          life: leafType.life,
+          floatDistance: leafType.floatDistance,
+          rotation: leafType.rotation,
+          startX: x,
+          startY: y,
+          driftX: (Math.random() - 0.5) * 12
+        };
+        
+        leaves.push(leafInfo);
+        animateLeaf(leafInfo);
+        return leafInfo;
+      }
+      
+      function animateLeaf(leafInfo) {
+        const leaf = leafInfo.element;
+        
+        setTimeout(() => {
+          leaf.style.opacity = '0.7';
+          leaf.style.transform = 'scale(1) rotate(0deg)';
+        }, 10);
+        
+        const startTime = Date.now();
+        const duration = leafInfo.life;
+        
+        function floatAnimation() {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          if (progress >= 1) {
+            leaf.style.opacity = '0';
+            leaf.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+              if (leaf.parentNode) leaf.remove();
+              const index = leaves.indexOf(leafInfo);
+              if (index > -1) leaves.splice(index, 1);
+            }, 500);
+            return;
+          }
+          
+          const floatY = progress * leafInfo.floatDistance;
+          const floatX = Math.sin(progress * Math.PI) * leafInfo.driftX;
+          const rotation = progress * leafInfo.rotation;
+          
+          leaf.style.transform = `
+            translate(${floatX}px, ${floatY}px)
+            scale(${1 - progress * 0.3})
+            rotate(${rotation}deg)
+          `;
+          
+          leaf.style.opacity = (0.7 * (1 - progress * 0.8)).toString();
+          requestAnimationFrame(floatAnimation);
+        }
+        
+        floatAnimation();
+      }
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        const now = Date.now();
+        if (now - lastLeafTime > leafDelay) {
+          createLeaf(mouseX, mouseY);
+          lastLeafTime = now;
+        }
+      });
+    }
+    // Green Loading Bar Functionality
+    const loadingBar = document.getElementById('loadingBar');
+
+    // Function to start loading animation
+    function startLoadingBar() {
+      loadingBar.style.transition = 'none';
+      loadingBar.style.width = '0';
+      loadingBar.style.display = 'block';
+      loadingBar.classList.add('active');
+      
+      // Force reflow
+      void loadingBar.offsetWidth;
+      
+      loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+      loadingBar.style.width = '100%';
+    }
+
+    // Function to complete loading
+    function completeLoadingBar() {
+      setTimeout(() => {
+        loadingBar.style.width = '100%';
+        setTimeout(() => {
+          loadingBar.style.display = 'none';
+          loadingBar.classList.remove('active');
+        }, 300);
+      }, 100);
+    }
+
+    // Add loading bar to all internal navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      
+      // Only apply to internal links (not external, mailto, tel, or anchor links)
+      if (
+        href &&
+        !href.startsWith('#') &&
+        !href.startsWith('mailto:') &&
+        !href.startsWith('tel:') &&
+        !href.startsWith('javascript:') &&
+        !href.startsWith('http') // This excludes external links
+      ) {
+        link.addEventListener('click', function(e) {
+          // Don't intercept if Ctrl/Cmd clicked or middle mouse button
+          if (e.ctrlKey || e.metaKey || e.which === 2) return;
+          
+          e.preventDefault();
+          startLoadingBar();
+          
+          // Navigate after animation
+          setTimeout(() => {
+            window.location.href = href;
+          }, 850);
+        });
+      }
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('beforeunload', function() {
+      startLoadingBar();
+    });
+
+    // Complete loading when page is fully loaded
+    window.addEventListener('load', function() {
+      completeLoadingBar();
+    });
+
+    // Also complete loading if page is already loaded (for single page navigation)
+    document.addEventListener('DOMContentLoaded', function() {
+      completeLoadingBar();
+    });
+  </script>
+</body>
+</html>

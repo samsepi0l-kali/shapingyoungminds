@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="stylecon.css" />
 </head>
 <body>
+  <div class="loading-bar" id="loadingBar"></div>
+
   <!-- Gentle Leaves Trail -->
   <div class="cursor-trail-container"></div>
 
@@ -246,7 +248,7 @@
             </div>
             
             <!-- General Inquiry Form -->
-            <form action="https://formspree.io/f/xgoekwzy" method="POST" id="generalForm" class="contact-form active">
+            <form action="https://formspree.io/f/xbdjobbl" method="POST" id="generalForm" class="contact-form active">
               <input type="hidden" name="_subject" value="General Inquiry - Shaping Young Minds">
               <input type="hidden" name="_replyto" value="%email%">
               
@@ -289,7 +291,7 @@
             </form>
             
             <!-- Support Request Form -->
-            <form action="https://formspree.io/f/xgoekwzy" method="POST" id="supportForm" class="contact-form">
+            <form action="https://formspree.io/f/xqekqjjl" method="POST" id="supportForm" class="contact-form">
               <input type="hidden" name="_subject" value="Support Request - Shaping Young Minds">
               <input type="hidden" name="_replyto" value="%email%">
               
@@ -801,6 +803,76 @@
       
       // Initialize contact page functionality
       initContactPage();
+    });
+    // Green Loading Bar Functionality
+    const loadingBar = document.getElementById('loadingBar');
+
+    // Function to start loading animation
+    function startLoadingBar() {
+      loadingBar.style.transition = 'none';
+      loadingBar.style.width = '0';
+      loadingBar.style.display = 'block';
+      loadingBar.classList.add('active');
+      
+      // Force reflow
+      void loadingBar.offsetWidth;
+      
+      loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+      loadingBar.style.width = '100%';
+    }
+
+    // Function to complete loading
+    function completeLoadingBar() {
+      setTimeout(() => {
+        loadingBar.style.width = '100%';
+        setTimeout(() => {
+          loadingBar.style.display = 'none';
+          loadingBar.classList.remove('active');
+        }, 300);
+      }, 100);
+    }
+
+    // Add loading bar to all internal navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      
+      // Only apply to internal links (not external, mailto, tel, or anchor links)
+      if (
+        href &&
+        !href.startsWith('#') &&
+        !href.startsWith('mailto:') &&
+        !href.startsWith('tel:') &&
+        !href.startsWith('javascript:') &&
+        !href.startsWith('http') // This excludes external links
+      ) {
+        link.addEventListener('click', function(e) {
+          // Don't intercept if Ctrl/Cmd clicked or middle mouse button
+          if (e.ctrlKey || e.metaKey || e.which === 2) return;
+          
+          e.preventDefault();
+          startLoadingBar();
+          
+          // Navigate after animation
+          setTimeout(() => {
+            window.location.href = href;
+          }, 850);
+        });
+      }
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('beforeunload', function() {
+      startLoadingBar();
+    });
+
+    // Complete loading when page is fully loaded
+    window.addEventListener('load', function() {
+      completeLoadingBar();
+    });
+
+    // Also complete loading if page is already loaded (for single page navigation)
+    document.addEventListener('DOMContentLoaded', function() {
+      completeLoadingBar();
     });
   </script>
 </body>

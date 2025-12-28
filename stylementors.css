@@ -1,24 +1,482 @@
 /* ============================================
-   SYM MENTORS PAGE - SPECIFIC STYLES
+   SYM MENTORS PAGE - COMPLETE STYLES
    ============================================ */
 
-/* Import main styles but override for mentors page */
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  background: #ffffff;
+  color: #020202;
+  overflow-x: hidden;
+}
+
+.highlight {
+  color: #55a80a;
+}
+
+/* ============================================
+   NAVIGATION - FROM STYLES.CSS
+   ============================================ */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e4e4e4;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.text {
+  font-family: "Alice", serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  color: #020202;
+}
+
+.text .highlight {
+  color: #55a80a;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a,
+.nav-parent {
+  color: #111827;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links a:hover,
+.nav-parent:hover {
+  color: #55a80a;
+  text-shadow: 0 0 10px rgba(85, 168, 10, 0.3), 
+               0 0 20px rgba(85, 168, 10, 0.2),
+               0 0 30px rgba(85, 168, 10, 0.1);
+  background: transparent;
+}
+
+.nav-links a::after,
+.nav-parent::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #55a80a;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after,
+.nav-parent:hover::after {
+  width: 70%;
+}
+
+.chevron {
+  font-size: 0.7rem;
+  transition: color 0.3s ease;
+}
+
+.nav-parent:hover .chevron {
+  color: #55a80a;
+}
+
+.nav-links a.active {
+  color: #55a80a;
+  font-weight: 700;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-radius: 0.6rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+  padding: 0.5rem 0;
+  list-style: none;
+  display: none;
+  margin-top: 0.25rem;
+  z-index: 1001;
+}
+
+.nav-links li.active .submenu {
+  display: block;
+}
+
+.submenu li a {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #111827;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.submenu li a:hover {
+  background: #f3f4f6;
+  color: #55a80a;
+  text-shadow: 0 0 8px rgba(85, 168, 10, 0.2);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+.hamburger:hover {
+  border-color: #55a80a;
+  box-shadow: 0 0 10px rgba(85, 168, 10, 0.2);
+}
+
+.bar {
+  width: 20px;
+  height: 2px;
+  background: #111827;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.hamburger:hover .bar {
+  background: #55a80a;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ============================================
+   PAGE CONTENT & LAYOUT
+   ============================================ */
+
+#pageContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+#pageContent.page-show {
+  opacity: 1;
+}
+
+.content {
+  flex: 1;
+  padding: 0; /* Changed from 5rem 1.25rem 4rem */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.page-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   FALLING LEAVES BACKGROUND
+   ============================================ */
+
+.leaves-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background: transparent;
+}
+
+.leaf {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2355a80a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 2px rgba(85, 168, 10, 0.3));
+}
+
+.leaf.color-1 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2355a80a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  opacity: 0.5;
+}
+
+.leaf.color-2 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23a7d397"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  opacity: 0.3;
+}
+
+.leaf.color-3 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c1e1a7"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  opacity: 0.6;
+}
+
+@keyframes floatLeaf {
+  0% {
+    transform: translateY(-100px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatLeaf2 {
+  0% {
+    transform: translateY(-100px) translateX(50px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-50px) rotate(405deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatLeaf3 {
+  0% {
+    transform: translateY(-100px) translateX(-30px) rotate(90deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(100vh) translateX(80px) rotate(450deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatLeaf4 {
+  0% {
+    transform: translateY(-100px) translateX(80px) rotate(135deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-30px) rotate(495deg);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   GENTLE LEAVES TRAIL CURSOR EFFECT
+   ============================================ */
+
+.cursor-leaf {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 1.2s ease, transform 1.5s ease;
+  filter: drop-shadow(0 0 3px rgba(85, 168, 10, 0.2));
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.leaf-trail-1 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2355a80a"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>');
+  width: 16px;
+  height: 16px;
+}
+
+.leaf-trail-2 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2378b93c"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  width: 14px;
+  height: 14px;
+}
+
+.leaf-trail-3 {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2393c763"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.21-2.38C8.77 17.14 10.53 16 12 16c1.47 0 3.23 1.14 5.08 3.62L18.29 22l1.89-.66C18.1 16.17 16 10 17 8z"/></svg>');
+  width: 18px;
+  height: 18px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor-leaf {
+    display: none;
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #6b7280;
+  width: 100%;
+  margin-top: auto;
+}
+
+.eternora-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.eternora-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #55a80a;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+}
+
+.eternora-link:hover {
+  color: #3b8205;
+  background: rgba(85, 168, 10, 0.08);
+  transform: translateY(-1px);
+}
+
+.eternora-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* ============================================
+   MENTORS PAGE SPECIFIC STYLES
+   ============================================ */
+
 .mentors-content {
   padding-top: 0;
 }
 
-/* Page Hero */
+/* Page Hero - FIXED: Now properly centered */
 .mentors-hero {
   padding: 4rem 1rem 3rem;
   text-align: center;
   background: linear-gradient(135deg, #f9fafb 0%, #f0fdf4 100%);
   margin-bottom: 3rem;
   border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .hero-container {
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .hero-title {
@@ -27,6 +485,7 @@
   color: #020202;
   margin-bottom: 1rem;
   line-height: 1.1;
+  text-align: center;
 }
 
 .hero-divider {
@@ -42,6 +501,7 @@
   color: #55a80a;
   margin-bottom: 1.5rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .hero-intro {
@@ -50,12 +510,14 @@
   color: #4b5563;
   max-width: 700px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Featured Mentor Card */
 .featured-mentor {
   max-width: 1100px;
   margin: 0 auto 4rem;
+  padding: 0 20px;
 }
 
 .mentor-profile-card {
@@ -112,34 +574,21 @@
   margin: 0 auto;
 }
 
-.experience-badge {
-  position: absolute;
-  bottom: 20px;
-  right: 0;
-  background: white;
-  padding: 1rem 1.5rem;
-  border-radius: 50px;
-  box-shadow: 0 8px 20px rgba(85, 168, 10, 0.2);
+.experience-highlight {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border: 2px solid #55a80a;
-  z-index: 3;
-}
-
-.experience-badge .years {
-  font-family: "Alice", serif;
-  font-size: 2.5rem;
-  font-weight: bold;
+  gap: 0.75rem;
   color: #55a80a;
-  line-height: 1;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  padding: 0.75rem 1.25rem;
+  background: rgba(85, 168, 10, 0.1);
+  border-radius: 50px;
+  display: inline-flex;
 }
 
-.experience-badge .label {
-  font-size: 0.9rem;
-  color: #374151;
-  font-weight: 600;
-  text-align: center;
+.experience-highlight svg {
+  flex-shrink: 0;
 }
 
 /* Profile Info */
@@ -412,19 +861,30 @@
   margin: 0;
 }
 
-/* Call to Action */
+.help-point:hover {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+/* Call to Action - FIXED: Now properly showing */
 .mentor-cta-section {
   background: linear-gradient(135deg, #55a80a 0%, #3b8205 100%);
   color: white;
   padding: 4rem 2rem;
   border-radius: 20px;
-  margin-bottom: 4rem;
+  margin: 4rem auto;
   text-align: center;
+  width: 100%;
+  max-width: 1100px;
+  display: block !important; /* Force display */
+  visibility: visible !important; /* Force visibility */
+  opacity: 1 !important; /* Force opacity */
 }
 
 .cta-container {
   max-width: 900px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .cta-title {
@@ -432,6 +892,7 @@
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: white;
+  text-align: center;
 }
 
 .cta-description {
@@ -442,6 +903,7 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .cta-features {
@@ -457,6 +919,7 @@
   border-radius: 12px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
 }
 
 .feature svg {
@@ -496,12 +959,13 @@
   gap: 0.75rem;
   transition: all 0.3s ease;
   min-width: 200px;
+  border: 2px solid transparent;
 }
 
 .cta-button.primary {
   background: white;
   color: #55a80a;
-  border: 2px solid white;
+  border-color: white;
 }
 
 .cta-button.primary:hover {
@@ -514,7 +978,7 @@
 .cta-button.secondary {
   background: transparent;
   color: white;
-  border: 2px solid white;
+  border-color: white;
 }
 
 .cta-button.secondary:hover {
@@ -529,6 +993,7 @@
   opacity: 0.9;
   font-style: italic;
   margin: 0;
+  text-align: center;
 }
 
 /* More Mentors Section */
@@ -536,7 +1001,9 @@
   padding: 4rem 2rem;
   background: #f9fafb;
   border-radius: 20px;
-  margin-bottom: 4rem;
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 1100px;
 }
 
 .more-mentors-container {
@@ -550,6 +1017,7 @@
   font-size: 2.2rem;
   color: #020202;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .more-mentors-description {
@@ -557,6 +1025,7 @@
   line-height: 1.7;
   color: #4b5563;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .coming-soon-placeholder {
@@ -566,6 +1035,7 @@
   border: 2px dashed #e5e7eb;
   margin-bottom: 3rem;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .coming-soon-placeholder:hover {
@@ -591,6 +1061,7 @@
   font-size: 1.8rem;
   color: #020202;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .coming-soon-placeholder p {
@@ -598,6 +1069,7 @@
   line-height: 1.6;
   max-width: 500px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .suggestion-box {
@@ -605,6 +1077,7 @@
   padding: 2.5rem;
   border-radius: 15px;
   border-left: 4px solid #55a80a;
+  text-align: center;
 }
 
 .suggestion-box h4 {
@@ -612,12 +1085,14 @@
   font-size: 1.5rem;
   color: #020202;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .suggestion-box p {
   color: #4b5563;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .suggestion-link {
@@ -629,6 +1104,8 @@
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s ease;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .suggestion-link:hover {
@@ -663,19 +1140,104 @@
     align-items: center;
   }
   
-  .experience-badge {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin-top: -30px;
-  }
-  
   .mentor-highlights {
     align-items: center;
+  }
+  
+  .featured-mentor,
+  .mentor-cta-section,
+  .more-mentors-section {
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 768px) {
+  /* Navigation */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-parent {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 8px;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    background: #f9fafb;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .text {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+
+  /* Page Content */
+  #pageContent {
+    padding-top: 80px;
+  }
+  
+  .content {
+    padding: 0;
+  }
+
+  /* For mobile, reduce number of leaves or size */
+  .leaf {
+    width: 15px;
+    height: 15px;
+  }
+  
+  /* Slower animation on mobile for better performance */
+  .leaf {
+    animation-duration: 15s !important;
+  }
+
   /* Page Hero */
   .mentors-hero {
     padding: 3rem 1rem 2rem;
@@ -756,7 +1318,7 @@
   /* CTA Section */
   .mentor-cta-section {
     padding: 3rem 1.5rem;
-    margin-bottom: 3rem;
+    margin: 3rem auto;
   }
   
   .cta-title {
@@ -786,7 +1348,7 @@
   /* More Mentors Section */
   .more-mentors-section {
     padding: 3rem 1.5rem;
-    margin-bottom: 3rem;
+    margin: 3rem auto;
   }
   
   .more-mentors-title {
@@ -806,10 +1368,51 @@
   .suggestion-box {
     padding: 2rem 1.5rem;
   }
+
+  /* Footer */
+  .site-footer {
+    padding: 1.5rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+  
+  .eternora-credit {
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .eternora-link {
+    padding: 0.2rem 0.4rem;
+    flex-direction: row;
+  }
+  
+  .eternora-logo {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (max-width: 480px) {
   /* Extra small adjustments */
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .text {
+    font-size: 1.3rem;
+  }
+
+  .hamburger {
+    width: 36px;
+    height: 36px;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
@@ -821,14 +1424,6 @@
   .image-wrapper {
     width: 200px;
     height: 200px;
-  }
-  
-  .experience-badge {
-    padding: 0.75rem 1.25rem;
-  }
-  
-  .experience-badge .years {
-    font-size: 2rem;
   }
   
   .mentor-quote {
@@ -843,15 +1438,13 @@
   .more-mentors-title {
     font-size: 1.6rem;
   }
-}
 
-/* Animation for help points on hover */
-.help-point:hover {
-  transform: translateX(5px);
-  transition: transform 0.3s ease;
-}
+  .site-footer {
+    padding: 1.5rem;
+  }
 
-/* Animation for specialty cards */
-.specialty-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .eternora-logo {
+    width: 18px;
+    height: 18px;
+  }
 }

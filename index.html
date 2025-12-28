@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shaping Young Minds</title>
+  <title>Shaping Young Minds - Nurturing Emotional Wellbeing</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
   <!-- Alice font -->
@@ -15,8 +15,10 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="loading-bar" id="loadingBar"></div>
   <!-- Gentle Leaves Trail -->
   <div class="cursor-trail-container"></div>
+  
   <!-- Preloader -->
   <div id="preloader">
     <div class="preloader-inner">
@@ -50,7 +52,7 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         
         <li class="has-submenu">
           <a href="#" class="nav-parent">Mental Health Awareness <span class="chevron">▾</span></a>
@@ -81,7 +83,48 @@
     <!-- Main Content -->
     <main id="mainContent" class="content">
       <div class="page-inner">
-        <!-- Quote Carousel -->
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="hero-container">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <span>Compassionate Support</span>
+              </div>
+              <h1 class="hero-title">
+                Nurturing <span class="highlight">Young</span> Minds,<br>
+                Building <span class="highlight">Strong</span> Futures
+              </h1>
+              <p class="hero-subtitle">
+                A compassionate initiative dedicated to the emotional and mental wellbeing of children and adolescents. 
+                We walk with families through challenging moments with patience, love, and care.
+              </p>
+              <div class="hero-actions">
+                <a href="#mental-health" class="hero-btn primary">
+                  <span>Explore Resources</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+                <a href="contact.html" class="hero-btn secondary">
+                  <span>Get Support</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="hero-visual">
+              <div class="visual-container">
+                <div class="hero-image">
+                  <img src="assets/hero-image.png" alt="Child smiling with parent" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quote Carousel Section -->
         <section class="quote-carousel-section">
           <div class="carousel-container">
             <div class="carousel-track">
@@ -98,7 +141,7 @@
                     </div>
                   </div>
                   <div class="quote-image">
-                    <img src="assets/kanta.png" alt="Kanta Devi"> 
+                    <img src="assets/kanta1.png" alt="Kanta Devi"> 
                   </div>
                 </div>
               </div>
@@ -163,139 +206,129 @@
           </div>
         </section>
 
-        <!-- Introduction Section -->
-        <section class="intro-section">
-          <div class="intro-container">
-            <div class="intro-header">
-              <h1>What is Shaping <span class="highlight">Young</span> Minds?</h1>
-              <div class="intro-divider"></div>
-            </div>
-            
-            <div class="intro-content">
-              <p class="intro-lead">
-                Shaping Young Minds is a compassionate initiative dedicated to nurturing the emotional and mental wellbeing of children and adolescents.
-              </p>
+        <!-- Interactive Mental Health Resources -->
+        <section id="mental-health" class="resources-section">
+          <div class="section-header">
+            <h2>Mental Health <span class="highlight">Resources</span></h2>
+            <p class="section-subtitle">Tailored support for parents and young people</p>
+          </div>
+          
+          <div class="resources-container">
+            <!-- Parent Card -->
+            <div class="resource-card parent-card">
+              <div class="card-header">
+                <div class="card-badge">For Parents</div>
+                <h3>Guiding Your Child's Emotional Journey</h3>
+              </div>
               
-              <div class="intro-details">
-                <p>
-                  We understand that growing up can sometimes feel overwhelming. There are moments when children struggle with feelings they don't fully understand, and parents worry about how to help without making things worse. At Shaping Young Minds, we are here to walk with you through those moments.
+              <div class="card-content">
+                <p class="card-description">
+                  A gentle guide to understanding your child's emotional world. Every child faces challenges, and every parent wants to support them with love, clarity, and confidence.
                 </p>
                 
-                <p>
-                  We want to help families notice the small signs, understand what lies beneath certain behaviors, and respond with patience, love, and care. It's not about judging or fixing: it's about guiding, supporting, and creating a space where children feel safe and parents feel confident.
-                </p>
-                
-                <div class="intro-highlight">
-                  <p>
-                    Our hope is to build a future where childhood is truly a time of joy and growth, where traumas don't linger, and where children can carry confidence, hope, and resilience into adulthood.
-                  </p>
+                <div class="card-topics">
+                  <h4>Topics we cover:</h4>
+                  <div class="topics-grid">
+                    <span class="topic-tag">ADHD & Autism</span>
+                    <span class="topic-tag">Anger & Emotions</span>
+                    <span class="topic-tag">Bullying & Anxiety</span>
+                    <span class="topic-tag">Screen Addiction</span>
+                    <span class="topic-tag">Eating Disorders</span>
+                    <span class="topic-tag">Grief & Loss</span>
+                  </div>
                 </div>
                 
-                <div class="intro-cta">
-                  <a href="sym.html" class="cta-button">Learn More About SYM</a>
-                  <a href="contact.html" class="cta-button secondary">Get In Touch</a>
+                <div class="card-cta">
+                  <a href="mha.html" class="resource-btn">
+                    <span>Explore Parent Resources</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Youth Card -->
+            <div class="resource-card youth-card">
+              <div class="card-header">
+                <div class="card-badge">For Young People</div>
+                <h3>Understanding Your Feelings</h3>
+              </div>
+              
+              <div class="card-content">
+                <p class="card-description">
+                  Understanding your feelings, coping with life's challenges, and supporting friends. Your mental health matters, and you're not alone on this journey.
+                </p>
+                
+                <div class="card-topics">
+                  <h4>Topics we cover:</h4>
+                  <div class="topics-grid">
+                    <span class="topic-tag">Understanding Conditions</span>
+                    <span class="topic-tag">Navigating Emotions</span>
+                    <span class="topic-tag">Coping Strategies</span>
+                    <span class="topic-tag">Supporting Friends</span>
+                    <span class="topic-tag">Exam Stress</span>
+                    <span class="topic-tag">Self-Care</span>
+                  </div>
+                </div>
+                
+                <div class="card-cta">
+                  <a href="mha-young.html" class="resource-btn">
+                    <span>Explore Youth Resources</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Mental Health Awareness Section -->
-        <section class="mha-preview-section">
+        <!-- Interactive Facts Section -->
+        <section class="facts-section">
           <div class="section-header">
-            <h2>Mental Health Awareness</h2>
-            <p class="section-subtitle">Resources tailored for both parents and young people</p>
+            <h2>Youth Mental Health <span class="highlight">Facts</span></h2>
+            <p class="section-subtitle">Understanding the reality to create better support</p>
           </div>
           
-          <div class="mha-preview-container">
-            <!-- Parent Section -->
-            <div class="mha-card parent-card">
-              <div class="mha-card-header">
-                <div class="mha-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                </div>
-                <h3>I am a Parent</h3>
-              </div>
-              
-              <div class="mha-card-content">
-                <p class="mha-description">
-                  A gentle guide to understanding your child's emotional world. Every child faces challenges, and every parent wants to support them with love, clarity, and confidence.
-                </p>
-                
-                <div class="mha-topics">
-                  <h4>Topics covered:</h4>
-                  <ul class="topics-list">
-                    <li>ADHD & Autism</li>
-                    <li>Anger & Emotional Regulation</li>
-                    <li>Bullying & Social Anxiety</li>
-                    <li>Screen & Gaming Addiction</li>
-                    <li>Eating Disorders</li>
-                    <li>And much more...</li>
-                  </ul>
-                </div>
-                
-                <div class="mha-cta">
-                  <a href="mha.html" class="mha-button parent-button">
-                    Explore Parent Resources
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </a>
-                </div>
+          <div class="facts-container">
+            <!-- Fact Cards -->
+            <div class="fact-card">
+              <div class="fact-number">1</div>
+              <div class="fact-content">
+                <h3>in 7 Adolescents Experience Mental Health Conditions</h3>
+                <p>Globally, approximately 14–15% of 10–19‑year‑olds have a mental disorder</p>
+                <div class="fact-source">Source: World Health Organization</div>
               </div>
             </div>
             
-            <!-- Young Person Section -->
-            <div class="mha-card young-card">
-              <div class="mha-card-header">
-                <div class="mha-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                <h3>I am a Young Person</h3>
+            <div class="fact-card">
+              <div class="fact-number">75%</div>
+              <div class="fact-content">
+                <h3>Begin by Age 24</h3>
+                <p>Three-quarters of all lifetime mental disorders start by age 24, with half beginning by age 14</p>
+                <div class="fact-source">Source: UNICEF & Mental Health Foundation</div>
               </div>
-              
-              <div class="mha-card-content">
-                <p class="mha-description">
-                  Understanding your feelings, coping with life's challenges, and supporting friends. Your mental health matters, and you're not alone on this journey.
-                </p>
-                
-                <div class="mha-topics">
-                  <h4>Topics covered:</h4>
-                  <ul class="topics-list">
-                    <li>Understanding Mental Health Conditions</li>
-                    <li>Navigating Feelings & Emotions</li>
-                    <li>Coping Strategies for Daily Life</li>
-                    <li>Supporting Friends in Need</li>
-                    <li>Managing Exam Stress</li>
-                    <li>And much more...</li>
-                  </ul>
-                </div>
-                
-                <div class="mha-cta">
-                  <a href="mha-young.html" class="mha-button young-button">
-                    Explore Youth Resources
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </a>
-                </div>
+            </div>
+            
+            <div class="fact-card">
+              <div class="fact-number">Leading</div>
+              <div class="fact-content">
+                <h3>Cause of Disability in Youth</h3>
+                <p>Mental disorders are among the leading causes of illness and disability in adolescents</p>
+                <div class="fact-source">Source: JAMA Network</div>
               </div>
             </div>
           </div>
           
-          <div class="mha-note">
-            <p>Both sections offer compassionate, practical guidance to help families navigate emotional challenges with understanding and care.</p>
+          <div class="facts-note">
+            <p>These facts highlight the urgent need for accessible mental health support for young people. Early intervention and compassionate care can make a profound difference.</p>
           </div>
         </section>
-        <!-- Featured Mentor Section -->
+
+        <!-- Featured Mentor Section (Original) -->
         <section class="featured-mentor-section">
           <div class="section-header">
             <h2>SYM Mentors</h2>
@@ -346,120 +379,27 @@
             </div>
           </div>
         </section>
-                <!-- Contact Us Section -->
-        <section class="contact-section">
-          <div class="section-header">
-            <h2>Get In Touch</h2>
-            <p class="section-subtitle">We're here to listen, support, and guide you</p>
-          </div>
-          
-          <div class="contact-container">
-            <div class="contact-info">
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+
+        <!-- Interactive CTA Section -->
+        <section class="cta-section">
+          <div class="cta-container">
+            <div class="cta-content">
+              <h2>Ready to Take the First Step?</h2>
+              <p>Whether you're a parent seeking guidance or a young person needing support, we're here to help you navigate emotional challenges with understanding and care.</p>
+              
+              <div class="cta-actions">
+                <a href="contact.html" class="cta-btn primary">
+                  <span>Get In Touch Today</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
                   </svg>
-                </div>
-                <h3>Talk to Us</h3>
-                <p>Have questions or need guidance? Our team is here to provide compassionate support.</p>
-              </div>
-              
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
+                </a>
+                <a href="sym.html" class="cta-btn secondary">
+                  <span>Learn About SYM</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   </svg>
-                </div>
-                <h3>Email Us</h3>
-                <p>Send us an email and we'll get back to you within 24 hours.</p>
-                <a href="mailto:contact@shapingyoungminds.in" class="contact-email">contact@shapingyoungminds.in</a>
-              </div>
-              
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                </div>
-                <h3>Response Time</h3>
-                <p>We typically respond within 24 hours. For urgent matters, please indicate in your message.</p>
-              </div>
-            </div>
-            
-            <div class="contact-form-container">
-              <div class="form-header">
-                <h3>Send us a Message</h3>
-                <p>All information shared is confidential and secure.</p>
-              </div>
-              
-              <form action="https://formspree.io/f/xgoekwzy" method="POST" id="contactForm" class="contact-form">
-                <!-- Hidden fields for Formspree configuration -->
-                <input type="hidden" name="_subject" value="New Contact Form Submission - Shaping Young Minds">
-                <input type="hidden" name="_replyto" value="%email%">
-                <input type="hidden" name="_format" value="plain">
-                <input type="hidden" name="_language" value="en">
-                
-                <div class="form-group">
-                  <label for="name">Full Name *</label>
-                  <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                
-                <div class="form-group">
-                  <label for="email">Email Address *</label>
-                  <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                </div>
-                
-                <div class="form-group">
-                  <label for="phone">Phone Number (Optional)</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                </div>
-                
-                <div class="form-group">
-                  <label for="category">How can we help you? *</label>
-                  <select id="category" name="category" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="parent-support">I'm a parent seeking support</option>
-                    <option value="youth-support">I'm a young person seeking support</option>
-                    <option value="general-inquiry">General inquiry about SYM</option>
-                    <option value="mentor-info">Information about SYM Mentors</option>
-                    <option value="partnership">Partnership opportunities</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                
-                <div class="form-group">
-                  <label for="message">Your Message *</label>
-                  <textarea id="message" name="message" rows="5" placeholder="Please share what's on your mind. We're here to listen." required></textarea>
-                </div>
-                
-                <div class="form-group checkbox-group">
-                  <input type="checkbox" id="confidentiality" name="confidentiality" required>
-                  <label for="confidentiality">
-                    I understand that my information is confidential and will only be used to provide me with support.
-                  </label>
-                </div>
-                
-                <div class="form-submit">
-                  <button type="submit" class="submit-button">
-                    Send Message
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M22 2L11 13"></path>
-                      <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
-                    </svg>
-                  </button>
-                  <p class="form-note">* Required fields</p>
-                </div>
-                
-                <!-- Formspree success/error messages will appear here -->
-                <div id="form-message" class="form-message" style="display: none;"></div>
-              </form>
-              
-              <div class="confidentiality-notice">
-                <h4>📋 Confidentiality Notice</h4>
-                <p>Your privacy is important to us. All conversations and information shared are strictly confidential. We adhere to professional ethical guidelines to protect your information.</p>
+                </a>
               </div>
             </div>
           </div>
@@ -532,11 +472,13 @@
       
       // Start the quote carousel after preloader finishes
       setTimeout(initQuoteCarousel, 500);
+      
+      // Initialize homepage animations
+      setTimeout(initHomepageAnimations, 800);
+      
+      // Start stats counter
+      setTimeout(initStatsCounter, 1000);
     }
-
-    window.addEventListener("load", () => {
-      setTimeout(typeNext, 400);
-    });
 
     // Create falling leaves
     function createLeaves() {
@@ -579,10 +521,13 @@
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const navLinks = document.querySelector('.nav-links');
 
-    hamburgerBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      navLinks.classList.toggle('open');
-    });
+    if (hamburgerBtn && navLinks) {
+      hamburgerBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        navLinks.classList.toggle('open');
+        hamburgerBtn.classList.toggle('active');
+      });
+    }
 
     // Dropdown menus
     function handleDropdowns() {
@@ -612,9 +557,7 @@
       });
     }
 
-    handleDropdowns();
-
-    // Quote Carousel - Simplified (no typewriter)
+    // Quote Carousel
     function initQuoteCarousel() {
       const carouselTrack = document.querySelector('.carousel-track');
       const quoteBoxes = document.querySelectorAll('.quote-box');
@@ -622,10 +565,12 @@
       const prevBtn = document.querySelector('.carousel-btn.prev');
       const nextBtn = document.querySelector('.carousel-btn.next');
       
+      if (!carouselTrack || !quoteBoxes.length) return;
+      
       let currentIndex = 0;
       let isAnimating = false;
       let autoSlideInterval;
-      const slideDuration = 6000; // 6 seconds
+      const slideDuration = 6000;
       
       function goToSlide(index) {
         if (isAnimating || index === currentIndex) return;
@@ -634,14 +579,18 @@
         
         // Remove active class from current slide
         quoteBoxes[currentIndex].classList.remove('active');
-        indicators[currentIndex].classList.remove('active');
+        if (indicators[currentIndex]) {
+          indicators[currentIndex].classList.remove('active');
+        }
         
         // Update current index
         currentIndex = index;
         
         // Add active class to new slide
         quoteBoxes[currentIndex].classList.add('active');
-        indicators[currentIndex].classList.add('active');
+        if (indicators[currentIndex]) {
+          indicators[currentIndex].classList.add('active');
+        }
         
         // Reset animation flag after transition
         setTimeout(() => {
@@ -668,8 +617,13 @@
       }
       
       // Event listeners
-      prevBtn.addEventListener('click', goToPrevSlide);
-      nextBtn.addEventListener('click', goToNextSlide);
+      if (prevBtn) {
+        prevBtn.addEventListener('click', goToPrevSlide);
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', goToNextSlide);
+      }
       
       indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => goToSlide(index));
@@ -685,17 +639,9 @@
       // Start autoplay
       startAutoSlide();
     }
-    // ============================================
-    // GENTLE LEAVES TRAIL EFFECT
-    // ============================================
-    
-    // Only run after page is fully loaded
-    window.addEventListener('load', function() {
-      initLeavesTrail();
-    });
-    
+
+    // Gentle Leaves Trail Effect
     function initLeavesTrail() {
-      // Don't run on touch devices
       if (('ontouchstart' in window) || 
           (navigator.maxTouchPoints > 0) || 
           (navigator.msMaxTouchPoints > 0)) {
@@ -805,224 +751,243 @@
           lastLeafTime = now;
         }
       });
+    }
+
+    // Stats counter animation
+    function initStatsCounter() {
+      const factNumbers = document.querySelectorAll('.fact-number');
       
-      const cleanupInterval = setInterval(() => {
-        const now = Date.now();
-        for (let i = leaves.length - 1; i >= 0; i--) {
-          if (now - leaves[i].createdAt > leaves[i].life + 500) {
-            if (leaves[i].element && leaves[i].element.parentNode) {
-              leaves[i].element.remove();
+      factNumbers.forEach(fact => {
+        if (!fact.textContent.includes('%') && !isNaN(parseInt(fact.textContent))) {
+          const target = parseInt(fact.textContent);
+          const suffix = fact.textContent.includes('%') ? '%' : '';
+          let count = 0;
+          const increment = target / 20;
+          
+          const updateCount = () => {
+            if (count < target) {
+              count += increment;
+              fact.textContent = Math.floor(count) + suffix;
+              setTimeout(updateCount, 50);
+            } else {
+              fact.textContent = target + suffix;
             }
-            leaves.splice(i, 1);
-          }
-        }
-      }, 1000);
-      
-      document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-          clearInterval(cleanupInterval);
+          };
+          
+          // Start animation when element comes into view
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                updateCount();
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.5 });
+          
+          observer.observe(fact);
         }
       });
     }
-    
-    // ============================================
-    // END LEAVES TRAIL EFFECT
-    // ============================================
+
     // Mentor section animation
-  function initMentorAnimation() {
-    const mentorCard = document.querySelector('.mentor-card');
-    const experienceCounter = document.getElementById('experienceYears');
-    
-    if (!mentorCard || !experienceCounter) return;
-    
-    // Intersection Observer for mentor card
-    const mentorObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          
-          // Start counter animation
-          startExperienceCounter();
-          mentorObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
-    
-    mentorObserver.observe(mentorCard);
-    
-    // Counter animation
-    function startExperienceCounter() {
-      let count = 0;
-      const target = 22;
-      const increment = 1;
-      const intervalTime = 80; // Slower for dramatic effect
+    function initMentorAnimation() {
+      const mentorCard = document.querySelector('.mentor-card');
+      const experienceCounter = document.getElementById('experienceYears');
       
-      function updateCounter() {
-        if (count < target) {
-          count += increment;
-          experienceCounter.textContent = count;
-          setTimeout(updateCounter, intervalTime);
-        }
-      }
+      if (!mentorCard || !experienceCounter) return;
       
-      updateCounter();
-    }
-  }
-
-  // Initialize mentor animation after page loads
-  window.addEventListener('load', () => {
-    setTimeout(initMentorAnimation, 1000);
-  });
-
-    document.addEventListener('click', function(e) {
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    // If menu is open AND click is NOT on hamburger AND NOT inside menu
-    if (navLinks.classList.contains('open') && 
-        !hamburgerBtn.contains(e.target) && 
-        !navLinks.contains(e.target)) {
-      
-      navLinks.classList.remove('open');
-      hamburgerBtn.classList.remove('active');
-    }
-  });
-  // ============================================
-  // CONTACT FORM HANDLING WITH FORMSPREE
-  // ============================================
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-      const submitButton = contactForm.querySelector('.submit-button');
-      const originalButtonText = submitButton.innerHTML;
-      const formMessage = document.getElementById('form-message');
-      
-      // Handle form submission
-      contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Validate form
-        if (!validateContactForm()) {
-          return;
-        }
-        
-        // Show loading state
-        submitButton.innerHTML = '<span class="spinner"></span> Sending...';
-        submitButton.disabled = true;
-        
-        try {
-          // Get form data
-          const formData = new FormData(contactForm);
-          
-          // Send to Formspree
-          const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-          
-          if (response.ok) {
-            // Success
-            showFormMessage('Thank you! Your message has been sent. We\'ll get back to you within 24 hours.', 'success');
-            contactForm.reset();
+      const mentorObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
             
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-              formMessage.style.display = 'none';
-            }, 5000);
-          } else {
-            // Error from Formspree
-            const data = await response.json();
-            showFormMessage('Sorry, there was an error sending your message. Please try again or email us directly.', 'error');
+            // Start counter animation
+            startExperienceCounter();
+            mentorObserver.unobserve(entry.target);
           }
-        } catch (error) {
-          // Network error
-          showFormMessage('Network error. Please check your connection and try again.', 'error');
-        } finally {
-          // Reset button
-          submitButton.innerHTML = originalButtonText;
-          submitButton.disabled = false;
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+      
+      mentorObserver.observe(mentorCard);
+      
+      // Counter animation
+      function startExperienceCounter() {
+        let count = 0;
+        const target = 22;
+        const increment = 1;
+        const intervalTime = 80;
+        
+        function updateCounter() {
+          if (count < target) {
+            count += increment;
+            experienceCounter.textContent = count;
+            setTimeout(updateCounter, intervalTime);
+          }
         }
+        
+        updateCounter();
+      }
+    }
+
+    // Homepage animations
+    function initHomepageAnimations() {
+      // Elements to animate
+      const heroContent = document.querySelector('.hero-content');
+      const resourceCards = document.querySelectorAll('.resource-card');
+      const factCards = document.querySelectorAll('.fact-card');
+      const ctaContainer = document.querySelector('.cta-container');
+      
+      // Create intersection observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
       });
       
-      // Form validation
-      function validateContactForm() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const category = document.getElementById('category').value;
-        const message = document.getElementById('message').value.trim();
-        const confidentiality = document.getElementById('confidentiality').checked;
-        
-        // Clear previous message
-        formMessage.style.display = 'none';
-        
-        // Validate required fields
-        if (!name) {
-          showFormMessage('Please enter your full name.', 'error');
-          document.getElementById('name').focus();
-          return false;
-        }
-        
-        if (!email) {
-          showFormMessage('Please enter your email address.', 'error');
-          document.getElementById('email').focus();
-          return false;
-        }
-        
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          showFormMessage('Please enter a valid email address.', 'error');
-          document.getElementById('email').focus();
-          return false;
-        }
-        
-        if (!category) {
-          showFormMessage('Please select how we can help you.', 'error');
-          document.getElementById('category').focus();
-          return false;
-        }
-        
-        if (!message) {
-          showFormMessage('Please enter your message.', 'error');
-          document.getElementById('message').focus();
-          return false;
-        }
-        
-        if (!confidentiality) {
-          showFormMessage('Please confirm that you understand our confidentiality policy.', 'error');
-          document.getElementById('confidentiality').focus();
-          return false;
-        }
-        
-        return true;
-      }
+      // Observe elements if they exist
+      if (heroContent) observer.observe(heroContent);
+      if (resourceCards.length) resourceCards.forEach(card => observer.observe(card));
+      if (factCards.length) factCards.forEach(card => observer.observe(card));
+      if (ctaContainer) observer.observe(ctaContainer);
       
-      // Show form message
-      function showFormMessage(message, type) {
-        formMessage.textContent = message;
-        formMessage.className = `form-message ${type}`;
-        formMessage.style.display = 'block';
+      // Add hover effects to cards
+      const cards = document.querySelectorAll('.resource-card, .fact-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-10px)';
+        });
         
-        // Scroll to message
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-      
-      // Real-time validation for better UX
-      const formInputs = contactForm.querySelectorAll('input, select, textarea');
-      formInputs.forEach(input => {
-        input.addEventListener('blur', function() {
-          if (this.value.trim() !== '') {
-            this.classList.add('touched');
-          }
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0)';
         });
       });
     }
-  });
+
+    // Initialize everything when page loads
+    window.addEventListener("load", () => {
+      setTimeout(typeNext, 400);
+    });
+
+    // Initialize everything when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      // Call handleDropdowns
+      handleDropdowns();
+      
+      // Initialize leaves trail
+      setTimeout(initLeavesTrail, 1000);
+      
+      // Initialize mentor animation
+      setTimeout(initMentorAnimation, 1000);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navLinks && navLinks.classList.contains('open') && 
+          hamburgerBtn && !hamburgerBtn.contains(e.target) && 
+          !navLinks.contains(e.target)) {
+        
+        navLinks.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+        // Green Loading Bar Functionality
+    const loadingBar = document.getElementById('loadingBar');
+
+    // Function to start loading animation
+    function startLoadingBar() {
+      loadingBar.style.transition = 'none';
+      loadingBar.style.width = '0';
+      loadingBar.style.display = 'block';
+      loadingBar.classList.add('active');
+      
+      // Force reflow
+      void loadingBar.offsetWidth;
+      
+      loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+      loadingBar.style.width = '100%';
+    }
+
+    // Function to complete loading
+    function completeLoadingBar() {
+      setTimeout(() => {
+        loadingBar.style.width = '100%';
+        setTimeout(() => {
+          loadingBar.style.display = 'none';
+          loadingBar.classList.remove('active');
+        }, 300);
+      }, 100);
+    }
+
+    // Add loading bar to all internal navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      
+      // Only apply to internal links (not external, mailto, tel, or anchor links)
+      if (
+        href &&
+        !href.startsWith('#') &&
+        !href.startsWith('mailto:') &&
+        !href.startsWith('tel:') &&
+        !href.startsWith('javascript:') &&
+        !href.startsWith('http') // This excludes external links
+      ) {
+        link.addEventListener('click', function(e) {
+          // Don't intercept if Ctrl/Cmd clicked or middle mouse button
+          if (e.ctrlKey || e.metaKey || e.which === 2) return;
+          
+          e.preventDefault();
+          startLoadingBar();
+          
+          // Navigate after animation
+          setTimeout(() => {
+            window.location.href = href;
+          }, 850);
+        });
+      }
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('beforeunload', function() {
+      startLoadingBar();
+    });
+
+    // Complete loading when page is fully loaded
+    window.addEventListener('load', function() {
+      completeLoadingBar();
+    });
+
+    // Also complete loading if page is already loaded (for single page navigation)
+    document.addEventListener('DOMContentLoaded', function() {
+      completeLoadingBar();
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I am a Parent - Shaping Young Minds</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Alice font -->
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet" />
+
+  <!-- Plus Jakarta Sans for the site UI/content -->
+  <link rel="stylesheet" href="https://unpkg.com/plusplusjakartasans/plusjakartasans.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="stylemha.css" />
+</head>
+<body class="parent-theme">
+  <div class="loading-bar" id="loadingBar"></div>
+
+  <!-- Gentle Leaves Trail -->
+  <div class="cursor-trail-container"></div>
+
+  <!-- Plant Animation Background -->
+  <div class="plant-animation-container">
+    <!-- Large plants growing from bottom -->
+    <div class="plant plant-1"></div>
+    <div class="plant plant-2"></div>
+    <div class="plant plant-3"></div>
+    <div class="plant plant-4"></div>
+    
+    <!-- Floating leaves -->
+    <div class="floating-leaf leaf-1"></div>
+    <div class="floating-leaf leaf-2"></div>
+    <div class="floating-leaf leaf-3"></div>
+    <div class="floating-leaf leaf-4"></div>
+    <div class="floating-leaf leaf-5"></div>
+  </div>
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="SYM logo" class="logo" />
+        <div class="text">Shaping <span class="highlight">Young</span> Minds</div>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="has-submenu">
+          <a href="#" class="nav-parent active">Mental Health Awareness <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="mha.html" class="active">I am a parent</a></li>
+            <li><a href="mha-young.html">I am a young person</a></li>
+          </ul>
+        </li>
+
+        <li><a href="sym.html">SYM</a></li>
+        <li><a href="safe-space.html">Safe Space</a></li>
+        <li><a href="blog.html">Blog</a></li>
+
+        <li class="has-submenu">
+          <a href="#" class="nav-parent">About us <span class="chevron">▾</span></a>
+          <ul class="submenu">
+            <li><a href="founder.html">Founder</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </li>
+
+        <li><a href="mentors.html">SYM Mentors</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="content">
+      <div class="page-inner">
+        <!-- Hero Section -->
+        <section class="mha-hero-section">
+          <div class="mha-hero-container">
+            <div class="mha-hero-content">
+              <div class="mha-hero-badge">
+                <span>For Parents</span>
+              </div>
+              <h1 class="mha-hero-title">
+                I am a <span class="highlight">Parent</span>
+              </h1>
+              <p class="mha-hero-subtitle">
+                A gentle guide to understanding your child's emotional world. Every child faces challenges. 
+                Every parent wants to support them with love, clarity and confidence.
+              </p>
+              <p class="mha-hero-description">
+                These topics are written to help you recognise what your child may be experiencing and to guide 
+                you in ways that bring safety, comfort and healing.
+              </p>
+            </div>
+            
+            <!-- Animated Plant Illustration -->
+            <div class="mha-hero-illustration">
+              <div class="plant-illustration">
+                <!-- Pot -->
+                <div class="plant-pot"></div>
+                
+                <!-- Growing stem -->
+                <div class="plant-stem"></div>
+                
+                <!-- Leaves -->
+                <div class="plant-leaf leaf-a"></div>
+                <div class="plant-leaf leaf-b"></div>
+                <div class="plant-leaf leaf-c"></div>
+                <div class="plant-leaf leaf-d"></div>
+                
+                <!-- Flower -->
+                <div class="plant-flower">
+                  <div class="flower-petal petal-1"></div>
+                  <div class="flower-petal petal-2"></div>
+                  <div class="flower-petal petal-3"></div>
+                  <div class="flower-petal petal-4"></div>
+                  <div class="flower-center"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Topics Grid -->
+        <section class="topics-section">
+          <div class="section-header">
+            <h2>Understanding Your <span class="highlight">Child's World</span></h2>
+            <p class="section-subtitle">Explore topics to better support your child's emotional journey</p>
+          </div>
+
+          <div class="topics-grid" id="topicsGrid">
+            <!-- Topics will be loaded here dynamically -->
+          </div>
+        </section>
+
+        <!-- Topic Detail Section -->
+        <section class="topic-detail-section" id="topicDetail">
+          <div class="detail-container">
+            <!-- Content will be loaded here dynamically -->
+            <div class="detail-placeholder">
+              <div class="placeholder-icon">🌱</div>
+              <h3>Select a topic to explore</h3>
+              <p>Click on any topic above to learn more about understanding and supporting your child through specific challenges.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Signs Section -->
+        <section class="signs-section">
+          <div class="section-header">
+            <h2>Signs of Mental Health Conditions <span class="highlight">in Children</span></h2>
+          </div>
+
+          <div class="signs-container">
+            <div class="signs-card">
+              <h3>Younger Children</h3>
+              <ul class="signs-list">
+                <li>Frequent tantrums or increased irritability</li>
+                <li>Appearing worried or scared of non-threatening situations</li>
+                <li>Complaints of stomachaches/headaches with no medical cause</li>
+                <li>Constant movement, difficulty sitting still</li>
+                <li>Changes in sleep patterns or frequent nightmares</li>
+                <li>Less interest in playing with others</li>
+                <li>Noticeable drop in academic performance</li>
+              </ul>
+            </div>
+
+            <div class="signs-card">
+              <h3>Older Children</h3>
+              <ul class="signs-list">
+                <li>Loss of interest in previously enjoyed activities</li>
+                <li>Constant tiredness or low energy</li>
+                <li>Extreme sleep pattern changes</li>
+                <li>Sudden high energy with little sleep</li>
+                <li>Withdrawing from family and friends</li>
+                <li>Over-focus on dieting or exercising</li>
+                <li>Signs of self-harm or risky behaviors</li>
+                <li>Expressing thoughts about not wanting to live</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Communication Guide -->
+        <section class="communication-section">
+          <div class="section-header">
+            <h2>How to <span class="highlight">Talk to Your Children</span></h2>
+          </div>
+
+          <div class="communication-guide">
+            <div class="guide-card">
+              <div class="guide-icon">👂</div>
+              <h3>Be Present and Patient</h3>
+              <p>Give your child your full attention, even if the conversation feels small or repetitive.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-icon">❤️</div>
+              <h3>Listen Without Judgment</h3>
+              <p>Allow them to express emotions freely without immediate solutions or criticism.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-icon">🔄</div>
+              <h3>Reflect and Validate</h3>
+              <p>Repeat back what you hear in your own words to show understanding.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-icon">❓</div>
+              <h3>Ask Gentle Questions</h3>
+              <p>Use open questions like "How did that make you feel?" instead of demanding answers.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-icon">🗣️</div>
+              <h3>Share Your Feelings</h3>
+              <p>Age-appropriate honesty about your experiences models emotional expression.</p>
+            </div>
+
+            <div class="guide-card">
+              <div class="guide-icon">⏰</div>
+              <h3>Create Conversation Routines</h3>
+              <p>Daily check-ins during meals or before bedtime make sharing a habit.</p>
+            </div>
+          </div>
+
+          <div class="communication-note">
+            <p>When children feel truly heard, they learn that their thoughts and emotions matter. This builds resilience, self-confidence, and the ability to navigate challenges.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="site-footer">
+      <p>© 2025 Shaping Young Minds. All rights reserved.</p>
+      <div class="eternora-credit">
+        <span>Website built by</span>
+        <a href="https://eternora.online" target="_blank" rel="noopener noreferrer" class="eternora-link">
+          <img src="assets/eternora-logo.png" alt="Eternora" class="eternora-logo">
+          <span>Eternora</span>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="mha-data.js"></script>
+  <script>
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize navigation
+      initNavigation();
+      
+      // Initialize plant animations
+      initPlantAnimations();
+      
+      // Load topics
+      loadTopics();
+      
+      // Initialize topic interactions
+      initTopicInteractions();
+      
+      // Initialize leaves trail
+      initLeavesTrail();
+    });
+
+    function initNavigation() {
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (hamburgerBtn && navLinks) {
+        hamburgerBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          navLinks.classList.toggle('open');
+          hamburgerBtn.classList.toggle('active');
+        });
+      }
+
+      // Dropdown menus
+      const parents = document.querySelectorAll('.nav-parent');
+      
+      parents.forEach(parent => {
+        parent.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          parents.forEach(otherParent => {
+            if (otherParent !== parent) {
+              otherParent.parentElement.classList.remove('active');
+            }
+          });
+          
+          this.parentElement.classList.toggle('active');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (navLinks && navLinks.classList.contains('open') && 
+            hamburgerBtn && !hamburgerBtn.contains(e.target) && 
+            !navLinks.contains(e.target)) {
+          
+          navLinks.classList.remove('open');
+          hamburgerBtn.classList.remove('active');
+        }
+        
+        // Close dropdowns
+        parents.forEach(parent => {
+          if (!parent.parentElement.contains(e.target)) {
+            parent.parentElement.classList.remove('active');
+          }
+        });
+      });
+    }
+
+    function initPlantAnimations() {
+      // Animate hero plant
+      const plantStem = document.querySelector('.plant-stem');
+      const plantLeaves = document.querySelectorAll('.plant-leaf');
+      const flower = document.querySelector('.plant-flower');
+      
+      setTimeout(() => {
+        if (plantStem) plantStem.style.height = '180px';
+      }, 500);
+      
+      setTimeout(() => {
+        plantLeaves.forEach((leaf, index) => {
+          setTimeout(() => {
+            leaf.style.opacity = '1';
+            leaf.style.transform = 'scale(1)';
+          }, index * 200);
+        });
+      }, 1000);
+      
+      setTimeout(() => {
+        if (flower) {
+          flower.style.opacity = '1';
+          flower.style.transform = 'scale(1)';
+        }
+      }, 1800);
+      
+      // Animate background plants
+      const backgroundPlants = document.querySelectorAll('.plant');
+      backgroundPlants.forEach((plant, index) => {
+        setTimeout(() => {
+          plant.style.height = (80 + Math.random() * 120) + 'px';
+          plant.style.opacity = '0.3';
+        }, index * 300);
+      });
+      
+      // Animate floating leaves
+      const floatingLeaves = document.querySelectorAll('.floating-leaf');
+      floatingLeaves.forEach((leaf, index) => {
+        leaf.style.animationDelay = (index * 1.5) + 's';
+      });
+    }
+
+    function loadTopics() {
+      const topicsGrid = document.getElementById('topicsGrid');
+      if (!topicsGrid) return;
+      
+      // Clear existing content
+      topicsGrid.innerHTML = '';
+      
+      // Load parent topics from mha-data.js
+      window.parentTopics.forEach((topic, index) => {
+        const topicCard = document.createElement('div');
+        topicCard.className = 'topic-card';
+        topicCard.dataset.topicId = topic.id;
+        
+        // Add animation delay
+        topicCard.style.animationDelay = (index * 0.1) + 's';
+        
+        topicCard.innerHTML = `
+          <div class="topic-icon">${topic.icon}</div>
+          <h3 class="topic-title">${topic.title}</h3>
+          <p class="topic-description">${topic.description}</p>
+          <div class="topic-indicator">
+            <span class="indicator-dot"></span>
+            <span class="indicator-text">Learn More</span>
+          </div>
+        `;
+        
+        topicsGrid.appendChild(topicCard);
+      });
+    }
+
+    function initTopicInteractions() {
+      const topicCards = document.querySelectorAll('.topic-card');
+      const topicDetail = document.getElementById('topicDetail');
+      const detailContainer = document.querySelector('.detail-container');
+      
+      topicCards.forEach(card => {
+        card.addEventListener('click', function() {
+          // Remove active class from all cards
+          topicCards.forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked card
+          this.classList.add('active');
+          
+          // Scroll to detail section
+          topicDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // Load topic details
+          const topicId = this.dataset.topicId;
+          const topic = window.parentTopics.find(t => t.id === topicId);
+          
+          if (topic) {
+            detailContainer.innerHTML = `
+              <div class="detail-header">
+                <div class="detail-icon">${topic.icon}</div>
+                <div class="detail-title-container">
+                  <h2 class="detail-title">${topic.title}</h2>
+                  <div class="detail-subtitle">${topic.description}</div>
+                </div>
+              </div>
+              
+              <div class="detail-content">
+                <div class="detail-section">
+                  <div class="section-header">
+                    <h3>Understanding the Experience</h3>
+                  </div>
+                  <div class="section-content">
+                    <p>${topic.understanding}</p>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <div class="section-header">
+                    <h3>What Parents Should Keep in Mind</h3>
+                  </div>
+                  <div class="section-content">
+                    <p>${topic.mind}</p>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <div class="section-header">
+                    <h3>Supporting Your Child</h3>
+                  </div>
+                  <div class="section-content">
+                    <ul class="support-list">
+                      ${topic.support.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="detail-section">
+                  <div class="section-header">
+                    <h3>Healing with Time and Understanding</h3>
+                  </div>
+                  <div class="section-content">
+                    <p>${topic.healing}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+            
+            // Add animation to new content
+            const detailHeader = detailContainer.querySelector('.detail-header');
+            const detailSections = detailContainer.querySelectorAll('.detail-section');
+            
+            setTimeout(() => {
+              if (detailHeader) detailHeader.classList.add('visible');
+              
+              detailSections.forEach((section, index) => {
+                setTimeout(() => {
+                  section.classList.add('visible');
+                }, index * 200);
+              });
+            }, 100);
+          }
+        });
+        
+        // Add hover effect
+        card.addEventListener('mouseenter', function() {
+          if (!this.classList.contains('active')) {
+            this.style.transform = 'translateY(-10px)';
+          }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          if (!this.classList.contains('active')) {
+            this.style.transform = 'translateY(0)';
+          }
+        });
+      });
+    }
+
+    // Gentle Leaves Trail Effect (from main site)
+    function initLeavesTrail() {
+      if (('ontouchstart' in window) || 
+          (navigator.maxTouchPoints > 0) || 
+          (navigator.msMaxTouchPoints > 0)) {
+        return;
+      }
+      
+      const leaves = [];
+      const maxLeaves = 12;
+      let lastLeafTime = 0;
+      const leafDelay = 150;
+      
+      const leafTypes = [
+        { class: 'leaf-trail-1', life: 2000, floatDistance: 20, rotation: 45 },
+        { class: 'leaf-trail-2', life: 1800, floatDistance: 18, rotation: 30 },
+        { class: 'leaf-trail-3', life: 2200, floatDistance: 22, rotation: 60 }
+      ];
+      
+      function createLeaf(x, y) {
+        if (leaves.length >= maxLeaves) {
+          const oldestLeaf = leaves.shift();
+          if (oldestLeaf && oldestLeaf.element) {
+            oldestLeaf.element.remove();
+          }
+        }
+        
+        const leafType = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+        const leaf = document.createElement('div');
+        leaf.className = `cursor-leaf ${leafType.class}`;
+        
+        leaf.style.left = x + 'px';
+        leaf.style.top = y + 'px';
+        leaf.style.opacity = '0';
+        leaf.style.transform = 'scale(0.8) rotate(0deg)';
+        
+        document.body.appendChild(leaf);
+        
+        const leafInfo = {
+          element: leaf,
+          createdAt: Date.now(),
+          life: leafType.life,
+          floatDistance: leafType.floatDistance,
+          rotation: leafType.rotation,
+          startX: x,
+          startY: y,
+          driftX: (Math.random() - 0.5) * 12
+        };
+        
+        leaves.push(leafInfo);
+        animateLeaf(leafInfo);
+        return leafInfo;
+      }
+      
+      function animateLeaf(leafInfo) {
+        const leaf = leafInfo.element;
+        
+        setTimeout(() => {
+          leaf.style.opacity = '0.7';
+          leaf.style.transform = 'scale(1) rotate(0deg)';
+        }, 10);
+        
+        const startTime = Date.now();
+        const duration = leafInfo.life;
+        
+        function floatAnimation() {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          if (progress >= 1) {
+            leaf.style.opacity = '0';
+            leaf.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+              if (leaf.parentNode) leaf.remove();
+              const index = leaves.indexOf(leafInfo);
+              if (index > -1) leaves.splice(index, 1);
+            }, 500);
+            return;
+          }
+          
+          const floatY = progress * leafInfo.floatDistance;
+          const floatX = Math.sin(progress * Math.PI) * leafInfo.driftX;
+          const rotation = progress * leafInfo.rotation;
+          
+          leaf.style.transform = `
+            translate(${floatX}px, ${floatY}px)
+            scale(${1 - progress * 0.3})
+            rotate(${rotation}deg)
+          `;
+          
+          leaf.style.opacity = (0.7 * (1 - progress * 0.8)).toString();
+          requestAnimationFrame(floatAnimation);
+        }
+        
+        floatAnimation();
+      }
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        const now = Date.now();
+        if (now - lastLeafTime > leafDelay) {
+          createLeaf(mouseX, mouseY);
+          lastLeafTime = now;
+        }
+      });
+    }
+    // Green Loading Bar Functionality
+    const loadingBar = document.getElementById('loadingBar');
+
+    // Function to start loading animation
+    function startLoadingBar() {
+      loadingBar.style.transition = 'none';
+      loadingBar.style.width = '0';
+      loadingBar.style.display = 'block';
+      loadingBar.classList.add('active');
+      
+      // Force reflow
+      void loadingBar.offsetWidth;
+      
+      loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+      loadingBar.style.width = '100%';
+    }
+
+    // Function to complete loading
+    function completeLoadingBar() {
+      setTimeout(() => {
+        loadingBar.style.width = '100%';
+        setTimeout(() => {
+          loadingBar.style.display = 'none';
+          loadingBar.classList.remove('active');
+        }, 300);
+      }, 100);
+    }
+
+    // Add loading bar to all internal navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      
+      // Only apply to internal links (not external, mailto, tel, or anchor links)
+      if (
+        href &&
+        !href.startsWith('#') &&
+        !href.startsWith('mailto:') &&
+        !href.startsWith('tel:') &&
+        !href.startsWith('javascript:') &&
+        !href.startsWith('http') // This excludes external links
+      ) {
+        link.addEventListener('click', function(e) {
+          // Don't intercept if Ctrl/Cmd clicked or middle mouse button
+          if (e.ctrlKey || e.metaKey || e.which === 2) return;
+          
+          e.preventDefault();
+          startLoadingBar();
+          
+          // Navigate after animation
+          setTimeout(() => {
+            window.location.href = href;
+          }, 850);
+        });
+      }
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('beforeunload', function() {
+      startLoadingBar();
+    });
+
+    // Complete loading when page is fully loaded
+    window.addEventListener('load', function() {
+      completeLoadingBar();
+    });
+
+    // Also complete loading if page is already loaded (for single page navigation)
+    document.addEventListener('DOMContentLoaded', function() {
+      completeLoadingBar();
+    });
+  </script>
+</body>
+</html>

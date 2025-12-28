@@ -822,10 +822,9 @@ body {
   transition: all 0.3s ease;
   text-align: center;
   display: flex; 
-  flex-direction: column;
-  flex: 1;
-  min-width: 250px;
-  max-width: 280px; 
+  flex-direction: column; 
+  min-width: 300px; /* Wider cards */
+  max-width: 350px; /* Wider cards */
 }
 
 .method-card:hover {
@@ -856,6 +855,10 @@ body {
   font-size: 0.95rem;
   color: #4b5563;
   line-height: 1.8;
+  margin-top: auto; /* Pushes content to bottom */
+  padding-top: 1.5rem; /* Add spacing */
+  text-align: center; /* Center text */
+  width: 100%; /* Full width */
 }
 
 .method-email, .method-link {
@@ -865,6 +868,8 @@ body {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  text-align: center;
+  width: 100%; /* Full width for centering */
 }
 
 .method-email:hover, .method-link:hover {
@@ -897,9 +902,10 @@ body {
   transition: all 0.3s ease;
   flex-direction: column; 
   text-align: center; 
-  flex: 1;
-  min-width: 250px;
-  max-width: 280px;
+  min-width: 300px; /* Wider cards */
+  max-width: 350px; /* Wider cards */
+  justify-content: space-between; /* Distribute space */
+  min-height: 320px; /* Consistent height */
 }
 
 .team-member-contact:hover {
@@ -936,6 +942,10 @@ body {
 
 .member-info-contact {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space */
+  width: 100%; /* Full width */
 }
 
 .member-info-contact h3 {
@@ -958,6 +968,11 @@ body {
   font-weight: 600;
   font-size: 0.9rem;
   transition: color 0.3s ease;
+  margin-top: auto; /* Push to bottom */
+  padding-top: 1rem; /* Add spacing */
+  display: block; /* Make it block for centering */
+  text-align: center; /* Center align */
+  width: 100%; /* Full width */
 }
 
 .member-email-contact:hover {
@@ -1107,7 +1122,76 @@ body {
 }
 
 /* ============================================
-   MOBILE RESPONSIVE STYLES
+   DESKTOP SPECIFIC LAYOUT (3 cards in row, 1 below)
+   ============================================ */
+@media (min-width: 1024px) {
+  .contact-methods-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* First 3 cards in one row */
+  .method-card:nth-child(-n+3) {
+    flex: 0 0 calc(33.333% - 1.34rem);
+    max-width: calc(33.333% - 1.34rem);
+  }
+  
+  /* 4th card centered below */
+  .method-card:nth-child(4) {
+    flex: 0 0 calc(33.333% - 1.34rem);
+    max-width: calc(33.333% - 1.34rem);
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Team grid - 2 per row on desktop */
+  .team-grid-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .team-member-contact {
+    flex: 0 0 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+
+/* ============================================
+   TABLET LAYOUT (2 cards per row)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .contact-methods-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .method-card {
+    flex: 0 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+  
+  .team-grid-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .team-member-contact {
+    flex: 0 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES (KEEPING YOUR ORIGINAL)
    ============================================ */
 
 @media (max-width: 768px) {
@@ -1233,17 +1317,38 @@ body {
   
   /* Contact Methods */
   .contact-methods-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .method-card {
+    width: 100%;
+    max-width: 350px;
+    min-width: 0;
+  }
+  
+  /* Remove desktop special styling for 4th card */
+  .method-card:nth-child(4) {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
   
   /* Team Grid */
   .team-grid-contact {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
   
   .team-member-contact {
-    flex-direction: column;
-    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    min-height: auto;
+    min-width: 0;
   }
   
   /* Form Tabs */
@@ -1301,26 +1406,10 @@ body {
     height: 20px;
   }
 
-    /* Contact Methods Grid - Mobile */
-  .contact-methods-grid {
-    grid-template-columns: 1fr; /* Stack on mobile */
-  }
-  
-  /* Team Grid - Mobile */
-  .team-grid-contact {
-    grid-template-columns: 1fr; /* Stack on mobile */
-  }
-
-  .team-member-contact {
-    width: 100%;
-    max-width: 350px; 
-    margin: 0 auto; 
-}
-
   .member-info-contact h3 {
-    font-size: 1.2rem; /* Slightly smaller font for long names */
-    word-wrap: break-word; /* Allow long names to break */
-}
+    font-size: 1.2rem;
+    word-wrap: break-word;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1363,11 +1452,13 @@ body {
   /* Method Cards */
   .method-card {
     padding: 1.5rem;
+    max-width: 100%;
   }
   
   /* Team Members */
   .team-member-contact {
     padding: 1.5rem;
+    max-width: 100%;
   }
   
   .image-container-contact {
@@ -1402,17 +1493,6 @@ body {
     width: 18px;
     height: 18px;
   }
-
-    /* Contact Methods Grid - Mobile */
-  .contact-methods-grid {
-    grid-template-columns: 1fr; /* Stack on mobile */
-  }
-  
-  /* Team Grid - Mobile */
-  .team-grid-contact {
-    grid-template-columns: 1fr; /* Stack on mobile */
-  }
-
 }
 
 /* Animation for hamburger menu when active */

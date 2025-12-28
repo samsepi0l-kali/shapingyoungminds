@@ -1,0 +1,714 @@
+/* Strategy Page Specific Styles */
+
+/* ============================================
+   STRATEGY HERO SECTION
+   ============================================ */
+.strategy-hero-section {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.strategy-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 24px;
+  padding: 4rem;
+  min-height: 400px;
+}
+
+.strategy-title-container {
+  flex: 1;
+}
+
+.strategy-title h1 {
+  font-family: "Alice", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #020202;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.strategy-title h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.title-divider {
+  width: 80px;
+  height: 4px;
+  background: #55a80a;
+  border-radius: 2px;
+  margin-top: 1.5rem;
+}
+
+.strategy-intro p {
+  font-size: 1.2rem;
+  color: #374151;
+  line-height: 1.6;
+  margin-top: 2rem;
+  font-style: italic;
+  max-width: 500px;
+}
+
+.strategy-icon-container {
+  flex: 0 0 400px;
+}
+
+.icon-box {
+  background: #55a80a;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 20px 40px rgba(85, 168, 10, 0.2);
+  text-align: center;
+  color: white;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.strategy-icon {
+  margin-bottom: 2rem;
+}
+
+.strategy-icon svg {
+  stroke: white;
+}
+
+.icon-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.icon-text span {
+  font-family: "Alice", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   PHILOSOPHY SECTION
+   ============================================ */
+.philosophy-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+}
+
+.philosophy-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.philosophy-content {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.philosophy-lead {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #020202;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.philosophy-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-highlight {
+  background: rgba(85, 168, 10, 0.1);
+  border-left: 4px solid #55a80a;
+  padding: 1.5rem;
+  margin: 2.5rem 0;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.highlight-icon {
+  flex-shrink: 0;
+  color: #55a80a;
+  margin-top: 0.25rem;
+}
+
+.philosophy-highlight p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #020202;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ============================================
+   PILLARS SECTION
+   ============================================ */
+.pillars-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  background: linear-gradient(135deg, #f9fafb 0%, #f0fdf4 100%);
+  border-radius: 20px;
+}
+
+.pillars-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+.pillar-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.pillar-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #55a80a;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Alice", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(85, 168, 10, 0.3);
+}
+
+.pillar-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(85, 168, 10, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #55a80a;
+}
+
+.pillar-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1.8rem;
+  color: #020202;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-subtitle {
+  color: #55a80a;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pillar-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   VISION SECTION
+   ============================================ */
+.vision-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+}
+
+.vision-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.vision-content {
+  padding-right: 2rem;
+}
+
+.vision-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.vision-highlight {
+  background: rgba(252, 124, 59, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.vision-icon {
+  flex-shrink: 0;
+  color: #fc7c3b;
+  margin-top: 0.25rem;
+}
+
+.highlight-content h3 {
+  font-family: "Alice", serif;
+  font-size: 1.4rem;
+  color: #020202;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-content p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.vision-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  background: linear-gradient(135deg, #fff8f0 0%, #fec5e5 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.image-placeholder {
+  text-align: center;
+  color: #020202;
+}
+
+.image-placeholder svg {
+  margin-bottom: 1.5rem;
+  stroke: #020202;
+}
+
+.image-placeholder span {
+  font-family: "Alice", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+/* ============================================
+   METHODS SECTION
+   ============================================ */
+.methods-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  background: linear-gradient(135deg, #f9fafb 0%, #f0fdf4 100%);
+  border-radius: 20px;
+}
+
+.methods-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+}
+
+.method-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.method-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(85, 168, 10, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #55a80a;
+}
+
+.method-card h3 {
+  font-family: "Alice", serif;
+  font-size: 1.8rem;
+  color: #020202;
+  margin-bottom: 1rem;
+}
+
+.method-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.methods-summary {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.methods-summary p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #020202;
+  font-style: italic;
+}
+
+/* ============================================
+   CALL TO ACTION SECTION
+   ============================================ */
+.strategy-cta-section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #55a80a 0%, #3b8205 100%);
+  border-radius: 20px;
+  padding: 4rem;
+  text-align: center;
+  color: white;
+}
+
+.cta-content h2 {
+  font-family: "Alice", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  border: 2px solid transparent;
+}
+
+.cta-button.primary {
+  background: white;
+  color: #55a80a;
+}
+
+.cta-button.primary:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: #55a80a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .strategy-hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
+    gap: 3rem;
+  }
+  
+  .strategy-title h1 {
+    font-size: 3.5rem;
+  }
+  
+  .strategy-icon-container {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .vision-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .vision-content {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .strategy-hero-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .strategy-title h1 {
+    font-size: 2.8rem;
+  }
+  
+  .strategy-title h2 {
+    font-size: 1.3rem;
+  }
+  
+  .strategy-intro p {
+    font-size: 1.1rem;
+  }
+  
+  .icon-box {
+    height: 250px;
+    padding: 2rem;
+  }
+  
+  .icon-text span {
+    font-size: 1.5rem;
+  }
+  
+  .philosophy-content {
+    padding: 2rem;
+  }
+  
+  .philosophy-lead {
+    font-size: 1.2rem;
+  }
+  
+  .philosophy-text p {
+    font-size: 1.05rem;
+  }
+  
+  .philosophy-highlight p {
+    font-size: 1.1rem;
+  }
+  
+  .pillars-container,
+  .methods-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .pillar-card,
+  .method-card {
+    padding: 2rem;
+  }
+  
+  .pillar-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .image-container {
+    height: 250px;
+  }
+  
+  .cta-container {
+    padding: 3rem 2rem;
+  }
+  
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .strategy-hero-container {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+  
+  .strategy-title h1 {
+    font-size: 2.2rem;
+  }
+  
+  .strategy-title h2 {
+    font-size: 1.1rem;
+  }
+  
+  .strategy-intro p {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .icon-box {
+    height: 200px;
+    padding: 1.5rem;
+  }
+  
+  .strategy-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .icon-text span {
+    font-size: 1.2rem;
+  }
+  
+  .philosophy-content {
+    padding: 1.5rem;
+  }
+  
+  .philosophy-lead {
+    font-size: 1.1rem;
+  }
+  
+  .philosophy-highlight {
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .pillar-card,
+  .method-card {
+    padding: 1.5rem;
+  }
+  
+  .pillar-icon,
+  .method-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+  }
+  
+  .pillar-card h3,
+  .method-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .image-container {
+    height: 200px;
+  }
+  
+  .image-placeholder svg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .image-placeholder span {
+    font-size: 1.2rem;
+  }
+  
+  .cta-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .strategy-hero-container {
+    padding: 3rem;
+  }
+  
+  .strategy-title h1 {
+    font-size: 3.2rem;
+  }
+  
+  .icon-box {
+    height: 280px;
+  }
+}

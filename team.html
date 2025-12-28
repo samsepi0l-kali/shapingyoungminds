@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About the Founder - Shaping Young Minds</title>
+  <title>Our Team - Shaping Young Minds</title>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
   <!-- Alice font -->
@@ -12,7 +12,279 @@
   <!-- Plus Jakarta Sans for the site UI/content -->
   <link rel="stylesheet" href="https://unpkg.com/plusplusjakartasans/plusjakartasans.css" />
 
-  <link rel="stylesheet" href="stylefounder.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Additional styles for the construction page */
+    .construction-container {
+      text-align: center;
+      padding: 6rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .construction-icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 3rem;
+      position: relative;
+    }
+    
+    .construction-icon svg {
+      width: 100%;
+      height: 100%;
+      color: #55a80a;
+      animation: gentlePulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes gentlePulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+    }
+    
+    .construction-title {
+      font-family: "Alice", serif;
+      font-size: 3.5rem;
+      color: #020202;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .construction-title .highlight {
+      color: #55a80a;
+    }
+    
+    .construction-subtitle {
+      font-size: 1.4rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .construction-message {
+      background: rgba(85, 168, 10, 0.08);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      border-left: 4px solid #55a80a;
+    }
+    
+    .construction-message p {
+      font-size: 1.2rem;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .construction-message p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .construction-cta {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+    
+    .construction-link {
+      padding: 1rem 2.5rem;
+      background: #55a80a;
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid #55a80a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 200px;
+    }
+    
+    .construction-link:hover {
+      background: white;
+      color: #55a80a;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(85, 168, 10, 0.2);
+    }
+    
+    .construction-link.secondary {
+      background: white;
+      color: #55a80a;
+      border: 2px solid #55a80a;
+    }
+    
+    .construction-link.secondary:hover {
+      background: #55a80a;
+      color: white;
+    }
+    
+    .construction-countdown {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 4rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+      text-align: center;
+      padding: 1.5rem;
+      min-width: 100px;
+    }
+    
+    .countdown-number {
+      font-family: "Alice", serif;
+      font-size: 2.5rem;
+      color: #55a80a;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .countdown-label {
+      font-size: 0.9rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    /* Animation for counting numbers */
+    @keyframes countUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .countdown-number {
+      animation: countUp 0.5s ease-out;
+    }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .construction-container {
+        padding: 4rem 1.5rem;
+      }
+      
+      .construction-title {
+        font-size: 2.5rem;
+      }
+      
+      .construction-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .construction-icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 2rem;
+      }
+      
+      .construction-message {
+        padding: 2rem;
+      }
+      
+      .construction-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .construction-link {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .construction-countdown {
+        gap: 1rem;
+      }
+      
+      .countdown-item {
+        min-width: 80px;
+        padding: 1rem;
+      }
+      
+      .countdown-number {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .construction-title {
+        font-size: 2rem;
+      }
+      
+      .construction-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .construction-message {
+        padding: 1.5rem;
+      }
+      
+      .construction-message p {
+        font-size: 1.1rem;
+      }
+      
+      .countdown-item {
+        min-width: 70px;
+      }
+      
+      .countdown-number {
+        font-size: 1.8rem;
+      }
+    }
+    
+    /* Progress indicator */
+    .progress-container {
+      margin: 3rem auto;
+      max-width: 500px;
+    }
+    
+    .progress-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    
+    .progress-bar {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: #55a80a;
+      border-radius: 4px;
+      width: 75%;
+      animation: progressFill 2s ease-out;
+    }
+    
+    @keyframes progressFill {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 75%;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="loading-bar" id="loadingBar"></div>
@@ -71,253 +343,80 @@
     <!-- Main Content -->
     <main id="mainContent" class="content">
       <div class="page-inner">
-        <!-- Founder Hero Section -->
-        <section class="founder-hero-section">
-          <div class="founder-hero-container">
-            <div class="founder-name-container">
-              <div class="founder-name">
-                <span class="first-name">Kanta</span>
-                <span class="last-name">Devi</span>
-              </div>
-              <div class="founder-title">
-                <h2>Founder & Child Psychologist</h2>
-                <div class="title-divider"></div>
-              </div>
-            </div>
-            
-            <div class="founder-image-container">
-              <div class="image-box" data-color="orange">
-                <img src="assets/kanta1.png" alt="Mrs. Kanta Devi - Founder of Shaping Young Minds" class="founder-photo">
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Founder Story Section -->
-        <section class="founder-story-section">
-          <div class="section-header">
-            <h2>The Heart Behind Shaping Young Minds</h2>
-            <p class="section-subtitle">A journey of compassion, understanding, and dedication</p>
+        <!-- Construction Page -->
+        <section class="construction-container">
+          <div class="construction-icon">
+            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
           </div>
           
-          <div class="story-container">
-            <div class="story-content">
-              <div class="story-paragraph">
-                <p>Shaping Young Minds was born from the life Kanta Devi has lived and the quiet stories she has carried in her heart for nearly two decades. As a young psychology student in Delhi, she was deeply struck by how a child's earliest experiences shape the way they feel, grow and understand themselves.</p>
-              </div>
-              
-              <div class="story-paragraph">
-                <p>Years later, after moving to Moscow and meeting parents, children and families who felt unheard or emotionally overwhelmed, she realised that awareness about children's mental health was not just limited—it was urgently needed.</p>
-              </div>
-              
-              <div class="story-highlight">
-                <div class="highlight-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg>
-                </div>
-                <p>"Every child deserves a safe space where they feel seen, understood and emotionally secure."</p>
-              </div>
-              
-              <div class="story-paragraph">
-                <p>Kanta's professional journey spans clinical psychology, community mental health, school counselling and almost ten years of voluntary counselling for the Indian diaspora. In classrooms, community centres and living rooms where parents sought guidance, she witnessed the silent battles children often fight behind their smiles: emotions they cannot name, stress they cannot express and struggles that go unnoticed.</p>
-              </div>
+          <h1 class="construction-title">Our <span class="highlight">Team</span> Page</h1>
+          
+          <p class="construction-subtitle">
+            We're carefully building something special ✨
+          </p>
+          
+          <!-- Progress Indicator -->
+          <div class="progress-container">
+            <div class="progress-text">
+              <span>In Progress</span>
+              <span>75% Complete</span>
             </div>
-          </div>
-        </section>
-
-        <!-- Journey Timeline Section -->
-        <section class="journey-section">
-          <div class="section-header">
-            <h2>Her Journey</h2>
-            <p class="section-subtitle">A timeline of dedication and impact</p>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
           </div>
           
-          <div class="timeline-container">
-            <div class="timeline">
-              <!-- Timeline Item 1 -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <div class="timeline-year">Early Years</div>
-                  <h3>Psychology Student in Delhi</h3>
-                  <p>Deeply influenced by how early childhood experiences shape emotional development and self-understanding.</p>
-                </div>
-              </div>
-              
-              <!-- Timeline Item 2 -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <div class="timeline-year">2000s</div>
-                  <h3>Move to Moscow</h3>
-                  <p>Recognized the urgent need for mental health awareness among families and children in the diaspora community.</p>
-                </div>
-              </div>
-              
-              <!-- Timeline Item 3 -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <div class="timeline-year">Over a Decade</div>
-                  <h3>School Teaching & Community Work</h3>
-                  <p>Taught in schools and kindergartens while supporting families adapting to new cultural environments.</p>
-                </div>
-              </div>
-              
-              <!-- Timeline Item 4 -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <div class="timeline-year">10+ Years</div>
-                  <h3>Voluntary Counselling</h3>
-                  <p>Provided compassionate counselling services to the Indian diaspora, focusing on children and families.</p>
-                </div>
-              </div>
-              
-              <!-- Timeline Item 5 -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <div class="timeline-year">Present</div>
-                  <h3>Founding Shaping Young Minds</h3>
-                  <p>Created a platform to make mental health conversations natural, accessible, and stigma-free for all families.</p>
-                </div>
-              </div>
+          <!-- Countdown Animation -->
+          <div class="construction-countdown">
+            <div class="countdown-item">
+              <span class="countdown-number" id="count1">25+</span>
+              <span class="countdown-label">Professionals</span>
             </div>
-          </div>
-        </section>
-
-        <!-- Qualifications Section -->
-        <section class="qualifications-section">
-          <div class="section-header">
-            <h2>Qualifications & Expertise</h2>
-            <p class="section-subtitle">Professional background and areas of specialization</p>
+            <div class="countdown-item">
+              <span class="countdown-number" id="count2">15+</span>
+              <span class="countdown-label">Years Experience</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="count3">100%</span>
+              <span class="countdown-label">Dedication</span>
+            </div>
           </div>
           
-          <div class="qualifications-container">
-            <div class="qualifications-grid">
-              <!-- Card 1 -->
-              <div class="qualification-card">
-                <div class="card-icon">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
-                  </svg>
-                </div>
-                <h3>Clinical Psychology</h3>
-                <p>Extensive training and practice in clinical psychology with a focus on child and adolescent mental health.</p>
-              </div>
-              
-              <!-- Card 2 -->
-              <div class="qualification-card">
-                <div class="card-icon">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                <h3>School Counselling</h3>
-                <p>Years of experience providing counselling in educational settings, helping children navigate academic and social challenges.</p>
-              </div>
-              
-              <!-- Card 3 -->
-              <div class="qualification-card">
-                <div class="card-icon">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="8" r="7"></circle>
-                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                  </svg>
-                </div>
-                <h3>Community Mental Health</h3>
-                <p>Deep engagement with community organizations to promote mental wellbeing and reduce stigma.</p>
-              </div>
-              
-              <!-- Card 4 -->
-              <div class="qualification-card">
-                <div class="card-icon">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                  </svg>
-                </div>
-                <h3>Voluntary Counselling</h3>
-                <p>Nearly a decade of providing free counselling services to support the Indian diaspora community.</p>
-              </div>
-            </div>
+          <div class="construction-message">
+            <p>
+              We believe that every great team deserves a thoughtful introduction. That's why we're taking our time to carefully curate our team page to properly introduce the wonderful professionals who make Shaping Young Minds possible.
+            </p>
             
-            <!-- Community Involvement -->
-            <div class="community-section">
-              <h3>Community Involvement</h3>
-              <div class="community-organizations">
-                <span class="org-tag">JNCC</span>
-                <span class="org-tag">Hindustani Samaj</span>
-                <span class="org-tag">OBA</span>
-                <span class="org-tag">NRI Women's Club</span>
-              </div>
-              <p class="community-description">
-                Active contributor to multiple community organizations, supporting families in finding their place and building connections.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Philosophy Section -->
-        <section class="philosophy-section">
-          <div class="philosophy-container">
-            <div class="philosophy-quote">
-              <div class="quote-icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
-                  <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
-                </svg>
-              </div>
-              <blockquote>
-                "Through this platform, I hope to empower parents, support children and make conversations about mental health natural and accessible. My mission is simple yet profound: to help every child grow not only academically but emotionally—confident, expressive and wholeheartedly themselves."
-              </blockquote>
-              <div class="quote-author">
-                <p>— Mrs. Kanta Devi</p>
-              </div>
-            </div>
+            <p>
+              Our team consists of experienced psychologists, dedicated counselors, compassionate educators, and passionate advocates - all united by a shared vision of supporting young minds.
+            </p>
             
-            <div class="vision-content">
-              <h3>Her Vision for Shaping Young Minds</h3>
-              <p>Shaping Young Minds represents the culmination of her life's work—a movement built on empathy, knowledge, and the belief that emotional wellbeing must be nurtured early.</p>
-              
-              <div class="vision-points">
-                <div class="vision-point">
-                  <div class="point-icon">✓</div>
-                  <p>Create safe spaces for children to express themselves</p>
-                </div>
-                <div class="vision-point">
-                  <div class="point-icon">✓</div>
-                  <p>Empower parents with knowledge and tools</p>
-                </div>
-                <div class="vision-point">
-                  <div class="point-icon">✓</div>
-                  <p>Break the stigma around mental health conversations</p>
-                </div>
-                <div class="vision-point">
-                  <div class="point-icon">✓</div>
-                  <p>Build emotionally resilient future generations</p>
-                </div>
-              </div>
-            </div>
+            <p>
+              We're currently finalizing team member profiles, gathering professional photos, and preparing detailed biographies to give you a comprehensive look at the expertise behind our organization.
+            </p>
           </div>
-        </section>
-
-        <!-- Connect Section -->
-        <section class="connect-section">
-          <div class="connect-container">
-            <div class="connect-content">
-              <h2>Want to Learn More?</h2>
-              <p>Discover how Shaping Young Minds can support your family's emotional wellbeing journey.</p>
-            </div>
-            <div class="connect-actions">
-              <a href="sym.html" class="connect-button primary">Learn About SYM</a>
-              <a href="contact.html" class="connect-button secondary">Get in Touch</a>
-            </div>
+          
+          <div class="construction-cta">
+            <a href="founder.html" class="construction-link">
+              Meet Our Founder
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            
+            <a href="strategy.html" class="construction-link secondary">
+              Learn Our Strategy
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </a>
           </div>
         </section>
       </div>
@@ -378,6 +477,7 @@
     window.addEventListener('load', () => {
       createLeaves();
       initLeavesTrail();
+      animateCounters();
     });
 
     // Hamburger menu
@@ -572,6 +672,35 @@
         hamburgerBtn.classList.remove('active');
       }
     });
+
+    // Animate counter numbers
+    function animateCounters() {
+      const counters = [
+        { element: document.getElementById('count1'), target: 25, prefix: '' },
+        { element: document.getElementById('count2'), target: 15, prefix: '' },
+        { element: document.getElementById('count3'), target: 100, prefix: '' }
+      ];
+      
+      counters.forEach(counter => {
+        if (!counter.element) return;
+        
+        let current = 0;
+        const increment = counter.target / 30; // 30 steps for smooth animation
+        const duration = 1500; // 1.5 seconds
+        
+        const updateCounter = () => {
+          current += increment;
+          if (current < counter.target) {
+            counter.element.textContent = counter.prefix + Math.floor(current) + '+';
+            setTimeout(updateCounter, duration / 30);
+          } else {
+            counter.element.textContent = counter.prefix + counter.target + (counter.target === 100 ? '%' : '+');
+          }
+        };
+        
+        updateCounter();
+      });
+    }
     // Green Loading Bar Functionality
     const loadingBar = document.getElementById('loadingBar');
 
