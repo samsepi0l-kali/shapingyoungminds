@@ -85,7 +85,7 @@ body {
 .nav-parent {
   color: #111827;
   text-decoration: none;
-  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  font-size: 0.95rem; /* Reduced font size */
   font-weight: 700;
   padding: 0.5rem 0.8rem;
   border-radius: 999px;
@@ -177,7 +177,7 @@ body {
 
 /* Hamburger Menu */
 .hamburger {
-  display: none;
+  display: none; /* Hidden by default on desktop */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -221,6 +221,69 @@ body {
   transform: translateY(-6px) rotate(-45deg);
 }
 
+/* Show hamburger menu on tablet and mobile (1024px and below) */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-parent {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 8px;
+    font-size: 0.9rem; /* Smaller font on mobile/tablet */
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    background: #f9fafb;
+    width: 100%;
+    border-radius: 8px;
+    display: none;
+  }
+
+  .nav-links li.active .submenu {
+    display: block;
+  }
+}
+
 /* ============================================
    PAGE CONTENT & LAYOUT
    ============================================ */
@@ -239,7 +302,7 @@ body {
 
 .content {
   flex: 1;
-  padding: 0; /* Changed from 5rem 1.25rem 4rem */
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -876,9 +939,9 @@ body {
   text-align: center;
   width: 100%;
   max-width: 1100px;
-  display: block !important; /* Force display */
-  visibility: visible !important; /* Force visibility */
-  opacity: 1 !important; /* Force opacity */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .cta-container {
@@ -1125,7 +1188,13 @@ body {
    RESPONSIVE DESIGN
    ============================================ */
 
+/* Tablet adjustments (1024px and below) - Already handled in the hamburger menu section above */
+
 @media (max-width: 1024px) {
+  #pageContent {
+    padding-top: 80px;
+  }
+  
   .profile-header {
     flex-direction: column;
     text-align: center;
@@ -1152,59 +1221,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Navigation */
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    flex-direction: column;
-    padding: 1.5rem;
-    border-top: 1px solid #e5e7eb;
-    transform: translateY(-20px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    gap: 0.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    z-index: 999;
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-  }
-
-  .nav-links.open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-links li {
-    width: 100%;
-  }
-
-  .nav-links a,
-  .nav-parent {
-    padding: 0.75rem 1rem;
-    width: 100%;
-    justify-content: space-between;
-    border-radius: 8px;
-  }
-
-  .submenu {
-    position: static;
-    box-shadow: none;
-    margin-left: 0;
-    margin-top: 0.5rem;
-    background: #f9fafb;
-    width: 100%;
-    border-radius: 8px;
-  }
-
+  /* Navigation - Hamburger menu already shown at 1024px, now adjust spacing */
+  
+  /* Adjust navbar for mobile */
   .navbar {
     padding: 16px 20px;
   }
@@ -1446,5 +1465,18 @@ body {
   .eternora-logo {
     width: 18px;
     height: 18px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .leaf {
+    width: 12px;
+    height: 12px;
+    opacity: 0.3;
   }
 }

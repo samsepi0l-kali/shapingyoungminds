@@ -78,7 +78,7 @@ body {
 .nav-parent {
   color: #111827;
   text-decoration: none;
-  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  font-size: 0.95rem; /* Reduced font size */
   font-weight: 700;
   padding: 0.5rem 0.8rem;
   border-radius: 999px;
@@ -198,6 +198,69 @@ body {
 
 .hamburger:hover .bar {
   background: #55a80a;
+}
+
+/* Show hamburger menu on tablet and mobile (1024px and below) */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .nav-parent {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 8px;
+    font-size: 0.9rem; /* Smaller font on mobile/tablet */
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    background: #f9fafb;
+    width: 100%;
+    border-radius: 8px;
+    display: none;
+  }
+
+  .nav-links li.active .submenu {
+    display: block;
+  }
 }
 
 /* Main Content - CENTERED */
@@ -1779,7 +1842,6 @@ body {
   object-fit: contain;
 }
 
-
 /* Loading Spinner */
 .spinner {
   width: 20px;
@@ -1836,7 +1898,6 @@ body {
     display: none;
   }
 }
-
 
 /* Preloader */
 #preloader {
@@ -2034,6 +2095,8 @@ body {
    MOBILE RESPONSIVE DESIGN
    ============================================ */
 
+/* Tablet adjustments (1024px and below) - Already handled in the hamburger menu section above */
+
 @media (max-width: 1024px) {
   #pageContent {
     padding-top: 80px;
@@ -2097,11 +2160,7 @@ body {
     animation-duration: 15s !important;
   }
 
-  /* Navigation */
-  .hamburger {
-    display: flex;
-  }
-
+  /* Navigation - Hamburger menu already shown at 1024px, now adjust spacing */
   .preloader-logo {
     width: clamp(180px, 38vw, 280px);
   }
@@ -2116,54 +2175,7 @@ body {
     width: 3px;
   }
 
-  .nav-links {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    flex-direction: column;
-    padding: 1.5rem;
-    border-top: 1px solid #e5e7eb;
-    transform: translateY(-20px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    gap: 0.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    z-index: 999;
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-  }
-
-  .nav-links.open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-links li {
-    width: 100%;
-  }
-
-  .nav-links a,
-  .nav-parent {
-    padding: 0.75rem 1rem;
-    width: 100%;
-    justify-content: space-between;
-    border-radius: 8px;
-  }
-
-  .submenu {
-    position: static;
-    box-shadow: none;
-    margin-left: 0;
-    margin-top: 0.5rem;
-    background: #f9fafb;
-    width: 100%;
-    border-radius: 8px;
-  }
-
+  /* Adjust navbar for mobile */
   .navbar {
     padding: 16px 20px;
   }
@@ -2817,78 +2829,6 @@ body {
   .eternora-logo{
     width: 18px;
     height: 18px;
-  }
-}
-
-/* Tablet adjustments */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .carousel-container {
-    max-width: 95%;
-  }
-
-  .quote-content {
-    min-height: 400px;
-  }
-
-  .quote-image {
-    flex: 0 0 350px;
-  }
-
-  .quote-image img {
-    max-height: 300px;
-  }
-
-  .quote-text {
-    padding: 3rem;
-  }
-
-  .quote {
-    font-size: 1.8rem;
-  }
-
-  .leaf {
-    width: 12px;
-    height: 12px;
-    opacity: 0.3;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-  }
-  
-  .hero-image {
-    width: 350px;
-    height: 350px;
-  }
-  
-  .mentor-card {
-    gap: 2rem;
-  }
-  
-  .mentor-image {
-    width: 240px;
-  }
-  
-  .image-container {
-    width: 220px;
-    height: 220px;
-  }
-  
-  .mentor-photo {
-    width: 90%;
-    height: 90%;
-  }
-
-  .contact-container {
-    gap: 2rem;
-  }
-  
-  .contact-form-container {
-    padding: 2rem;
-  }
-  
-  .contact-card {
-    padding: 1.5rem;
   }
 }
 
