@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9VD5BCWKQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Z9VD5BCWKQ');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us - Shaping Young Minds</title>
@@ -247,10 +256,8 @@
               <button class="tab-btn" data-tab="support">Support Request</button>
             </div>
             
-            <!-- General Inquiry Form -->
+            <!-- General Inquiry Form - FIXED: Removed hidden fields, added checkbox -->
             <form action="https://formspree.io/f/xbdjobbl" method="POST" id="generalForm" class="contact-form active">
-              <input type="hidden" name="_subject" value="General Inquiry - Shaping Young Minds">
-              <input type="hidden" name="_replyto" value="%email%">
               
               <div class="form-group">
                 <label for="name">Your Name *</label>
@@ -279,6 +286,14 @@
                 <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
               </div>
               
+              <!-- Confidentiality checkbox for General Inquiry -->
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="confidentiality-agreement-general" name="confidentiality_agreement" required>
+                <label for="confidentiality-agreement-general">
+                  I understand that all information shared is confidential and protected under professional ethical guidelines.
+                </label>
+              </div>
+              
               <div class="form-submit">
                 <button type="submit" class="submit-button">
                   Send Inquiry
@@ -290,10 +305,8 @@
               </div>
             </form>
             
-            <!-- Support Request Form -->
+            <!-- Support Request Form - FIXED: Removed hidden fields -->
             <form action="https://formspree.io/f/xqekqjjl" method="POST" id="supportForm" class="contact-form">
-              <input type="hidden" name="_subject" value="Support Request - Shaping Young Minds">
-              <input type="hidden" name="_replyto" value="%email%">
               
               <div class="form-group">
                 <label for="support-name">Your Name *</label>
@@ -364,9 +377,10 @@
                 <textarea id="support-message" name="message" rows="5" placeholder="Please share what you're comfortable sharing. This helps us understand how best to support you." required></textarea>
               </div>
               
+              <!-- Confidentiality checkbox for Support Request (already present, keeping it) -->
               <div class="form-group checkbox-group">
-                <input type="checkbox" id="confidentiality-agreement" name="confidentiality_agreement" required>
-                <label for="confidentiality-agreement">
+                <input type="checkbox" id="confidentiality-agreement-support" name="confidentiality_agreement" required>
+                <label for="confidentiality-agreement-support">
                   I understand that all information shared is confidential and protected under professional ethical guidelines.
                 </label>
               </div>
@@ -583,7 +597,7 @@
         });
       });
       
-      // Form submission handling
+      // Form submission handling - FIXED for Formspree
       const formsToHandle = document.querySelectorAll('#generalForm, #supportForm');
       
       formsToHandle.forEach(form => {
@@ -598,7 +612,9 @@
           submitButton.disabled = true;
           
           try {
+            // Create FormData from the form
             const formData = new FormData(this);
+            
             const response = await fetch(this.action, {
               method: 'POST',
               body: formData,
@@ -608,12 +624,17 @@
             });
             
             if (response.ok) {
+              // Success
               alert('Thank you! Your message has been sent. We\'ll respond within 24 hours.');
               this.reset();
             } else {
+              // Try to get error details
+              const responseData = await response.json().catch(() => null);
+              console.error('Form error:', responseData);
               alert('Sorry, there was an error sending your message. Please try again or email us directly.');
             }
           } catch (error) {
+            console.error('Network error:', error);
             alert('Network error. Please check your connection and try again.');
           } finally {
             // Reset button
@@ -804,6 +825,7 @@
       // Initialize contact page functionality
       initContactPage();
     });
+    
     // Green Loading Bar Functionality
     const loadingBar = document.getElementById('loadingBar');
 
